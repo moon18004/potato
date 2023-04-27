@@ -84,3 +84,84 @@ header.active {
   margin: 10px;
   font-size: 16px;
 }
+
+
+/**************************** community ***********************************/
+.posts_body{
+  max-width: 1300px;
+}
+.posts {
+  width: 840px;
+  margin: auto;
+  padding: 0;
+}
+.posts_bar{
+  width: 840px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: auto;
+  display: flex;
+}
+.write{
+  margin-left: 10px;
+  flex-grow: 1;
+  
+}
+.categories{
+  display: flex;
+  flex-grow:6;
+  text-align:center;
+  justify-content: center;
+  align-items:center;
+}
+.categories p{
+  margin: 0 20px;
+  cursor: pointer;
+}
+.categories .active{
+  background-color: gray;
+}
+
+.search{
+  width: 840px;
+  margin: auto;
+  padding: 0 30px;
+}
+.search_form{
+  text-align:center;
+}
+
+.post{
+  padding: 0 10px 0 10px;
+  width: 840px;
+  margin: auto;
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.name {
+  margin-right: 10px;
+}
+.name, .title, .post-bottom p{
+  margin-bottom: 10px;
+  margin-left: 
+}
+.post-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.post-bottom p{
+  margin-top: 0;
+}
+.amount span{
+  margin: 0 4px 0 4px;
+}
+
+/************************* posting page *****************************/
+.posting-body{
+  width: 1300px;
+  margin: auto;
+}
+.posting-form{
+  width: 840px;
+  margin:auto;
+  text-align:center;
+}
