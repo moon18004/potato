@@ -7,3 +7,15 @@ const element = document.querySelector(".posts");
 const postList = new PostList(source, element);
 
 postList.init();
+
+const tab = document.querySelectorAll('.categories p');
+
+// console.log(uiItems);
+document.addEventListener('click', (e)=>{
+  if(e.target.parentNode.className=='categories'){
+    tab.forEach(element=> element.classList.remove('active'));
+    e.target.classList.add('active');
+    
+    
+  }
+})

@@ -26,3 +26,17 @@ export function renderwithTemplate(parent_node, template, data, callback) {
 
   parent_node.appendChild(copy);
 }
+
+export function formDataToJSON(formElement) {
+  const formData = new FormData(formElement);
+  // const converted = Object.fromEntries(formData.entries());
+
+  // return converted;
+  let convertedJSON = {};
+
+  formData.forEach(function (value, key) {
+    convertedJSON[key] = value;
+  });
+  // console.log(convertedJSON);
+  return convertedJSON;
+}
