@@ -84,3 +84,31 @@ header.active {
   margin: 10px;
   font-size: 16px;
 }
+
+.posts{
+  width: 1300px;
+  margin: auto;
+}
+.post{
+  padding: 0 10px 0 10px;
+  width: 840px;
+  margin: auto;
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.name {
+  margin-right: 10px;
+}
+.name, .title, .post-bottom p{
+  margin-bottom: 10px;
+  margin-left: 
+}
+.post-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.post-bottom p{
+  margin-top: 0;
+}
+.amount span{
+  margin: 0 4px 0 4px;
+}
