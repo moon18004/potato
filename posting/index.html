@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/posting.js" type="module"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <a href="#"><img src="">Potato</a>
+        </div>
+        <div class="gnb">
+          <a href="#feature1">Home</a>
+          <a href="#feature2">Information</a>
+          <a href="#feature3">Courses</a>
+          <a href="#feature4">Community</a>
+        </div>
+        <div class="login">
+          <a href="">Login</a>
+        </div>
+      </div>
+      <div class="trigger"></div>
+    </header>
+    <section class="posting-body">
+      <form name="posting-form" class="posting-form" action="">
+        <div class="select-category">
+          <label for="category">카테고리</label>
+          <select type="radio" name="category">
+            <option value="">질문</option>
+            <option value="">잡담</option>
+            <option value="">팁</option>
+            <option value="">상담</option>
+            <option value="">기타</option>
+          </select>
+        </div>
+        <div class="form-title">
+          <label for="title">제목</label>
+          <input type="text" name="title">
+        </div>
+        <div class="main-text">
+          <label for="main-text"></label>
+          <textarea name="main-text" id="" cols="90" rows="16"></textarea>
+        </div>
+        <div class="btn">
+          <button>취소</button>
+          <button class="submit-post">작성</button>
+        </div>
+      </form>
+    </section>
+
+
+  </div>
+</body>
+</html>
