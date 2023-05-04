@@ -1,3 +1,11 @@
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
 export async function loadTemplate(path) {
   const data = await fetch(path);
   const template = await data.text();
@@ -7,6 +15,7 @@ export async function loadTemplate(path) {
 
   return newTemplate;
 }
+
 
 export function renderList(ul, template, list, hydrateFunction, clear) {
   // Empty the list if the list should be emptied

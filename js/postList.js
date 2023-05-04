@@ -1,4 +1,4 @@
-import { loadTemplate, renderList } from './utils.js';
+import { getLocalStorage, loadTemplate, renderList, setLocalStorage } from './utils.js';
 
 export default class PostList{
   constructor(source, element){
@@ -7,10 +7,20 @@ export default class PostList{
   }
 
   async init(){
-    const list = await this.source.getDate();
+    let data = getLocalStorage('posts');
+    if(!data){
+      data = await this.source.getDate();
+      setLocalStorage('posts', data);
+      console.log(data);
+    }
+    console.log(data);
+
+    // const list = await this.source.getDate();
+    // setLocalStorage('posts', list);
+    
     const template = await loadTemplate("../templates/postBox.html");
     // console.log(list);
-    renderList(this.element, template, list, this.prepareTemplate, true);
+    renderList(this.element, template, data, this.prepareTemplate, true);
 
   }
 
