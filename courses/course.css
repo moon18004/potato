@@ -1,14 +1,20 @@
+.post {
+  max-width: 150px;
+  min-height: 50px;
+  margin: auto;
+  font-size: x-large;
+}
+
 .card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 700px;
-    margin: auto;
-    position: relative;
-    margin-top: 10px;
-    text-align: center;
-    font-family: arial;
-    top: 100px;
-  }
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  margin-top: 5px;
+  text-align: center;
+  font-family: arial;
+}
   
   /* On mouse-over, add a deeper shadow */
 .card:hover {
@@ -23,12 +29,3 @@
     justify-content: space-between;
   }
 
-.subject {
-    text-align: left;
-    
-  }
-
-.button1 {
-    top: 100px;
-    margin: auto;
-}

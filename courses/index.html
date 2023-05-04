@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="./course.css">
+  <link rel="stylesheet" href="../style.css">
+  
+  <script src="../js/courseJS/course.js" type="module"></script>
 </head>
 <body>
   <div class="container">
@@ -28,38 +30,22 @@
       <div class="trigger"></div>
     </header>
   </div>
-  <button id="button1"  type="button">
-    <a href="../index.html">작성하기</a>
-  </button>
-  <div class = "card">
-    <div class ="top">
-      <h4 class = "subject">subject: computer science</h4>
-      <h4 class = "classcode">code: cse341</h4>
-      <h4 class = "nick">nickname</h4>
+  <section class="cards">
+    <button class="post"  type="button">
+      <a href="../index.html">POST</a>
+    </button>
+    <div class = "card">
+      <div class ="top">
+        <h4 id = "subject"></h4>
+        <h4 id = "classcode"></h4>
+        <h4 id = "date"></h4>
+      </div>
+      <h4 id = "nick"></h4>
+      <p id = "text"></p>
+      <img src="#" alt="likes">
+      <img src="#" alt="reply">
+      <img src="#" alt="report">
     </div>
-    <p class = date>date</p>
-    <img src="#" alt="reply">
-    <div class = "comment">hello world!hello world!hello world!hello world!</div>
-  </div>
-  <div class = "card">
-    <div class ="top">
-      <h4 class = "subject">subject: computer science</h4>
-      <h4 class = "classcode">code: cse341</h4>
-      <h4 class = "nick">nickname</h4>
-    </div>
-    <p class = date>date</p>
-    <img src="#" alt="reply">
-    <div class = "comment">hello world!hello world!hello world!hello world!</div>
-  </div>
-  <div class = "card">
-    <div class ="top">
-      <h4 class = "subject">subject: computer science</h4>
-      <h4 class = "classcode">code: cse341</h4>
-      <h4 class = "nick">nickname</h4>
-    </div>
-    <p class = date>date</p>
-    <img src="#" alt="reply">
-    <div class = "comment">hello world!hello world!hello world!hello world!</div>
-  </div>
+  </section>
 </body>
 </html>
