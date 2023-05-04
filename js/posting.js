@@ -1,4 +1,4 @@
-import { formDataToJSON } from './utils.js';
+import { formDataToJSON, getLocalStorage, setLocalStorage } from './utils.js';
 
 document.querySelector(".submit-post").addEventListener("click", (e) => {
   e.preventDefault();
@@ -7,8 +7,21 @@ document.querySelector(".submit-post").addEventListener("click", (e) => {
   const checkForm = formElement.checkValidity();
   formElement.reportValidity();
   // console.log(formElement);
-  const json = formDataToJSON(formElement);
-  console.log(json);
+  let json = formDataToJSON(formElement);
+  // console.log(json);
+  const date = new Date();
+  const views = 0;
+  const likes = 0;
+  const comments = 0;
+  const author = "Moon";
+  const id = Date.now().toString();
+  json = { ...json, id, views, likes, date, comments, author };
+  let data = getLocalStorage('posts');
+  // console.log(data);
+  data = [json, ...data];
+  setLocalStorage('posts', data);
+  console.log(getLocalStorage('posts'));
+  location.assign("/community/index.html");
 });
 
 
