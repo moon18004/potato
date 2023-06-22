@@ -18,8 +18,10 @@ export default class CardList{
     template.querySelector(".classcode").innerHTML = card.classCode;
     template.querySelector(".date").innerHTML = card.date;
     template.querySelector(".nick").innerHTML = card.nickname;
-    template.querySelector(".textBox").innerHTML = card.text;
+    console.log(card.comment);
+    
 
     return template;
   }
+
 } 

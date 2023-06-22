@@ -1,0 +1,30 @@
+[
+    {
+    "course_id":"1",
+    "nickname" : "abcd",
+    "date" : "2023-03-25",
+    "classCode" : "CSE341",
+    "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
+    },
+    {
+        "course_id":"2",
+        "nickname" : "abcd",
+        "date" : "2023-03-25",
+        "classCode" : "CSE341",
+        "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
+        },
+        {
+            "course_id":"3",
+            "nickname" : "abcd",
+            "date" : "2023-03-25",
+            "classCode" : "CSE341",
+            "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
+            },
+            {
+                "course_id":"2",
+                "nickname" : "abcd",
+                "date" : "2023-03-25",
+                "classCode" : "CSE341",
+                "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
+                }
+]
