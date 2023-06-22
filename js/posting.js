@@ -39,19 +39,19 @@ function getJson(json){
   let cat_id;
   switch (json.category) {
       case 'question':
-        cat_id = 'question';
+        cat_id = '질문';
         break;
       case 'free':
-        cat_id = 'free';
+        cat_id = '잡담';
         break;
       case 'counsel':
-        cat_id = 'counsel';
+        cat_id = '상담';
         break;
       case 'tip':
-        cat_id = 'tip';
+        cat_id = '팁';
         break;
       case 'etc':
-        cat_id = 'etc';
+        cat_id = '기타';
         break;
       default:
         break;

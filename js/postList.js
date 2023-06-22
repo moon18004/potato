@@ -43,7 +43,7 @@ export default class PostList{
           return;
         }
         
-        const filtered = this.data.filter((item) => item.cat_id === category);
+        const filtered = this.data.filter((item) => item.category === category);
         
         
         renderList(this.element, template, filtered, this.prepareTemplate, true);
@@ -54,19 +54,19 @@ export default class PostList{
   prepareTemplate(template, post) {
     let category = '';
     switch (post.category) {
-      case '질문':
+      case 'question':
         category = 'question';
         break;
-      case '잡담':
+      case 'free':
         category = 'free';
         break;
-      case '상담':
+      case 'counsel':
         category = 'counsel';
         break;
-      case '팁':
+      case 'tip':
         category = 'tip';
         break;
-      case '기타':
+      case 'etc':
         category = 'etc';
         break;
       default:
@@ -76,9 +76,9 @@ export default class PostList{
     template.querySelector('a').href = `/community/post.html?id=${post._id}`;
     template.querySelector('.post').dataset.category = category;
     template.querySelector(".name").innerHTML = post.author;
-    template.querySelector(".date").innerHTML = post.date;
+    template.querySelector(".date").innerHTML = post.createdAt;
     template.querySelector(".title").innerHTML += post.title;
-    template.querySelector(".category").innerHTML = post.category;
+    template.querySelector(".category").innerHTML = post.cat_id;
     template.querySelector(".views").innerHTML = post.views;
     template.querySelector(".comments").innerHTML = post.comments;
     template.querySelector(".likes").innerHTML = post.likes;

@@ -18,6 +18,7 @@ export default class ExternalServices{
   }
 
   async postRequest(post){
+    console.log(JSON.stringify(post));
     const options = {
       method: "POST",
       headers: {
