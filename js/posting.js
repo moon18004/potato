@@ -1,6 +1,9 @@
+import ExternalServices from './ExternalServices.js';
 import { formDataToJSON, getLocalStorage, setLocalStorage } from './utils.js';
 
-document.querySelector(".submit-post").addEventListener("click", (e) => {
+const services = new ExternalServices();
+
+document.querySelector(".submit-post").addEventListener("click", async (e) => {
   e.preventDefault();
   //
   const formElement = document.forms["posting-form"];
@@ -9,21 +12,53 @@ document.querySelector(".submit-post").addEventListener("click", (e) => {
   // console.log(formElement);
   let json = formDataToJSON(formElement);
   // console.log(json);
+  
+  console.log(json.mainText);
+  
+  json = getJson(json);
+
+  let data = getLocalStorage('posts');
+  // console.log(data);
+  data = [json, ...data];
+  await services.postRequest(json)
+  // setLocalStorage('posts', data);
+  // console.log(getLocalStorage('posts'));
+  if(json.mainText !== "" && json.title !== ""){
+    location.assign("/community/index.html");
+  }
+  
+});
+
+function getJson(json){
   const date = new Date();
   const views = 0;
   const likes = 0;
   const comments = 0;
   const author = "Moon";
   const id = Date.now().toString();
-  json = { ...json, id, views, likes, date, comments, author };
-  let data = getLocalStorage('posts');
-  // console.log(data);
-  data = [json, ...data];
-  setLocalStorage('posts', data);
-  console.log(getLocalStorage('posts'));
-  location.assign("/community/index.html");
-});
-
+  let cat_id;
+  switch (json.category) {
+      case 'question':
+        cat_id = '질문';
+        break;
+      case 'free':
+        cat_id = '잡담';
+        break;
+      case 'counsel':
+        cat_id = '상담';
+        break;
+      case 'tip':
+        cat_id = '팁';
+        break;
+      case 'etc':
+        cat_id = '기타';
+        break;
+      default:
+        break;
+    }
+  console.log(cat_id);
+  return { ...json, id, views, likes, date, comments, author, "cat_id" : cat_id };
+}
 
 
 // async checkout() {
