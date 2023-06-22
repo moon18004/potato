@@ -43,6 +43,7 @@ const cardList = new CardList(source, element);
 cardList.init();
 
 const tab = document.querySelectorAll('.text p');
+console.log(tab);
 
 document.addEventListener('click', (e)=>{
   if(e.target.parentNode.className=='categories'){

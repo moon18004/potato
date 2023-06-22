@@ -1,31 +1,74 @@
 .post {
-  max-width: 150px;
+  max-width: 200px;
   min-height: 50px;
   margin: auto;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 .card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 700px;
-  margin: auto;
-  position: relative;
-  margin-top: 5px;
+  border: 2px solid gray;
+  border-radius: 20px 20px 20px 20px;
+  max-width: 900px;
+  min-height: 400px;
+  margin: 25px auto;
+  /* position: relative; */
   text-align: center;
   font-family: arial;
 }
   
   /* On mouse-over, add a deeper shadow */
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.3);
   }
   
   /* Add some padding inside the card container */
 .top {
-    padding: 2px 16px;
-    padding: 20px;
+    padding: 5px 16px;
+    padding: 40px;
     display: flex;
-    justify-content: space-between;
   }
 
+.bodyBar{
+  padding: 130px 0px 0px 0px;
+  margin: auto;
+  max-width: 700px;
+}
+
+.cards{
+  padding: 10px;
+}
+
+.subject{
+  padding-right: 30px;
+}
+
+.classcode{
+  padding-right: 400px;
+}
+
+.date{
+  padding-left: 10px;
+}
+
+.nick{
+  padding-left: 50px
+}
+
+.nicks{
+  display: flex;
+  max-height: 30px;
+}
+
+.textBox{
+  border: 1px solid gray;
+  border-radius: 20px 20px 20px 20px;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 800px;
+  min-height: 250px;
+}
+
+.comments{
+  padding: 0px;
+}

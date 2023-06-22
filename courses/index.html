@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./course.css">
   <link rel="stylesheet" href="../style.css">
-  
+  <script src="https://kit.fontawesome.com/f566ce53a0.js" crossorigin="anonymous"></script>
   <script src="../js/courseJS/course.js" type="module"></script>
 </head>
 <body>
@@ -30,22 +30,21 @@
       <div class="trigger"></div>
     </header>
   </div>
-  <section class="cards">
-    <button class="post"  type="button">
-      <a href="../index.html">POST</a>
-    </button>
-    <div class = "card">
-      <div class ="top">
-        <h4 id = "subject"></h4>
-        <h4 id = "classcode"></h4>
-        <h4 id = "date"></h4>
-      </div>
-      <h4 id = "nick"></h4>
-      <p id = "text"></p>
-      <img src="#" alt="likes">
-      <img src="#" alt="reply">
-      <img src="#" alt="report">
+  <section class="bodyBar">
+    <div class ="post">
+      <a href=""><h1>POST</h1></a>
     </div>
+    
+    <select name="subject" style="width:200px; height: 50px; font-size: larger;" id="selectSubject">
+      <option value="cse341">Clarify Subject</option>
+      <option value="cse341">cse341</option>
+      <option value="cse341">cse341</option>
+      <option value="cse341">cse341</option>
+      <option value="cse341">cse341</option>
+    </select>
+    <input id="search" type="text" style="width:400px; height: 50px; font-size: larger;">
+    <button id="search_btn">검색</button>
   </section>
+  <section class="cards"></section>
 </body>
 </html>
