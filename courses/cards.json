@@ -1,67 +1,46 @@
 [
-        {
-        "course_id":"1",
-        "nickname" : "ab",
+    {
+        "_id":"1",
+        "author" : "ab",
         "subject": "computer science",
         "date" : "2023-03-25",
         "classCode" : "CSE341",
         "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
         "reply" : "10",
         "likes" : "4",
-        "comment": {
-            "nickname" : "abcd",
-            "date" : "2023-03-25",
-            "classCode" : "CSE341",
-            "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
-        }
-        },
-        {
-            "course_id":"2",
-            "subject": "computer science",
-            "classCode" : "CSE341",
-            "nickname" : "abc",
-            "date" : "2023-03-25",
-            "text" : "hello world!hello world!hello world!hello world!",
-            "reply" : "10",
-            "likes" : "4",
-            "comment": {
-                "nickname" : "abcd",
-                "date" : "2023-03-25",
-                "classCode" : "CSE341",
-                "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
-            }
-
-        },
-        {
-            "course_id":"3",
-            "nickname" : "abdd",
-            "subject": "computer science",
-            "date" : "2023-03-25",
-            "classCode" : "CSE341",
-            "text" : "hello world!hello world!hello world!hello world!",
-            "reply" : "10",
-            "likes" : "4",
-            "comment": {
-                "nickname" : "abcd",
-                "date" : "2023-03-25",
-                "classCode" : "CSE341",
-                "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
-            }
-        },
-        {
-            "course_id":"4",
-            "nickname" : "abcd",
-            "subject": "computer science",
-            "date" : "2023-03-25",
-            "classCode" : "CSE341",
-            "text" : "hello world!hello world!hello world!hello world!",
-            "reply" : "10",
-            "likes" : "4",
-            "comment": {
-                "nickname" : "abcd",
-                "date" : "2023-03-25",
-                "classCode" : "CSE341",
-                "text" : "texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!texthello world!hello world!hello world!hello world!",
-            }
-        }
-    ]
+        "comment": 1
+    },
+    {
+        "_id":"2",
+        "subject": "computer science",
+        "classCode" : "CSE341",
+        "author" : "abc",
+        "date" : "2023-03-25",
+        "text" : "hello world!hello world!hello world!hello world!",
+        "reply" : "10",
+        "likes" : "4",
+        "comment": 2
+    },
+    {
+        "_id":"3",
+        "author" : "abdd",
+        "subject": "computer science",
+        "date" : "2023-03-25",
+        "classCode" : "CSE341",
+        "text" : "hello world!hello world!hello world!hello world!",
+        "reply" : "10",
+        "likes" : "4",
+        "comment": 3
+    },
+    {
+        "_id":"4",
+        "author" : "abcd",
+        "subject": "computer science",
+        "date" : "2023-03-25",
+        "classCode" : "CSE341",
+        "text" : "hello world!hello world!hello world!hello world!",
+        "reply" : "10",
+        "likes" : "4",
+        "comment": 4
+    }
+]

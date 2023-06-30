@@ -250,6 +250,12 @@ header.active {
   background-color: #f1f1f1;
   display: flex;
 }
+.comment {
+  display:none;
+}
+.comment.active{
+  display:block;
+}
 .info p{
   font-size: 14px;
   margin: 2px 10px;
@@ -259,6 +265,7 @@ header.active {
   margin: 4px;
   margin-bottom: 12px;
 }
+.
 /* .info .author{
   margin-right: 10px;
 } */

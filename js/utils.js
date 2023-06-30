@@ -20,13 +20,43 @@ export async function loadTemplate(path) {
 export function renderList(ul, template, list, hydrateFunction, clear) {
   // Empty the list if the list should be emptied
   if (clear) ul.innerHTML = "";
-  console.log(list);
   list.forEach((item) => {
     renderwithTemplate(ul, template, item, hydrateFunction);
   });
 }
-
 export function renderwithTemplate(parent_node, template, data, callback) {
+  let copy = template.content.cloneNode(true);
+  
+  if (callback) {
+    copy = callback(copy, data);
+  }
+  console.log(copy);
+  parent_node.appendChild(copy);
+}
+
+// export function renderCourseList(ul, template, list, list2, hydrateFunction, clear){
+//     // Empty the list if the list should be emptied
+//     if (clear) ul.innerHTML = "";
+//     console.log(list);
+//     list.forEach((item) => {
+//       renderwithTemplate(ul, template, item, hydrateFunction);
+//       });
+//       list2.forEach((item2) => {
+//         if(item._id = item2._id){
+
+//         }
+//     });
+// }
+export function renderCommentList(ul, template, list, hydrateFunction, clear){
+  // Empty the list if the list should be emptied
+  if (clear) ul.innerHTML = "";
+  console.log(list);
+  list.forEach((item) => {
+    renderwithComment(ul, template, item, hydrateFunction);
+    });
+    
+}
+export function renderwithComment(parent_node, template, data, callback) {
   let copy = template.content.cloneNode(true);
 
   if (callback) {
@@ -35,6 +65,8 @@ export function renderwithTemplate(parent_node, template, data, callback) {
 
   parent_node.appendChild(copy);
 }
+
+
 
 export function formDataToJSON(formElement) {
   const formData = new FormData(formElement);

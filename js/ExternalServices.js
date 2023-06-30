@@ -30,6 +30,5 @@ export default class ExternalServices{
       convertToJson
     );
     console.log(response);
-
   }
 }

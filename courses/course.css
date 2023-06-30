@@ -50,11 +50,11 @@
   padding-left: 10px;
 }
 
-.nick{
+.author{
   padding-left: 50px
 }
 
-.nicks{
+.authors{
   display: flex;
   max-height: 30px;
 }
