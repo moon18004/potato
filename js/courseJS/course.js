@@ -2,7 +2,8 @@
 import ExternalServices from "../ExternalServices.js";
 import CardList from './cardList.js';
 
-const url = '../courses/cards.json';
+// const url = '../courses/cards.json';
+const url = 'https://byuifriendserver.onrender.com/course';
 const source = new ExternalServices(url);
 
 const commentUrl = '../courses/comments.json';
