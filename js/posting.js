@@ -19,7 +19,7 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
 
   let data = getLocalStorage('posts');
   // console.log(data);
-  data = [json, ...data];
+  // data = [json, ...data];
   await services.postRequest(json)
   // setLocalStorage('posts', data);
   // console.log(getLocalStorage('posts'));
