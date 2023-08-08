@@ -17,10 +17,10 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   
   json = getJson(json);
 
-  let data = getLocalStorage('posts');
+  // let data = getLocalStorage('posts');
   // console.log(data);
   // data = [json, ...data];
-  await services.postRequest(json)
+  await services.postRequest(json, 'community')
   // setLocalStorage('posts', data);
   // console.log(getLocalStorage('posts'));
   if(json.mainText !== "" && json.title !== ""){

@@ -262,3 +262,45 @@ header.active {
 /* .info .author{
   margin-right: 10px;
 } */
+
+/* registration */
+
+.registration{
+  width: 1300px;
+  margin: auto;
+}
+.registration form{
+  width: 800px;
+  margin: auto;
+}
+.registration form div{
+  width: 600px;
+  text-align:cneter;
+}
+.opt{
+  display:none;
+}
+.opt.display{
+  display:block;
+}
+.user-info{
+  padding: 20px 0 ;
+  display:none;
+}
+.user-info.display{
+  display:block;
+}
+
+/* login */
+.section-login{
+  width: 1300px;
+  margin: auto;
+}
+.login-form{
+  width: 800px;
+  margin: auto;
+}
+.section-login form div{
+  width: 600px;
+  text-align:cneter;
+}
