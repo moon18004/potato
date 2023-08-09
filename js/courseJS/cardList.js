@@ -1,9 +1,13 @@
 import { loadTemplate, renderCommentList, renderList } from '../utils.js';
+import ExternalServices from '../ExternalServices.js';
+
+const services = new ExternalServices();
 
 export default class CardList{
   constructor(source, commentSource, element){
     this.source = source;
     this.element = element;
+    console.log(element)
     this.commentSource = commentSource;
     this.commentTemplate = "";
     this.list2 = "";
@@ -28,21 +32,30 @@ export default class CardList{
 
   prepareTemplate(template, card) {
     template.querySelector(".subject").innerHTML = card.subject;
-    template.querySelector(".classcode").innerHTML = card.classCode;
-    template.querySelector(".date").innerHTML = card.date;
+    template.querySelector(".classcode").innerHTML = card.code;
+    template.querySelector(".date").innerHTML = card.createdAt;
     template.querySelector(".author").innerHTML = card.author;
     template.querySelector(".textBox").innerHTML = card.text;
+    template.querySelector(".updateCourse").href = `../posting/updateCourse.html?id=${card._id}`;
+    template.querySelector(".deleteCourse").addEventListener('click', async (e) => {
+      e.preventDefault();
+      await services.deleteCourseRequest(card._id);
+    })
     const comment = template.querySelector('.comment');
+    console.log()
+
+    //update
+    template.querySelector('.updateCourse').addEventListener('click', (e)=>{
+      console.log(card._id);
+    })
     
-    
-    //template.querySelector(".comment").innerHTML = card.comment;
+    // template.querySelector(".comment").innerHTML = card.comment;
     template.querySelector('.fa-comment').addEventListener('click', (e) => {
       console.log(comment);
       comment.classList.toggle('active');
       console.log(this.list2);
       const filtered = this.list2.filter(element => {
-        
-        return card._id === element._id;
+        return card._id === element.source_id;
       });
       console.log(filtered);
       renderList(comment, this.commentTemplate, filtered, this.prepareComment, true);
@@ -52,6 +65,7 @@ export default class CardList{
   prepareComment(template, comment){
     template.querySelector(".author").innerHTML = comment.author;
     template.querySelector(".content").innerHTML = comment.text;
+    template.querySelector(".date").innerHTML = comment.createdAt;
     return template;
   }
 } 

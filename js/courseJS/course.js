@@ -6,13 +6,11 @@ import CardList from './cardList.js';
 const url = 'https://byuifriendserver.onrender.com/course';
 const source = new ExternalServices(url);
 
-const commentUrl = '../courses/comments.json';
+const commentUrl = 'https://byuifriendserver.onrender.com/comment';
 const commentSource = new ExternalServices(commentUrl);
 
 const element = document.querySelector(".cards");
-// console.log(element);
 const cardList = new CardList(source, commentSource, element);
-
 cardList.init();
 
 const tab = document.querySelectorAll('.text p');

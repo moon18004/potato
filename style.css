@@ -120,7 +120,7 @@ header.active {
   cursor: pointer;
 }
 .categories .active{
-  background-color: gray;
+  background-color: gray; 
 }
 
 .search{
@@ -265,7 +265,15 @@ header.active {
   margin: 4px;
   margin-bottom: 12px;
 }
-.
+
 /* .info .author{
   margin-right: 10px;
 } */
+
+.main-text textarea {
+  white-space: pre-wrap;
+}
+
+.comm {
+  display: flex;
+}

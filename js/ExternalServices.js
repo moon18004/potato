@@ -1,4 +1,5 @@
 const baseURL = 'https://byuifriendserver.onrender.com/';
+import { getParam } from "./utils.js";
 
 async function convertToJson(res) {
   let json = await res.json();
@@ -14,16 +15,70 @@ export default class ExternalServices{
     this.url = url
   }
   getData(){
-    return fetch(this.url).then(convertToJson).then((data)=> data);
+    let a = fetch(this.url).then(convertToJson).then((data)=> data);
+    console.log(a) ;
+    return a;
   }
 
-  async getCourseRequest(){
-    const courseResponse = fetch(baseURL + "course")
-      .then(convertToJson)
-      .then(data=>console.log(data));
-    console.log(courseResponse);
+  
+
+  async postCourseRequest(json){
+   const a = await fetch(baseURL+"course/", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify({
+        "author": "name",
+        "subject": json.category,
+        "code": json.code,
+        "text": json.mainText
+      })
+    }).then(convertToJson)   
+    console.log(a) 
+  }
+  
+  async updateCourseRequest(json){
+    const id = getParam('id');
+    console.log(id);
+    // fetch(baseURL+`course/${postId}`, {
+    fetch(baseURL+`course/${id}`, {
+    method: 'PUT', 
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ 
+      "subject": json.category,
+      "code": json.code,
+      "text": json.mainText
+     }) // 업데이트할 내용을 JSON 형태로 전달합니다.
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('글이 성공적으로 업데이트되었습니다.', data);
+  })
+  .catch(error => {
+    console.error('글 업데이트 중 오류가 발생했습니다.', error);
+  });
   }
 
+  async deleteCourseRequest(id){
+    // const id = getParam('id');
+    // console.log(id);
+    fetch( baseURL+`course/`+id, {
+      method: 'DELETE',
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('데이터가 성공적으로 삭제되었습니다.');
+      } else {
+        console.error('데이터 삭제에 실패했습니다.');
+      }
+    })
+    .catch(error => {
+      console.error('요청 중 오류가 발생했습니다.', error);
+    });
+  }
 
   async postRequest(post){
     console.log(JSON.stringify(post));

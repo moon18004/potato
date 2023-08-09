@@ -11,7 +11,8 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   formElement.reportValidity();
   // console.log(formElement);
   let json = formDataToJSON(formElement);
-  // console.log(json);
+  console.log("hihihihi");
+  console.log(json);
   
   console.log(json.mainText);
   
