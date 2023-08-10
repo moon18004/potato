@@ -84,4 +84,19 @@ export default class ExternalServices{
     }
 
   }
+  async me(token){
+    const options = {
+      method: "GET",
+      headers: {Authorization: `Bearer ${token}`}
+    };
+    try{
+      const response = await fetch(baseURL + "auth/me", options).then(
+        convertToJson
+      );
+      return response;
+    }
+    catch(err){
+      return err;
+    }
+  }
 }

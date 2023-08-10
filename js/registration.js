@@ -1,7 +1,9 @@
 import ExternalServices from './ExternalServices.js';
 import { formDataToJSON, getLocalStorage, setLocalStorage } from './utils.js';
+import TokenStorage from './token.js';
 
 const services = new ExternalServices();
+const tokenStorage = new TokenStorage();
 
 document.querySelector(".get-opt").addEventListener("click", async (e) => {
   e.preventDefault();
@@ -52,10 +54,9 @@ document.querySelector(".sign-up").addEventListener('click', async (e) =>{
 
   if(res.code == 200){
     location.assign("/index.html");
+    tokenStorage.saveToken(res.token);
   }
   else{
     document.querySelector('.err-msg').innerHTML = res.message;
   }
-
-  
 })

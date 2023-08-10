@@ -84,7 +84,15 @@ header.active {
   margin: 10px;
   font-size: 16px;
 }
-
+.loginBtn.none{
+  display:none;
+}
+.signoutBtn{
+  display:none;
+}
+.signoutBtn.display{
+  display:block;
+}
 
 /**************************** community ***********************************/
 .posts_body{
