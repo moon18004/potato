@@ -7,7 +7,7 @@ export default class CardList{
   }
 
   async init(){
-    const list = await this.source.getDate();
+    const list = await this.source.getData();
     console.log(list)
     const template = await loadTemplate("../templates/courseCard.html");
     renderList(this.element, template, list, this.prepareTemplate, true);

@@ -53,7 +53,7 @@ document.querySelector(".sign-up").addEventListener('click', async (e) =>{
   console.log(res);
 
   if(res.code == 200){
-    location.assign("/index.html");
+    location.assign("../index.html");
     tokenStorage.saveToken(res.token);
   }
   else{

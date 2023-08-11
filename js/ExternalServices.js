@@ -8,21 +8,30 @@ async function convertToJson(res) {
     throw { code: 400, name: "servicesError", message: json.message };
   }
 }
+async function convert(res) {
+  let json = await res.json();
+  if (res.ok) {
+    return json;
+  } else {
+    throw { name: "servicesError", message: json };
+  }
+}
 
 export default class ExternalServices{
   constructor(url){
     this.url = url
   }
-  getData(){
-    return fetch(this.url).then(convertToJson).then((data)=> data);
+  async getData(){
+    return fetch(this.url).then(convert).then((data)=> data);
   }
 
-  async postRequest(post, url){
+  async postRequest(post, url, token){
     console.log(JSON.stringify(post));
     const options = {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(post),
     };
@@ -94,6 +103,19 @@ export default class ExternalServices{
         convertToJson
       );
       return response;
+    }
+    catch(err){
+      return err;
+    }
+  }
+  async deletePost(token){
+    const options = {
+      method: "DELETE",
+      headers: {Authorization: `Bearer ${token}`}
+    };
+    try{
+      const response = await fetch(this.url, options);
+      return response.status;
     }
     catch(err){
       return err;

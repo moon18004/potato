@@ -15,6 +15,8 @@ init();
 
 postList.init();
 
+let login;
+
 // const tab = document.querySelectorAll('.categories p');
 
 // console.log(uiItems);
@@ -32,6 +34,11 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   document.querySelector('.loginBtn').classList.remove('none');
 })
 
+// document.querySelector('.write-btn').addEventListener('click', async (e)=>{
+//   e.preventDefault();
+//   location.assign("/posting/index.html");
+// })
+
 async function init(){
   if (token) {
     console.log('init')
@@ -40,7 +47,19 @@ async function init(){
     if(res.code==200){
       document.querySelector('.signoutBtn').classList.add('display');
       document.querySelector('.loginBtn').classList.add('none');
+      document.querySelector('.write-btn').addEventListener('click', async (e)=>{
+        e.preventDefault();
+        location.assign("../posting/index.html");
+      })
     }
+    
+  }
+  else{
+    document.querySelector('.write-btn').addEventListener('click', async (e)=>{
+      e.preventDefault();
+      // location.assign("/posting/index.html");
+      alert('You should login to write post');
+    })
   }
 }
 

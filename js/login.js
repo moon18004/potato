@@ -30,7 +30,7 @@ document.querySelector(".login-btn").addEventListener('click', async (e) => {
 
   if(res.code == 200){
     tokenStorage.saveToken(res.token);
-    location.assign("/index.html");
+    location.assign("../index.html");
   }
   else{
     document.querySelector('.err-msg').innerHTML = res.message;

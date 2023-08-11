@@ -271,6 +271,16 @@ header.active {
   margin-right: 10px;
 } */
 
+
+/* **************  community post ******************* */
+.postBtns{
+  display:none;
+}
+.postBtns.display{
+  display:block;
+}
+
+
 /* registration */
 
 .registration{

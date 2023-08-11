@@ -27,7 +27,6 @@ export default class PostList{
     renderList(this.element, template, this.data, this.prepareTemplate, true);
 
     this.selectCategory(template);
-    
 
   }
   selectCategory(template){
@@ -52,29 +51,29 @@ export default class PostList{
   }
 
   prepareTemplate(template, post) {
-    let category = '';
-    switch (post.category) {
-      case 'question':
-        category = 'question';
-        break;
-      case 'free':
-        category = 'free';
-        break;
-      case 'counsel':
-        category = 'counsel';
-        break;
-      case 'tip':
-        category = 'tip';
-        break;
-      case 'etc':
-        category = 'etc';
-        break;
-      default:
-        break;
-    }
+    // let category = '';
+    // switch (post.category) {
+    //   case 'question':
+    //     category = 'question';
+    //     break;
+    //   case 'free':
+    //     category = 'free';
+    //     break;
+    //   case 'counsel':
+    //     category = 'counsel';
+    //     break;
+    //   case 'tip':
+    //     category = 'tip';
+    //     break;
+    //   case 'etc':
+    //     category = 'etc';
+    //     break;
+    //   default:
+    //     break;
+    // }
     // console.log(template.querySelector('.post').dataset);
     template.querySelector('a').href = `/community/post.html?id=${post._id}`;
-    template.querySelector('.post').dataset.category = category;
+    template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
     template.querySelector(".date").innerHTML = post.createdAt;
     template.querySelector(".title").innerHTML += post.title;
