@@ -4,6 +4,14 @@ import { getParam } from "./utils.js";
 async function convertToJson(res) {
   let json = await res.json();
   if (res.ok) {
+    return { ...json, code:200};
+  } else {
+    throw { code: 400, name: "servicesError", message: json.message };
+  }
+}
+async function convert(res) {
+  let json = await res.json();
+  if (res.ok) {
     return json;
   } else {
     throw { name: "servicesError", message: json };
@@ -80,12 +88,13 @@ export default class ExternalServices{
     });
   }
 
-  async postRequest(post){
+  async postRequest(post, url, token){
     console.log(JSON.stringify(post));
     const options = {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(post),
     };
@@ -93,5 +102,33 @@ export default class ExternalServices{
       convertToJson
     );
     console.log(response);
+  }
+  async me(token){
+    const options = {
+      method: "GET",
+      headers: {Authorization: `Bearer ${token}`}
+    };
+    try{
+      const response = await fetch(baseURL + "auth/me", options).then(
+        convertToJson
+      );
+      return response;
+    }
+    catch(err){
+      return err;
+    }
+  }
+  async deletePost(token){
+    const options = {
+      method: "DELETE",
+      headers: {Authorization: `Bearer ${token}`}
+    };
+    try{
+      const response = await fetch(this.url, options);
+      return response.status;
+    }
+    catch(err){
+      return err;
+    }
   }
 }
