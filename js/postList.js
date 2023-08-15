@@ -72,7 +72,7 @@ export default class PostList{
     //     break;
     // }
     // console.log(template.querySelector('.post').dataset);
-    template.querySelector('a').href = `/community/post.html?id=${post._id}`;
+    template.querySelector('a').href = `../community/post.html?id=${post._id}`;
     template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
     template.querySelector(".date").innerHTML = post.createdAt;

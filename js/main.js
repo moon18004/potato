@@ -16,6 +16,8 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   tokenStorage.clearToken();
   document.querySelector('.signoutBtn').classList.remove('display');
   document.querySelector('.loginBtn').classList.remove('none');
+  document.querySelector('.profileBtn').classList.remove('display');
+  document.querySelector('.signupBtn').classList.remove('none');
 })
 
 async function init(){
@@ -25,7 +27,9 @@ async function init(){
     console.log(res);
     if(res.code==200){
       document.querySelector('.signoutBtn').classList.add('display');
+      document.querySelector('.profileBtn').classList.add('display');
       document.querySelector('.loginBtn').classList.add('none');
+      document.querySelector('.signupBtn').classList.add('none');
     }
   }
 }

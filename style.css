@@ -91,7 +91,19 @@ header.active {
   display:none;
 }
 .signoutBtn.display{
-  display:block;
+  display:inline-block;
+}
+.signupBtn{
+  /* display:display; */
+}
+.signupBtn.none{
+  display:none;
+}
+.profileBtn{
+  display:none;
+}
+.profileBtn.display{
+  display:inline-block;
 }
 
 /**************************** community ***********************************/

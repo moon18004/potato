@@ -7,7 +7,7 @@ const services = new ExternalServices();
 const tokenStorage = new TokenStorage();
 
 
-const token = tokenStorage.getToken();
+let token = tokenStorage.getToken();
 
 
 
@@ -21,6 +21,7 @@ init();
 document.querySelector(".submit-post").addEventListener("click", async (e) => {
   e.preventDefault();
   //
+  token = tokenStorage.getToken();
   const formElement = document.forms["posting-form"];
   const checkForm = formElement.checkValidity();
   formElement.reportValidity();
@@ -28,16 +29,23 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   let json = formDataToJSON(formElement);
   // console.log(json);
   
-  console.log(json.mainText);
+  // console.log(json.mainText);
   
   json = getJson(json);
+
+  console.log(json);
 
   // let data = getLocalStorage('posts');
   // console.log(data);
   // data = [json, ...data];
-  await services.postRequest(json, 'community', token)
+  
+  const res = await services.postRequest(json, 'community', token);
+  // console.log(res);
+  
   // setLocalStorage('posts', data);
   // console.log(getLocalStorage('posts'));
+  
+  
   if(json.mainText !== "" && json.title !== ""){
     location.assign("../community/index.html");
   }
@@ -49,6 +57,8 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   tokenStorage.clearToken();
   document.querySelector('.signoutBtn').classList.remove('display');
   document.querySelector('.loginBtn').classList.remove('none');
+  document.querySelector('.profileBtn').classList.remove('display');
+  document.querySelector('.signupBtn').classList.remove('none');
   location.assign("../index.html");
 })
 
@@ -61,7 +71,9 @@ async function init(){
     console.log(res);
     if(res.code==200){
       document.querySelector('.signoutBtn').classList.add('display');
+      document.querySelector('.profileBtn').classList.add('display');
       document.querySelector('.loginBtn').classList.add('none');
+      document.querySelector('.signupBtn').classList.add('none');
     }
   }
 }

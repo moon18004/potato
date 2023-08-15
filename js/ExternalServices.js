@@ -24,6 +24,28 @@ export default class ExternalServices{
   async getData(){
     return fetch(this.url).then(convert).then((data)=> data);
   }
+  async putData(data, token){
+    console.log(data);
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(data),
+    };
+    try{
+      const response = await fetch(this.url, options).then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+  }
 
   async postRequest(post, url, token){
     console.log(JSON.stringify(post));
@@ -46,9 +68,6 @@ export default class ExternalServices{
       console.log(err);
       return err;
     }
-    
-    
-    
   }
   async sendEmail(email){
     console.log(JSON.stringify(email));

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <script src="../js/posting.js" type="module"></script>
+  <script src="../js/edit.js" type="module"></script>
   <title>Document</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
       <form name="posting-form" class="posting-form" action="">
         <div class="select-category">
           <label for="category">Categories</label>
-          <select type="radio" name="category">
+          <select type="radio" name="category" class="category">
             <option value="question">Question</option>
             <option value="free">Free</option>
             <option value="tip">Tip</option>
@@ -44,15 +44,15 @@
         </div>
         <div class="form-title">
           <label for="title">Title</label>
-          <input type="text" name="title" required>
+          <input class="title" type="text" name="title" required>
         </div>
         <div class="main-text">
           <label for="mainText"></label>
-          <textarea name="mainText" id="" cols="90" rows="16" required></textarea>
+          <textarea class="textArea" name="mainText" id="" cols="90" rows="16" required></textarea>
         </div>
         <div class="btn">
-          <button class="submit-post">Write</button>
-          <button class="'cancel-btn"><a href="../community">Cancel</a></button>
+          <button class="edit-btn">Edit</button>
+          <button class="cancel-btn"><a href="">Cancel</a></button>
         </div>
       </form>
     </section>
