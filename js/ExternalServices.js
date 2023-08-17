@@ -1,4 +1,5 @@
-const baseURL = 'http://localhost:8080/';
+const baseURL = "https://byuifriendserver.onrender.com/";
+const localURL = 'http://localhost:8080/';
 
 async function convertToJson(res) {
   let json = await res.json();
@@ -46,7 +47,28 @@ export default class ExternalServices{
       return err;
     }
   }
-
+  async postReq(post, url, token){
+    console.log(JSON.stringify(post));
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(post),
+    };
+    try{
+      const response = await fetch(localURL + url, options).then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+  }
   async postRequest(post, url, token){
     console.log(JSON.stringify(post));
     const options = {
@@ -78,10 +100,10 @@ export default class ExternalServices{
       },
       body: JSON.stringify(email)
     };
-    console.log(`${baseURL}auth/email`);
+    console.log(`${localURL}auth/email`);
     // let response;
     try{
-      const response = await fetch(baseURL + "auth/email", options).then(
+      const response = await fetch(localURL + "auth/email", options).then(
         convertToJson
       );
       return response;
@@ -101,7 +123,7 @@ export default class ExternalServices{
       },
     };
     try{
-      const response = await fetch(baseURL + "auth/check/" + code, options).then(
+      const response = await fetch(localURL + "auth/check/" + code, options).then(
         convertToJson
       );
       return response;
@@ -118,7 +140,7 @@ export default class ExternalServices{
       headers: {Authorization: `Bearer ${token}`}
     };
     try{
-      const response = await fetch(baseURL + "auth/me", options).then(
+      const response = await fetch(localURL + "auth/me", options).then(
         convertToJson
       );
       return response;

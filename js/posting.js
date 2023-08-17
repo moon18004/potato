@@ -39,7 +39,7 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   // console.log(data);
   // data = [json, ...data];
   
-  const res = await services.postRequest(json, 'community', token);
+  const res = await services.postReq(json, 'community', token);
   // console.log(res);
   
   // setLocalStorage('posts', data);

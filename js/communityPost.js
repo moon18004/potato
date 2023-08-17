@@ -61,7 +61,7 @@ document.querySelector('.commentBtn').addEventListener('click', async (e) =>{
 
   const body = { text, author, source_id: postID}
 
-  const res = await source.postRequest(body, 'comment', token);
+  const res = await source.postReq(body, 'comment', token);
   if (res.code == 200){
     document.querySelector('.commentText').value = "";
   }

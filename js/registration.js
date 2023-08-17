@@ -49,7 +49,7 @@ document.querySelector(".sign-up").addEventListener('click', async (e) =>{
   let json = formDataToJSON(formElement);
   console.log(json);
 
-  const res = await services.postRequest(json, 'auth/signup');
+  const res = await services.postReq(json, 'auth/signup');
   console.log(res);
 
   if(res.code == 200){
