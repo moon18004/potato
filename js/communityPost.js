@@ -20,9 +20,6 @@ const userId = await init();
 
 post.init(userId);
 
-
-
-
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
   tokenStorage.clearToken();
@@ -49,8 +46,25 @@ document.querySelector('.postDelete').addEventListener('click', async (e)=>{
 })
 document.querySelector('.editBtn').addEventListener('click', async(e)=> {
   e.preventDefault();
-  location.assign(`../community/edit.html?id=${postID}`)
+  location.assign(`../community/edit.html?id=${postID}`);
+})
 
+
+document.querySelector('.commentBtn').addEventListener('click', async (e) =>{
+  e.preventDefault();
+  token = tokenStorage.getToken();
+  const text = document.querySelector('.commentText').value;
+  console.log(text);
+  const post = await source.getData();
+  const author = post.author;
+  console.log(author);
+
+  const body = { text, author, source_id: postID}
+
+  const res = await source.postRequest(body, 'comment', token);
+  if (res.code == 200){
+    document.querySelector('.commentText').value = "";
+  }
 })
 
 

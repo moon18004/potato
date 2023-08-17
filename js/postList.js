@@ -77,10 +77,10 @@ export default class PostList{
     template.querySelector(".name").innerHTML = post.author;
     template.querySelector(".date").innerHTML = post.createdAt;
     template.querySelector(".title").innerHTML += post.title;
-    template.querySelector(".category").innerHTML = post.cat_id;
-    template.querySelector(".views").innerHTML = post.views;
+    template.querySelector(".category").innerHTML = post.category;
+    template.querySelector(".views").innerHTML = post.view;
     template.querySelector(".comments").innerHTML = post.comments;
-    template.querySelector(".likes").innerHTML = post.likes;
+    // template.querySelector(".likes").innerHTML = post.likes;
     
     return template;
   }

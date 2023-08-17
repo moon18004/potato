@@ -43,8 +43,8 @@ export default class Post{
     const text = document.querySelector('.mainText');
     category.innerText = data.category;
     author.innerHTML = data.author;
-    date.innerHTML = data.date;
-    view.innerHTML = data.views;
+    date.innerHTML = data.createdAt;
+    view.innerHTML = data.view;
     title.innerHTML = data.title;
     text.innerHTML = data.mainText;
   }
