@@ -10,6 +10,7 @@ async function convertToJson(res) {
   }
 }
 async function convert(res) {
+  console.log(res);
   let json = await res.json();
   if (res.ok) {
     return json;
