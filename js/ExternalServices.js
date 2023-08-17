@@ -23,7 +23,7 @@ export default class ExternalServices{
     this.url = url
   }
   getData(){
-    let a = fetch(this.url).then(convertToJson).then((data)=> data);
+    let a = fetch(this.url).then(convertToJson).then(convert);
     console.log(a) ;
     return a;
   }

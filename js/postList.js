@@ -24,6 +24,7 @@ export default class PostList{
     
     const template = await loadTemplate("../templates/postBox.html");
     // console.log(list);
+    
     renderList(this.element, template, this.data, this.prepareTemplate, true);
 
     this.selectCategory(template);
