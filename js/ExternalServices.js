@@ -1,4 +1,5 @@
 const baseURL = "https://byuifriendserver.onrender.com/";
+const localURL = "http://localhost:8080/"
 import { getParam } from "./utils.js";
 
 async function convertToJson(res) {
@@ -31,7 +32,7 @@ export default class ExternalServices {
     return a;
   }
 
-  async postCourseRequest(json) {
+  async postCourseRequest(json, token) {
     const a = await fetch(baseURL + "course/", {
       method: "POST",
       headers: {
@@ -48,7 +49,7 @@ export default class ExternalServices {
     console.log(a);
   }
 
-  async updateCourseRequest(json) {
+  async updateCourseRequest(json, token) {
     const id = getParam("id");
     console.log(id);
     // fetch(baseURL+`course/${postId}`, {

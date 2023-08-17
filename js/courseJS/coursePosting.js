@@ -1,16 +1,21 @@
 import ExternalServices from '../ExternalServices.js';
 import { formDataToJSON, getLocalStorage, setLocalStorage } from '../utils.js';
+import TokenStorage from './token.js';
 
+const tokenStorage = new TokenStorage();
+let token = tokenStorage.getToken();
 const services = new ExternalServices();
 
 // course post
 document.querySelector(".submit-coursePost").addEventListener("click", async (e) => {
   e.preventDefault();
+
+  token = tokenStorage.getToken();
   const formElement = document.forms["posting-courseForm"];
   let json = formDataToJSON(formElement);
 
   json.mainText = lineChange(json.mainText);
-  await services.postCourseRequest(json)
+  await services.postCourseRequest(json, token)
 });
 
 function lineChange(text) {
