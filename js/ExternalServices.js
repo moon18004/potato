@@ -27,6 +27,12 @@ export default class ExternalServices {
   async getData(){
     return fetch(this.url).then(convert).then((data)=> data);
   }
+  async getCourseData(){
+    const id = getParam("id")
+    
+    return fetch(baseURL+"course/"+id).then(convert).then((data)=> data);
+  }
+  
   async putData(data, token){
     console.log(data);
     const options = {
@@ -91,9 +97,8 @@ export default class ExternalServices {
 
   async updateCourseRequest(json, token) {
     const id = getParam("id");
-    console.log(id);
-    // fetch(baseURL+`course/${postId}`, {
-    fetch(baseURL + `course/${id}`, {
+    console.log(`id`+id);
+    const options ={
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -103,15 +108,19 @@ export default class ExternalServices {
         subject: json.category,
         code: json.code,
         text: json.mainText,
-      }), // 업데이트할 내용을 JSON 형태로 전달합니다.
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("글이 성공적으로 업데이트되었습니다.", data);
       })
-      .catch((error) => {
-        console.error("글 업데이트 중 오류가 발생했습니다.", error);
-      });
+    }
+    try{
+      const response = await fetch(baseURL+"course/"+id, options)
+      .then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }catch(err){
+      console.log(err);
+      return err;
+    }
   }
   async sendEmail(email){
     console.log(JSON.stringify(email));
@@ -157,10 +166,13 @@ export default class ExternalServices {
 
   }
 
-  async deleteCourseRequest(id) {
+  async deleteCourseRequest(id, token) {
     // const id = getParam('id');
     // console.log(id);
     fetch(baseURL + `course/` + id, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       method: "DELETE",
     })
       .then((response) => {

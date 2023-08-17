@@ -1,6 +1,9 @@
 import { loadTemplate, renderCommentList, renderList } from '../utils.js';
 import ExternalServices from '../ExternalServices.js';
+import TokenStorage from "../token.js";
 
+const tokenStorage = new TokenStorage();
+let token = tokenStorage.getToken();
 const services = new ExternalServices();
 
 export default class CardList{
@@ -39,7 +42,7 @@ export default class CardList{
     template.querySelector(".updateCourse").href = `../posting/updateCourse.html?id=${card._id}`;
     template.querySelector(".deleteCourse").addEventListener('click', async (e) => {
       e.preventDefault();
-      await services.deleteCourseRequest(card._id);
+      await services.deleteCourseRequest(card._id, token);
     })
     const comment = template.querySelector('.comment');
     console.log()
