@@ -25,7 +25,7 @@ export default class ExternalServices {
   }
   getData() {
     let a = fetch(this.url)
-      .then(convertToJson)
+      .then(convert)
       .then((data) => data);
     console.log(a);
     return a;
@@ -35,6 +35,7 @@ export default class ExternalServices {
     const a = await fetch(baseURL + "course/", {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -54,6 +55,7 @@ export default class ExternalServices {
     fetch(baseURL + `course/${id}`, {
       method: "PUT",
       headers: {
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -94,8 +96,8 @@ export default class ExternalServices {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(post),
     };
