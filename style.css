@@ -290,14 +290,13 @@ header.active {
   margin-right: 10px;
 } */
 
-<<<<<<< HEAD
 .main-text textarea {
   white-space: pre-wrap;
 }
 
 .comm {
   display: flex;
-=======
+}
 
 /* **************  community post ******************* */
 .postBtns{
@@ -348,5 +347,4 @@ header.active {
 .section-login form div{
   width: 600px;
   text-align:cneter;
->>>>>>> 9aa06ae28658f093faa8c77505d1adcb8b0b2ac0
 }
