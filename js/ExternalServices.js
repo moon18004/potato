@@ -185,10 +185,11 @@ export default class ExternalServices {
       },
       body: JSON.stringify(post),
     };
-    const response = await fetch(localURL + "community", options).then(
+    const response = await fetch(localURL + url, options).then(
       convertToJson
     );
     console.log(response);
+    return response;
   }
   async me(token){
     const options = {
