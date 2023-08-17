@@ -1,5 +1,5 @@
 const baseURL = "https://byuifriendserver.onrender.com/";
-const localURL = "http://localhost:8080/"
+const localURL = 'http://localhost:8080/';
 import { getParam } from "./utils.js";
 
 async function convertToJson(res) {
@@ -24,12 +24,52 @@ export default class ExternalServices {
   constructor(url) {
     this.url = url;
   }
-  getData() {
-    let a = fetch(this.url)
-      .then(convert)
-      .then((data) => data);
-    console.log(a);
-    return a;
+  async getData(){
+    return fetch(this.url).then(convert).then((data)=> data);
+  }
+  async putData(data, token){
+    console.log(data);
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(data),
+    };
+    try{
+      const response = await fetch(this.url, options).then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+  }
+  async postReq(post, url, token){
+    console.log(JSON.stringify(post));
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(post),
+    };
+    try{
+      const response = await fetch(localURL + url, options).then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
   }
 
   async postCourseRequest(json, token) {
@@ -73,6 +113,49 @@ export default class ExternalServices {
         console.error("글 업데이트 중 오류가 발생했습니다.", error);
       });
   }
+  async sendEmail(email){
+    console.log(JSON.stringify(email));
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify(email)
+    };
+    console.log(`${localURL}auth/email`);
+    // let response;
+    try{
+      const response = await fetch(localURL + "auth/email", options).then(
+        convertToJson
+      );
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+    // console.log(response)
+  }
+  async checkCode(code){
+    // console.log(JSON.stringify(post));
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+    };
+    try{
+      const response = await fetch(localURL + "auth/check/" + code, options).then(
+        convertToJson
+      );
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+
+  }
 
   async deleteCourseRequest(id) {
     // const id = getParam('id');
@@ -102,34 +185,36 @@ export default class ExternalServices {
       },
       body: JSON.stringify(post),
     };
-    const response = await fetch(baseURL + "community", options).then(
+    const response = await fetch(localURL + "community", options).then(
       convertToJson
     );
     console.log(response);
   }
-  async me(token) {
+  async me(token){
     const options = {
       method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {Authorization: `Bearer ${token}`}
     };
-    try {
-      const response = await fetch(baseURL + "auth/me", options).then(
+    try{
+      const response = await fetch(localURL + "auth/me", options).then(
         convertToJson
       );
       return response;
-    } catch (err) {
+    }
+    catch(err){
       return err;
     }
   }
-  async deletePost(token) {
+  async deletePost(token){
     const options = {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {Authorization: `Bearer ${token}`}
     };
-    try {
+    try{
       const response = await fetch(this.url, options);
       return response.status;
-    } catch (err) {
+    }
+    catch(err){
       return err;
     }
   }

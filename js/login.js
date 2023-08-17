@@ -25,7 +25,7 @@ document.querySelector(".login-btn").addEventListener('click', async (e) => {
   let json = formDataToJSON(formElement);
   console.log(json);
 
-  const res = await services.postRequest(json, 'auth/login');
+  const res = await services.postReq(json, 'auth/login');
   console.log(res);
 
   if(res.code == 200){
@@ -35,7 +35,6 @@ document.querySelector(".login-btn").addEventListener('click', async (e) => {
   else{
     document.querySelector('.err-msg').innerHTML = res.message;
   }
-
 })
 
 async function init(){
