@@ -10,6 +10,7 @@ async function convertToJson(res) {
   }
 }
 async function convert(res) {
+  console.log(res);
   let json = await res.json();
   if (res.ok) {
     return json;
@@ -22,8 +23,8 @@ export default class ExternalServices{
   constructor(url){
     this.url = url
   }
-  getData(){
-    let a = fetch(this.url).then(convertToJson).then(convert);
+  async getData(){
+    let a = await fetch(this.url).then(convert).then((data)=>data);
     console.log(a) ;
     return a;
   }
