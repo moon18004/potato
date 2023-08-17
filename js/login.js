@@ -8,6 +8,8 @@ const tokenStorage = new TokenStorage();
 
 const token = tokenStorage.getToken();
 
+// init();
+
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
   tokenStorage.clearToken();
