@@ -25,7 +25,8 @@ export default class ExternalServices {
     this.url = url;
   }
   async getData(){
-    return fetch(this.url).then(convert).then((data)=> data);
+    return  fetch(this.url).then(convert).then((data)=> data);
+    
   }
   async getCourseData(){
     const id = getParam("id")
@@ -55,6 +56,8 @@ export default class ExternalServices {
       return err;
     }
   }
+
+  
   async postReq(post, url, token){
     console.log(JSON.stringify(post));
     const options = {
@@ -67,6 +70,45 @@ export default class ExternalServices {
     };
     try{
       const response = await fetch(localURL + url, options).then(
+        convertToJson
+      );
+      console.log(response);
+      return response;
+    }
+    catch(err){
+      console.log(err);
+      return err;
+    }
+  }
+  async getComments(url, post_id){
+    // console.log(post_id);
+    return fetch(localURL + url + "/" + post_id).then(convert).then((data)=>data);
+  }
+  async deleteComment(url, comment_id, token){
+    const options = {
+      method: "DELETE",
+      headers: {Authorization: `Bearer ${token}`}
+    };
+    try{
+      const response = await fetch(localURL + url + "/" + comment_id, options);
+      return response.status;
+    }
+    catch(err){
+      return err;
+    }
+  }
+  async putComment(url, data, comment_id,token){
+    console.log(data);
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type" : "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(data),
+    };
+    try{
+      const response = await fetch(localURL + url + "/" + comment_id, options).then(
         convertToJson
       );
       console.log(response);

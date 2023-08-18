@@ -8,10 +8,14 @@ export default class Post{
   async init(userId){
     this.data = await this.source.getData();
     console.log(this.data);
+    console.log(userId);
     
     this.renderPost(this.data);
     if (this.data.userId === userId){
       document.querySelector('.postBtns').classList.add('display');
+    }
+    else{
+      document.querySelector('.postBtns').classList.remove('display');
     }
   }
   renderPost(data){
