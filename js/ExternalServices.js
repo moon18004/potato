@@ -200,10 +200,10 @@ export default class ExternalServices {
     }
   }
 
-  async deleteCourseRequest(id, token) {
+  async deleteCourseRequest(id, where, token) {
     // const id = getParam('id');
     // console.log(id);
-    fetch(baseURL + `course/` + id, {
+    fetch(baseURL + where + id, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

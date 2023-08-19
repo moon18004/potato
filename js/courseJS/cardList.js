@@ -98,22 +98,22 @@ export default class CardList {
     template
       .querySelector(".commentEditBtn")
       .addEventListener("click", async (e) => {
-        e.preventDefault;
+        e.preventDefault();
         console.log(comment);
-        token = tokenStorage.getToken();
+        // token = tokenStorage.getToken();
         // const text = document.querySelector(".reply").value;
         // const cardId = card.id;
         // const body = { text, cardId };
-        await services.commentPostRequest(body, token);
+        // await services.commentPostRequest(body, token);
         // await services.deleteCourseRequest(comment.id,token)
       });
     template
     .querySelector(".commentDeleteBtn")
     .addEventListener("click", async (e) => {
-      // e.preventDefault;
+      e.preventDefault();
       token = tokenStorage.getToken();
       console.log("comment : " +comment);
-      await services.deleteCourseRequest(comment.id, token)
+      await services.deleteCourseRequest(comment._id, 'comment/', token)
     });  
 
     return template;
