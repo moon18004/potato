@@ -75,6 +75,46 @@ export default class ExternalServices {
       return err;
     }
   }
+  async increaseView(id, num){
+    const view = { num };
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(view)
+    };
+    try {
+      const response = await fetch(this.url + '/view/' +id, options).then(convertToJson);
+      console.log(response);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  }
+  async changeNumComments(id){
+    const comments = await this.getComments('comment', id);
+    const num = comments.length;
+    // const comments = { num };
+    console.log(num);
+    // const options = {
+    //   method: "PUT",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(comments)
+    // };
+    // try {
+    //   const response = await fetch(localURL + 'community/num/' +id, options).then(convertToJson);
+    //   console.log(response);
+    //   return response;
+    // } catch (err) {
+    //   console.log(err);
+    //   return err;
+    // }
+  }
+
   async getComments(url, post_id){
     // console.log(post_id);
     return fetch(localURL + url + "/" + post_id).then(convert).then((data)=>data);
