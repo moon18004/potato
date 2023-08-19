@@ -26,12 +26,10 @@ export function renderList(ul, template, list, hydrateFunction, clear) {
 }
 export function renderwithTemplate(parent_node, template, data, callback) {
   let copy = template.content.cloneNode(true);
-  console.log(callback);
+
   if (callback) {
-    console.log('aa');
     copy = callback(copy, data);
   }
-  console.log(copy);
   parent_node.appendChild(copy);
 }
 

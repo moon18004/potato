@@ -1,32 +1,39 @@
-import { loadTemplate, renderCommentList, renderList } from '../utils.js';
-import ExternalServices from '../ExternalServices.js';
+import { loadTemplate, renderCommentList, renderList } from "../utils.js";
+import ExternalServices from "../ExternalServices.js";
 import TokenStorage from "../token.js";
+import { formDataToJSON } from "../utils.js";
 
 const tokenStorage = new TokenStorage();
 let token = tokenStorage.getToken();
 const services = new ExternalServices();
 
-export default class CardList{
-  constructor(source, commentSource, element){
+export default class CardList {
+  constructor(source, commentSource, element) {
     this.source = source;
     this.element = element;
-    console.log(element)
+    console.log(element);
     this.commentSource = commentSource;
     this.commentTemplate = "";
     this.list2 = "";
   }
 
-  async init(){
+  async init() {
     const list = await this.source.getData();
     this.list2 = await this.commentSource.getData();
-    
-    
+
     const template = await loadTemplate("../templates/courseCard.html");
     this.commentTemplate = await loadTemplate("../templates/comment.html");
     console.log(this.element);
-    renderList(this.element, template, list, this.prepareTemplate.bind(this), true);
-    // renderList(this.element, template, list2, this.prepareTemplate, true);
-    
+    renderList(
+      this.element,
+      template,
+      list,
+      this.prepareTemplate.bind(this),
+      true
+    );
+
+    // commentList(this.element, template, list2, this.prepareTemplate, true);
+
     // document.querySelector('.fa-comment').addEventListener('click', (e) => {
     //   document.querySelector('.comment').classList.toggle('active');
 
@@ -39,37 +46,67 @@ export default class CardList{
     template.querySelector(".date").innerHTML = card.createdAt;
     template.querySelector(".author").innerHTML = card.author;
     template.querySelector(".textBox").innerHTML = card.text;
-    template.querySelector(".updateCourse").href = `../posting/updateCourse.html?id=${card._id}`;
-    template.querySelector(".deleteCourse").addEventListener('click', async (e) => {
-      e.preventDefault();
-      await services.deleteCourseRequest(card._id, token);
-    })
-    const comment = template.querySelector('.comment');
-    console.log()
+    template.querySelector(
+      ".updateCourse"
+    ).href = `../posting/updateCourse.html?id=${card._id}`;
+    template
+      .querySelector(".deleteCourse")
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        await services.deleteCourseRequest(card._id, token);
+      });
+    const comment = template.querySelector(".comment");
+
+    // comment reply button
+    template
+      .querySelector(".commentReplyBtn")
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        token = tokenStorage.getToken();
+        const text = document.querySelector(".reply").value;
+        const cardId = card.id;
+        const body = { text, cardId };
+        await services.commentPostRequest(body, token);
+      });
+
 
     //update
-    template.querySelector('.updateCourse').addEventListener('click', (e)=>{
+    template.querySelector(".updateCourse").addEventListener("click", (e) => {
       console.log(card._id);
-    })
-    
+    });
+
     // template.querySelector(".comment").innerHTML = card.comment;
-    template.querySelector('.fa-comment').addEventListener('click', (e) => {
+    template.querySelector(".fa-comment").addEventListener("click", (e) => {
       console.log(comment);
-      comment.classList.toggle('active');
+      comment.classList.toggle("active");
       console.log(this.list2);
-      const filtered = this.list2.filter(element => {
+      const filtered = this.list2.filter((element) => {
         return card._id === element.source_id;
       });
       console.log(filtered);
-      renderList(comment, this.commentTemplate, filtered, this.prepareComment, true);
-      console.log(`comment`+comment);
-    })  
+      
+    });
     return template;
   }
-  prepareComment(template, comment){
+  prepareComment(template, comment) {
     template.querySelector(".author").innerHTML = comment.author;
     template.querySelector(".content").innerHTML = comment.text;
     template.querySelector(".date").innerHTML = comment.createdAt;
+    template
+      .querySelector(".commentEditBtn")
+      .addEventListener("click", async (e) => {
+        e.preventDefault;
+        console.log(comment);
+        // await services.deleteCourseRequest(comment.id)
+      });
+    template
+    .querySelector(".commentEditBtn")
+    .addEventListener("click", async (e) => {
+      e.preventDefault;
+      console.log(comment);
+      // await services.deleteCourseRequest(comment.id)
+    });  
+
     return template;
   }
-} 
+}

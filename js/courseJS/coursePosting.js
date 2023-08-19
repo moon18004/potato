@@ -13,7 +13,7 @@ document.querySelector(".submit-coursePost").addEventListener("click", async (e)
   token = tokenStorage.getToken();
   const formElement = document.forms["posting-courseForm"];
   let json = formDataToJSON(formElement);
-
+  console.log(json);
   json.mainText = lineChange(json.mainText);
   await services.postCourseRequest(json, token)
 });

@@ -137,12 +137,9 @@ input {
   cursor: pointer;
 }
 
-.commentReplyBtn{
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-.commentBtn {
+.commentReplyBtn,
+.commentDeleteBtn
+.commentEditBtn{
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -173,6 +170,9 @@ input {
 .commentReplyBtn:hover .icon-text{
   opacity: 1;
 }
-.commentBtn:hover .icon-text{
+.commentEditBtn:hover .icon-text{
+  opacity: 1;
+}
+.commentDeleteBtn:hover .icon-text{
   opacity: 1;
 }

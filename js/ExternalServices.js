@@ -123,7 +123,7 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        author: "name",
+        // author: "name",
         subject: json.category,
         code: json.code,
         text: json.mainText,
@@ -270,8 +270,9 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        text: json.mainText,
-        // source_id: json.i
+        author: 'name',
+        text: json.text,
+        source_id: json.cardId
       }),
     };
     const response = await fetch(baseURL + "comment/", options).then(
