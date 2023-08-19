@@ -39,7 +39,9 @@ export default class CommunityComment{
       e.preventDefault();
       console.log('delete clicked');
       const token = tokenStorage.getToken();
-      await this.source.deleteComment('comment', comment.id, token);
+      if (confirm("Do you want to delete this comment?")){
+        await this.source.deleteComment('comment', comment.id, token);
+      }
       await this.reRender();
     });
     template.querySelector('.edit-comment').addEventListener('click', async (e) => {
