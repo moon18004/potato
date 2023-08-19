@@ -251,17 +251,7 @@ header.active {
   border-radius: 10px 0 0 10px;
   padding: 10px;
 }
-.commentArea div{
-}
-.commentBtn{
-  background-color: #364759;
-  height: 80px;
-  width: 120px;
-  color:white;
-  border:none;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-}
+
 
 .comments{
   padding: 10px;
@@ -286,16 +276,15 @@ header.active {
   margin-bottom: 12px;
 }
 
-/* .info .author{
-  margin-right: 10px;
-} */
-
 .main-text textarea {
   white-space: pre-wrap;
 }
 
-.comm {
-  display: flex;}
+/* comment  */
+.commentDetail {
+  display: flex;
+  align-items: center;
+}
 
 /* **************  community post ******************* */
 .postBtns{

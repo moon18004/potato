@@ -62,6 +62,7 @@ export default class CardList{
       });
       console.log(filtered);
       renderList(comment, this.commentTemplate, filtered, this.prepareComment, true);
+      console.log(`comment`+comment);
     })  
     return template;
   }

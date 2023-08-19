@@ -66,7 +66,11 @@
 }
 
 .author{
-  padding-left: 50px
+  padding-left: 50px;
+  padding-right: 20px;
+}
+.content{
+  width: 400px;
 }
 
 .authors{
@@ -106,9 +110,12 @@ input {
   height: 40px;
 }
 
-.bottom {
-  padding-bottom: 10px;
+.writeComment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* flex for update and delete buttons */
 .twoRow {
   display: flex;
@@ -130,11 +137,22 @@ input {
   cursor: pointer;
 }
 
+.commentReplyBtn{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.commentBtn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .icon-text {
   padding-top: 20px;
   position: absolute;
    /* 텍스트를 아이콘 위에 표시하도록 조정 */
-  left: 70%;
+  left: 50%;
   
   transform: translateX(-50%);
   background-color: #333;
@@ -151,4 +169,10 @@ input {
 }
 .deleteCourse:hover .icon-text {
   opacity: 1; /* 아이콘에 마우스를 올렸을 때 텍스트를 나타나게 함 */
+}
+.commentReplyBtn:hover .icon-text{
+  opacity: 1;
+}
+.commentBtn:hover .icon-text{
+  opacity: 1;
 }
