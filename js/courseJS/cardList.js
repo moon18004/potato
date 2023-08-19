@@ -11,7 +11,6 @@ export default class CardList {
   constructor(source, commentSource, element) {
     this.source = source;
     this.element = element;
-    console.log(element);
     this.commentSource = commentSource;
     this.commentTemplate = "";
     this.list2 = "";
@@ -23,7 +22,6 @@ export default class CardList {
 
     const template = await loadTemplate("../templates/courseCard.html");
     this.commentTemplate = await loadTemplate("../templates/comment.html");
-    console.log(this.element);
     renderList(
       this.element,
       template,
@@ -31,7 +29,6 @@ export default class CardList {
       this.prepareTemplate.bind(this),
       true
     );
-
     // commentList(this.element, template, list2, this.prepareTemplate, true);
 
     // document.querySelector('.fa-comment').addEventListener('click', (e) => {
@@ -69,7 +66,6 @@ export default class CardList {
         await services.commentPostRequest(body, token);
       });
 
-
     //update
     template.querySelector(".updateCourse").addEventListener("click", (e) => {
       console.log(card._id);
@@ -84,7 +80,14 @@ export default class CardList {
         return card._id === element.source_id;
       });
       console.log(filtered);
-      
+      renderList(
+        comment,
+        this.commentTemplate,
+        filtered,
+        this.prepareComment,
+        true
+      );
+      console.log(`comment` + comment);
     });
     return template;
   }
@@ -97,14 +100,20 @@ export default class CardList {
       .addEventListener("click", async (e) => {
         e.preventDefault;
         console.log(comment);
-        // await services.deleteCourseRequest(comment.id)
+        token = tokenStorage.getToken();
+        // const text = document.querySelector(".reply").value;
+        // const cardId = card.id;
+        // const body = { text, cardId };
+        await services.commentPostRequest(body, token);
+        // await services.deleteCourseRequest(comment.id,token)
       });
     template
-    .querySelector(".commentEditBtn")
+    .querySelector(".commentDeleteBtn")
     .addEventListener("click", async (e) => {
-      e.preventDefault;
-      console.log(comment);
-      // await services.deleteCourseRequest(comment.id)
+      // e.preventDefault;
+      token = tokenStorage.getToken();
+      console.log("comment : " +comment);
+      await services.deleteCourseRequest(comment.id, token)
     });  
 
     return template;
