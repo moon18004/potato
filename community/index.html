@@ -50,8 +50,13 @@
       <section class="search">
         <div class="search_form">
           <form action="">
-            <input type="text">
-            <button>검색</button>
+            <select class ="searchOption" name="option" id="">
+              <option value="username">Author</option>
+              <option value="title">Title</option>
+              <option value="text">Content</option>
+            </select>
+            <input type="text" class ="searchText">
+            <button class="searchBtn">Search</button>
           </form>
         </div>
       </section>

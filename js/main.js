@@ -13,11 +13,13 @@ init();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
+  if (confirm("Do you want to sign out?")){
   tokenStorage.clearToken();
   document.querySelector('.signoutBtn').classList.remove('display');
   document.querySelector('.loginBtn').classList.remove('none');
   document.querySelector('.profileBtn').classList.remove('display');
   document.querySelector('.signupBtn').classList.remove('none');
+  }
 })
 
 async function init(){

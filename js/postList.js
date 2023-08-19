@@ -7,10 +7,17 @@ export default class PostList{
     this.data = [];
   }
 
-  async init(){
+  async init(query=null){
     // this.data = getLocalStorage('posts');
     // if(!this.data){
-    this.data = await this.source.getData();
+    if(query == null){
+      this.data = await this.source.getData();
+    }
+    else{
+      console.log("query");
+      this.data = await this.source.getData(query);
+    }
+    
       // setLocalStorage('posts', this.data);
     //   console.log(this.data);
     // }

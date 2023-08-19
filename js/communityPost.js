@@ -26,6 +26,7 @@ commentList.init();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
+  if (confirm("Do you want to sign out?")){
   tokenStorage.clearToken();
   document.querySelector('.signoutBtn').classList.remove('display');
   document.querySelector('.loginBtn').classList.remove('none');
@@ -33,6 +34,7 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   document.querySelector('.signupBtn').classList.remove('none');
   await post.init(null);
   await commentList.reRender(null);
+  }
   // document.querySelectorAll('.revise').classList.remove('display');
 })
 

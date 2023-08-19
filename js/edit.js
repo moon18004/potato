@@ -31,11 +31,15 @@ await getPost();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
-  tokenStorage.clearToken();
-  document.querySelector('.signoutBtn').classList.remove('display');
-  document.querySelector('.loginBtn').classList.remove('none');
-  document.querySelector('.profileBtn').classList.remove('display');
-  document.querySelector('.signupBtn').classList.remove('none');
+  if(confirm("Do you want to sign out?")){
+    tokenStorage.clearToken();
+    document.querySelector('.signoutBtn').classList.remove('display');
+    document.querySelector('.loginBtn').classList.remove('none');
+    document.querySelector('.profileBtn').classList.remove('display');
+    document.querySelector('.signupBtn').classList.remove('none');
+    location.assign(`../community/post.html?id=${postID}`);
+  }
+  
 })
 document.querySelector('.cancel-btn').addEventListener('click', async (e)=>{
   e.preventDefault();

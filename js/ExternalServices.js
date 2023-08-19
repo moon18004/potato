@@ -24,10 +24,18 @@ export default class ExternalServices {
   constructor(url) {
     this.url = url;
   }
-  async getData() {
-    return fetch(this.url)
+  async getData(query = null) {
+    if (query == null){
+      return fetch(this.url)
       .then(convert)
       .then((data) => data);
+    }
+    else{
+      return fetch(this.url + `?${query.option}=${query.search}`)
+      .then(convert)
+      .then((data) => data);
+    }
+    
   }
   async getCourseData() {
     const id = getParam("id");
