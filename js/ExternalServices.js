@@ -98,21 +98,22 @@ export default class ExternalServices {
     const num = comments.length;
     // const comments = { num };
     console.log(num);
-    // const options = {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(comments)
-    // };
-    // try {
-    //   const response = await fetch(localURL + 'community/num/' +id, options).then(convertToJson);
-    //   console.log(response);
-    //   return response;
-    // } catch (err) {
-    //   console.log(err);
-    //   return err;
-    // }
+    const body = {num}
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body)
+    };
+    try {
+      const response = await fetch(localURL + 'community/num/' +id, options).then(convertToJson);
+      console.log(response);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 
   async getComments(url, post_id){
