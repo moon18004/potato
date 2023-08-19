@@ -8,6 +8,8 @@ const tokenStorage = new TokenStorage();
 
 const token = tokenStorage.getToken();
 
+await init();
+
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
   tokenStorage.clearToken();
@@ -46,5 +48,9 @@ async function init(){
       document.querySelector('.signoutBtn').classList.add('display');
       document.querySelector('.loginBtn').classList.add('none');
     }
+    else{
+      document.querySelector('.signupBtn').classList.add('display');
+    }
+    
   }
 }

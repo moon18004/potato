@@ -2,23 +2,27 @@ import ExternalServices from './ExternalServices.js';
 import Post from './renderPost.js';
 import { getParam } from './utils.js';
 import TokenStorage from './token.js';
+import CommunityComment from './communityComment.js';
 
 
 const postID = getParam('id');
 const url = `http://localhost:8080/community/${postID}`;
 const source = new ExternalServices(url);
+const comments = document.querySelector('.com-cmts');
+console.log(comments);
+// let token = tokenStorage.getToken();
+const tokenStorage = new TokenStorage();
+let token = tokenStorage.getToken();
+const userInfo = await init();
+console.log(userInfo);
+const commentList = new CommunityComment(source, comments, postID, userInfo?.userId);
 
 const post = new Post(source);
-const tokenStorage = new TokenStorage();
-
-
-let token = tokenStorage.getToken();
 
 
 
-const userId = await init();
-
-post.init(userId);
+post.init(userInfo?.userId);
+commentList.init();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
@@ -27,6 +31,9 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   document.querySelector('.loginBtn').classList.remove('none');
   document.querySelector('.profileBtn').classList.remove('display');
   document.querySelector('.signupBtn').classList.remove('none');
+  await post.init(null);
+  await commentList.reRender(null);
+  // document.querySelectorAll('.revise').classList.remove('display');
 })
 
 document.querySelector('.postDelete').addEventListener('click', async (e)=>{
@@ -56,14 +63,16 @@ document.querySelector('.commentBtn').addEventListener('click', async (e) =>{
   const text = document.querySelector('.commentText').value;
   console.log(text);
   const post = await source.getData();
-  const author = post.author;
+  const author = userInfo.username;
+  const userId = userInfo.userId;
   console.log(author);
 
-  const body = { text, author, source_id: postID}
+  const body = { text, author, source_id: postID, userId}
 
   const res = await source.postRequest(body, 'comment', token);
   if (res.code == 200){
     document.querySelector('.commentText').value = "";
+    commentList.reRender();
   }
 })
 
@@ -79,7 +88,7 @@ async function init(){
       document.querySelector('.profileBtn').classList.add('display');
       document.querySelector('.loginBtn').classList.add('none');
       document.querySelector('.signupBtn').classList.add('none');
-      return res.userId;
+      return { userId : res.userId, username: res.username };
     }
   }
 }
