@@ -29,11 +29,24 @@ let login;
 // })
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
+  if (confirm("Do you want to sign out?")){
   tokenStorage.clearToken();
   document.querySelector('.signoutBtn').classList.remove('display');
   document.querySelector('.loginBtn').classList.remove('none');
   document.querySelector('.profileBtn').classList.remove('display');
   document.querySelector('.signupBtn').classList.remove('none');
+  }
+})
+
+document.querySelector('.searchBtn').addEventListener('click', async (e) => {
+  e.preventDefault();
+  const option = document.querySelector('.searchOption').value;
+  const search = document.querySelector('.searchText').value;
+  const query = {option, search}
+  await postList.init(query);
+  // console.log(search);
+  // console.log(document.querySelector('.searchOption').value);
+
 })
 
 // document.querySelector('.write-btn').addEventListener('click', async (e)=>{

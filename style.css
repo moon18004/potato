@@ -251,6 +251,15 @@ header.active {
   border-radius: 10px 0 0 10px;
   padding: 10px;
 }
+.commentBtn{
+  background-color: #364759;
+  height: 80px;
+  width: 120px;
+  color:white;
+  border:none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
 
 
 .comments{

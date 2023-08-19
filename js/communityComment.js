@@ -30,23 +30,26 @@ export default class CommunityComment{
     template.querySelector('.author').innerHTML = comment.author;
     template.querySelector('.date').innerHTML = comment.createdAt;
     template.querySelector('.content').innerHTML = comment.text;
-    console.log(comment);
-    console.log(this.userId);
+    // console.log(comment);
+    // console.log(this.userId);
     if(comment.userId == this.userId){
       template.querySelector('.revise').classList.add('display');
     }
     template.querySelector('.delete-comment').addEventListener('click', async (e)=> {
       e.preventDefault();
-      console.log('delete clicked');
+      // console.log('delete clicked');
       const token = tokenStorage.getToken();
-      await this.source.deleteComment('comment', comment.id, token);
+      if (confirm("Do you want to delete this comment?")){
+        await this.source.deleteComment('comment', comment.id, token);
+        await this.source.changeNumComments(comment.source_id);
+      }
       await this.reRender();
     });
     template.querySelector('.edit-comment').addEventListener('click', async (e) => {
       e.preventDefault();
       const token = tokenStorage.getToken();
-      console.log(e);
-      console.log(e.target.parentNode.parentElement.parentElement.querySelector('.editArea'));
+      // console.log(e);
+      // console.log(e.target.parentNode.parentElement.parentElement.querySelector('.editArea'));
       const editArea = e.target.parentNode.parentElement.parentElement.querySelector('.editArea');
       const content = e.target.parentNode.parentElement.parentElement.querySelector('.content');
       // editArea.value = comment.text;

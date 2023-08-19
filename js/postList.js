@@ -7,10 +7,17 @@ export default class PostList{
     this.data = [];
   }
 
-  async init(){
+  async init(query=null){
     // this.data = getLocalStorage('posts');
     // if(!this.data){
-    this.data = await this.source.getData();
+    if(query == null){
+      this.data = await this.source.getData();
+    }
+    else{
+      console.log("query");
+      this.data = await this.source.getData(query);
+    }
+    
       // setLocalStorage('posts', this.data);
     //   console.log(this.data);
     // }
@@ -25,7 +32,7 @@ export default class PostList{
     const template = await loadTemplate("../templates/postBox.html");
     // console.log(list);
     
-    renderList(this.element, template, this.data, this.prepareTemplate, true);
+    renderList(this.element, template, this.data, this.prepareTemplate.bind(this), true);
 
     this.selectCategory(template);
 
@@ -39,14 +46,14 @@ export default class PostList{
         // console.log(e.target.dataset['cat']);
         const category = e.target.dataset['cat'];
         if (category ==='all'){
-          renderList(this.element, template, this.data, this.prepareTemplate, true);
+          renderList(this.element, template, this.data, this.prepareTemplate.bind(this), true);
           return;
         }
         
         const filtered = this.data.filter((item) => item.category === category);
         
         
-        renderList(this.element, template, filtered, this.prepareTemplate, true);
+        renderList(this.element, template, filtered, this.prepareTemplate.bind(this), true);
       }
     })
   }
@@ -74,6 +81,11 @@ export default class PostList{
     // }
     // console.log(template.querySelector('.post').dataset);
     template.querySelector('a').href = `../community/post.html?id=${post._id}`;
+    template.querySelector('a').addEventListener('click', async (e) => {
+      // e.preventDefault();
+      // console.log(this.source);
+      const res = await this.source.increaseView(post.id, post.view + 1);
+    })
     template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
     template.querySelector(".date").innerHTML = post.createdAt;
