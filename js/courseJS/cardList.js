@@ -64,7 +64,9 @@ export default class CardList {
         console.log(cardId);
         console.log(token);
         const body = { text, cardId };
-        await services.commentPostRequest(body, 'comment/', token);
+        const userInformation = await userInfo();
+        
+        await services.commentPostRequest(body, 'comment/', userInformation, token);
       });
 
     //update
@@ -119,4 +121,15 @@ export default class CardList {
 
     return template;
   }
+}
+
+async function userInfo(){
+  console.log(token);
+    if (token) {
+      console.log('init')
+      const res = await services.me(token);
+      console.log(res.userId);
+
+      return { userId : res.userId, username: res.username };
+    }
 }

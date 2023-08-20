@@ -168,7 +168,7 @@ export default class ExternalServices {
     }
   }
 
-  async postCourseRequest(json, page, token) {
+  async postCourseRequest(json, page, userInfo, token) {
     const a = await fetch(baseURL + page, {
       method: "POST",
       headers: {
@@ -176,7 +176,7 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        author: "name",
+        author: userInfo['username'],
         subject: json.category,
         code: json.code,
         text: json.mainText,
@@ -322,8 +322,8 @@ export default class ExternalServices {
     }
   }
 
-  async commentPostRequest(json, page, token) {
-    console.log(json);
+  async commentPostRequest(json, page, userinfo, token) {
+    console.log(userinfo);
     const options = {
       method: "POST",
       headers: {
@@ -331,13 +331,16 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        author: "name",
+        author: userinfo['username'],
         text: json.text,
         source_id: json.cardId,
+        userId: userinfo['userId']
       }),
     };
     const response = await fetch(baseURL + page, options)
-      .then(convertToJson);
+      .then(convertToJson)
+      .then(alert("정상적으로 포스트 되었습니다."))
+      .then((window.location.href = "../courses/index.html"));
     console.log(response);
     return response;
   }

@@ -17,7 +17,8 @@ document
     let json = formDataToJSON(formElement);
     console.log(json);
     json.mainText = lineChange(json.mainText);
-    await services.postCourseRequest(json, "course/", token);
+    const userInformation = await userInfo();
+    await services.postCourseRequest(json, "course/", userInformation, token);
   });
 
 function lineChange(text) {
@@ -25,4 +26,15 @@ function lineChange(text) {
   // 서버로 formattedText를 보내거나 원하는 방식으로 처리합니다.
   console.log(formattedText);
   return formattedText;
+}
+
+async function userInfo(){
+  console.log(token);
+    if (token) {
+      console.log('init')
+      const res = await services.me(token);
+      console.log(res.userId);
+
+      return { userId : res.userId, username: res.username };
+    }
 }
