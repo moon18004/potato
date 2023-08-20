@@ -54,6 +54,6 @@ $('.infoTrigger').click(function(){
   $(this).toggleClass('active');
   $('.info-menu').toggleClass('active');
 })
-$('.info-menu p').click(function(){
+$('.info-menu p, .info-items').click(function(){
   $('.info-menu, .info-trigger').removeClass('active')
 })
