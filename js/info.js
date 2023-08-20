@@ -56,4 +56,5 @@ $('.infoTrigger').click(function(){
 })
 $('.info-menu p, .info-items').click(function(){
   $('.info-menu, .infoTrigger').removeClass('active')
+  $('html').animate({scrollTop: 0}, 300)
 })
