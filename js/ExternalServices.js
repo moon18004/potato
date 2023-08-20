@@ -25,17 +25,15 @@ export default class ExternalServices {
     this.url = url;
   }
   async getData(query = null) {
-    if (query == null){
+    if (query == null) {
       return fetch(this.url)
-      .then(convert)
-      .then((data) => data);
-    }
-    else{
+        .then(convert)
+        .then((data) => data);
+    } else {
       return fetch(this.url + `?${query.option}=${query.search}`)
-      .then(convert)
-      .then((data) => data);
+        .then(convert)
+        .then((data) => data);
     }
-    
   }
   async getCourseData() {
     const id = getParam("id");
@@ -83,17 +81,19 @@ export default class ExternalServices {
       return err;
     }
   }
-  async increaseView(id, num){
+  async increaseView(id, num) {
     const view = { num };
     const options = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(view)
+      body: JSON.stringify(view),
     };
     try {
-      const response = await fetch(this.url + '/view/' +id, options).then(convertToJson);
+      const response = await fetch(this.url + "/view/" + id, options).then(
+        convertToJson
+      );
       console.log(response);
       return response;
     } catch (err) {
@@ -101,21 +101,24 @@ export default class ExternalServices {
       return err;
     }
   }
-  async changeNumComments(id){
-    const comments = await this.getComments('comment', id);
+  async changeNumComments(id) {
+    const comments = await this.getComments("comment", id);
     const num = comments.length;
     // const comments = { num };
     console.log(num);
-    const body = {num}
+    const body = { num };
     const options = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
     };
     try {
-      const response = await fetch(localURL + 'community/num/' +id, options).then(convertToJson);
+      const response = await fetch(
+        localURL + "community/num/" + id,
+        options
+      ).then(convertToJson);
       console.log(response);
       return response;
     } catch (err) {
@@ -124,60 +127,64 @@ export default class ExternalServices {
     }
   }
 
-  async getComments(url, post_id){
+  async getComments(url, post_id) {
     // console.log(post_id);
-    return fetch(localURL + url + "/" + post_id).then(convert).then((data)=>data);
+    return fetch(localURL + url + "/" + post_id)
+      .then(convert)
+      .then((data) => data);
   }
-  async deleteComment(url, comment_id, token){
+  async deleteComment(url, comment_id, token) {
     const options = {
       method: "DELETE",
-      headers: {Authorization: `Bearer ${token}`}
+      headers: { Authorization: `Bearer ${token}` },
     };
-    try{
+    try {
       const response = await fetch(localURL + url + "/" + comment_id, options);
       return response.status;
-    }
-    catch(err){
+    } catch (err) {
       return err;
     }
   }
-  async putComment(url, data, comment_id,token){
+  async putComment(url, data, comment_id, token) {
     console.log(data);
     const options = {
       method: "PUT",
       headers: {
-        "Content-Type" : "application/json",
-        Authorization: `Bearer ${token}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     };
-    try{
-      const response = await fetch(localURL + url + "/" + comment_id, options).then(
-        convertToJson
-      );
+    try {
+      const response = await fetch(
+        localURL + url + "/" + comment_id,
+        options
+      ).then(convertToJson);
       console.log(response);
       return response;
-    }
-    catch(err){
+    } catch (err) {
       console.log(err);
       return err;
     }
   }
 
-  async postCourseRequest(json, token) {
-    const a = await fetch(baseURL + "course/", {
+  async postCourseRequest(json, page, token) {
+    const a = await fetch(baseURL + page, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // author: "name",
+        author: "name",
         subject: json.category,
         code: json.code,
         text: json.mainText,
       }),
-    }).then(convertToJson);
+    })
+      .then(convertToJson)
+      .then(alert("정상적으로 포스트 되었습니다."))
+      .then((window.location.href = "../courses/index.html"));
     console.log(a);
   }
 
@@ -201,6 +208,8 @@ export default class ExternalServices {
         convertToJson
       );
       console.log(response);
+      alert("정상적으로 수정되었습니다.");
+      window.location.href = "../courses/index.html";
       return response;
     } catch (err) {
       console.log(err);
@@ -249,10 +258,10 @@ export default class ExternalServices {
     }
   }
 
-  async deleteCourseRequest(id, where, token) {
+  async deleteCourseRequest(id, page, token) {
     // const id = getParam('id');
     // console.log(id);
-    fetch(baseURL + where + id, {
+    fetch(baseURL + page + id, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -261,6 +270,8 @@ export default class ExternalServices {
       .then((response) => {
         if (response.ok) {
           console.log("데이터가 성공적으로 삭제되었습니다.");
+          alert("데이터가 성공적으로 삭제되었습니다.");
+          window.location.href = "../courses/index.html";
         } else {
           console.error("데이터 삭제에 실패했습니다.");
         }
@@ -311,7 +322,8 @@ export default class ExternalServices {
     }
   }
 
-  async commentPostRequest(json, token) {
+  async commentPostRequest(json, page, token) {
+    console.log(json);
     const options = {
       method: "POST",
       headers: {
@@ -319,14 +331,13 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        author: 'name',
+        author: "name",
         text: json.text,
-        source_id: json.cardId
+        source_id: json.cardId,
       }),
     };
-    const response = await fetch(baseURL + "comment/", options).then(
-      convertToJson
-    );
+    const response = await fetch(baseURL + page, options)
+      .then(convertToJson);
     console.log(response);
     return response;
   }

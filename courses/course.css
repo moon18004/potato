@@ -21,13 +21,12 @@
 .card {
   border: 2px solid gray;
   border-radius: 20px 20px 20px 20px;
-  max-width: 900px;
   min-height: 300px;
-  min-width: 850px;
+  width: 900px;
   
   margin-right: 10px;
   /* position: relative; */
-  text-align: center;
+  text-align: left;
   font-family: arial;
 }
   
@@ -39,7 +38,7 @@
   /* Add some padding inside the card container */
 .top {
     padding: 5px 16px;
-    padding: 40px;
+    padding: 40px 40px 0px 40px;
     display: flex;
   }
 
@@ -175,4 +174,10 @@ input {
 }
 .commentDeleteBtn:hover .icon-text{
   opacity: 1;
+}
+
+/* Heart button and Comment button in Course page */
+.heartCommentBtn {
+  margin-top: 5px;
+  margin-left: 90px;
 }

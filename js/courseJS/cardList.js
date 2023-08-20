@@ -50,7 +50,7 @@ export default class CardList {
       .querySelector(".deleteCourse")
       .addEventListener("click", async (e) => {
         e.preventDefault();
-        await services.deleteCourseRequest(card._id, token);
+        await services.deleteCourseRequest(card._id, 'course/', token);
       });
     const comment = template.querySelector(".comment");
 
@@ -59,11 +59,12 @@ export default class CardList {
       .querySelector(".commentReplyBtn")
       .addEventListener("click", async (e) => {
         e.preventDefault();
-        token = tokenStorage.getToken();
         const text = document.querySelector(".reply").value;
         const cardId = card.id;
+        console.log(cardId);
+        console.log(token);
         const body = { text, cardId };
-        await services.commentPostRequest(body, token);
+        await services.commentPostRequest(body, 'comment/', token);
       });
 
     //update
