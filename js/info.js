@@ -54,7 +54,11 @@ $('.infoTrigger').click(function(){
   $(this).toggleClass('active');
   $('.info-menu').toggleClass('active');
 })
-$('.info-menu p, .info-items').click(function(){
+$('.info-menu p').click(function(){
   $('.info-menu, .infoTrigger').removeClass('active')
   $('html').animate({scrollTop: 0}, 300)
+})
+
+$('.info-items').click(function(){
+  $('.info-menu, .infoTrigger').removeClass('active')
 })
