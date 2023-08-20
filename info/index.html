@@ -1,12 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <script src="//code.jquery.com/jquery-latest.js"></script>
+  <script src="../js/info.js" type ='module'></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <title>Document</title>
 </head>
+
 <body>
-  
+  <div class="container">
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <a href="../index.html"><img src="../images/temp_logo.png"></a>
+        </div>
+        <div class="gnb">
+          <a href="../index.html">Home</a>
+          <a href="../info/index.html">Information</a>
+          <a href="../courses/index.html">Courses</a>
+          <a href="../community/index.html">Community</a>
+        </div>
+        <div class="login">
+          <a href="./login/login.html" class="loginBtn">Sign in</a>
+          <a href="./login/registration.html" class="signupBtn">Sign Up</a>
+          <a href="" class="profileBtn">Profile</a>
+          <a href="" class="signoutBtn">Sign Out</a>
+        </div>
+      </div>
+      <div class="trigger"></div>
+    </header>
+  </div>
+ 
+  <section id="info">
+    <!-- <i class="xi-hamburger-out xi-2x"></i> -->
+    <div class="info__container">
+      <h2>Information</h2>
+      <div class="info-inner">
+        <div class="info-menu">
+          <p data-alt="tab1" class="active">Enrollment</p>
+          <p data-alt="tab2">I-20 Application</p>
+          <p data-alt="tab3">Registration</p>
+          <p data-alt="tab4">On-Campus Job</p>
+          <p data-alt="tab5">Internship/CPT</p>
+          <p data-alt="tab6">Missionary Work</p>
+          <p data-alt="tab7">Transfer</p>
+          <p data-alt="tab8">Marriage</p>
+          <p data-alt="tab9">Job</p>
+          <p data-alt="tab10">Tax</p>
+          <p data-alt="tab11">Housing</p>
+          <p data-alt="tab12">Insurance</p>
+          <p data-alt="tab13">Bank</p>
+        </div>
+        <div class="infoTrigger"></div>
+        <div class="info-contents">
+          <div id="tab1" class="info-items active">
+            <p>
+              미국에 학생 비자를 받고 대학교를 다녀야 하는 모든 외국인 학생은 ‘International Student’ 으로 학교 원서를 지원 하셔야 합니다. (<a
+                href="https://www.byui.edu/admissions/application-help" target='_blank'>영상 튜토리얼</a>)<br><br>
+              이 후 Admissions으로부터 임시 합격 (Conditional Acceptance)를 받으면 International Services로부터 I-20 원서 관련한 이메일을 받게 되는데,
+              만약 임시 합격 통보를 받은 후 1주일이 지나도 이메일을 받지 않았다면 International Services (international@byui.edu) 에게 문의 하시는 것을 추천
+              드립니다.<br><br>
+              I-20 원서는 본인이 하기에 따라 짧게는 2주 길게는 몇달이 소모 될 수 있으니 부지런하게 신청을 하시는 것을 권장 드립니다. I-20 원서를 성공적으로 제출하신 뒤 Approval
+              notice를 받게 되면 Admissions 에서 Questionnaire 과 Track Assignment에 관한 이메일을 받게 되는데 이 두 이메일을 다 수락 하셔야 BYU-Idaho
+              계정과 이메일을 만드실 수 있고 임시 합격이 아닌 완전한 합격을 받게 되시고 학생 계정을 만드실 수 있으십니다. 학생 계정을 만드셨다면 마지막 절차인 International Deposit을
+              내실 수 있습니다.<br><br>
+              주로 계정을 만들고 24시간 후에 학교 시스템이 백업 되면 International Deposit을 내실 수 있고 International Services에서 입금이 확인 되면 I-20과
+              함께 다음으로 해야 하는 것들을 학생 이메일로 받게 됩니다.<br><br>
+
+              이제 받으신 I-20를 가지고 U.S. Embassy에서 학생 비자 인터뷰 신청하시고 비자를 받으신 후 미국으로 오시면 되겠습니다.<br><br><br>
+              All students with F-1 Student Visa are considered as international students when applying to BYU-Idaho
+              through Admissions including transferring students. Other visa type students may contact Admissions at
+              admissions@byui.edu for additional information. (<a
+                href="https://www.byui.edu/admissions/application-help" target='_blank'>Video Tutorial</a>)<br><br>
+              Once an international student applies through Admissions and gets conditionally accepted to BYU-Idaho, the
+              student will receive an email from International Services regarding an I-20 application. If a student does
+              not receive the email within 1 week after the conditional acceptance, it is recommended for the student to
+              contact International Services at international@byui.edu regarding the I-20 Application.<br><br>
+              Depends on how a student prepares the I-20 application, the process of applying for an I-20 may take from
+              2 weeks to many months. Therefore, it is highly recommended not to procrastinate his/her I-20 application.
+              If he/she fills out everything on the I-20 application and gets an approval notice from International
+              Services, he/she will receive emails from Admissions regarding his/her Questionnaire and Track Assignment.
+              The student must accept the emails to create a student account for BYU-Idaho in order to make his/her
+              International Student Deposit payment. It usually takes 24 hours for the school system to update student
+              account information before he/she can access to his/her deposit account.<br><br>
+              If everything on his/her I-20 application gets approved and International Services confirms the deposit
+              payment has been made, he/she will receive an I-20 through his/her BYU-Idaho student email address with
+              additional information for what to do next.<br><br>
+              Now, they can apply for F-1 Student Visa interviews through the U.S. Embassy.<br><br>
+              Canadian students do not need to set up an appointment with the U.S. Embassy to get F-1 Student
+              Visas.<br><br>
+
+            </p>
+          </div>
+          <div id="tab2" class="info-items">
+            <p>
+              약 7가지의 항목을 작성하셔야 하는데 (개인의 사정에 따라 더 추가 될 수 있음) 질문을 잘 읽고 그에 알맞은 대답을 하시면 됩니다. 질문이 있으시다면 주저 말고
+              International Services (international@byui.edu)로 문의 하시는 것을 권장 드립니다.<br><br>
+              작성해야 하는 항목 중 가장 까다로운 한가지를 설명 드리겠습니다.<br><br>
+              Sponsor and Funding Information<br>
+              모든 Sponsorship에 대한 서류는 본인이 지원하는 학기 첫 달의 6개월 이내에 대한 정보(날짜 표기)여야 하며 자산의 정보 (현금인지 적금인지 등) 그리고 은행 정보 (보통 은행
+              이름) 그리고 자산 주인의 통성명이 포함 되어야 합니다.  은행 어플리케이션에 해당 정보가 모두 제공이 되어 있다면 화면 캡쳐 후 제출 하셔도 무방합니다. 하지만 모든 자산은 liquid
+              fund<br><br>
+              Liquid funds 한국말로? 교회 회원인가의 여부에 따라 입증해야 하는 자산이 다를 수 있습니다.<br><br>
+              교회 회원일 경우:<br>
+              </p>
+              <ul>
+                <li>만약 본인이 누구의 도움없이 본인의 모든 학비 및 생활비를 책임을 지고 있다면 BYU-Idaho에서 측정한 연평균 지출 금액 ($17,000)의 4년치 ($68,000)에 대한
+                  본인 명이의 통장 잔고 입증을 하셔야 합니다.</li>
+                <li>만약 부모님 또는 주변 지인 즉 다른 누군가가 학생 본인의 학비 및 생활비를 대신 지출을 해 준다면 지원 해주시는 분의 명의로  $17,000에 대한 자산을 보여주셔야 합니다.
+                </li>
+                <li>만약 누군가가 학생 본인의 학비 및 생활비를 지원을 해 주시는데 은퇴를 하셨다면 4년치에 대한 학비 및 생활비, $68,000, 를 입증 해주시면 됩니다.</li>
+              </ul>
+              <br>
+              <p>
+              There are about 7 parts that you need to fill out to complete your I-20 application (You may have more
+              depends on your circumstances).<br><br>
+              It is quite easy to follow if you read questions carefully and answer, but great portion of I-20
+              applicants often struggle with filling Sponsor and Funding Information. Here’s the basic
+              information.<br><br>
+              If you are member of the Church of Jesus Christ of Latter-day Saints
+              </p>
+              <ul>
+                <li>If you plan to sponsor yourself throughout your academic years with tuitions and living expenses,
+                  you are required to show bank statements with amount of average annual expense set by BYU-Idaho
+                  multiply by 4 years of schooling ($17,000 x 4 = $68,000).</li>
+                <li>If you have one or two sponsors for your expenses (You can have up to two sponsors), your sponsors
+                  need to show the annual expense ($17,000) plus international student deposit ($4,000) in their bank
+                  statements.</li>
+                <li>If your sponsor(s) is retired, your sponsor is required to show $68,000 in his/her bank statements.
+                </li>
+              </ul>
+              <p>
+              All funds have to be liquid funds, and all bank statements have to have the name of who is sponsoring,
+              recent date (it cannot be more than 6 months old from the start month of the semester that you are
+              applying to), name of a bank, and proper amount of money with account information (savings, checking,
+              money market, etc.). You can contact International Services for information regarding liquid funds that
+              they receive.
+            </p>
+          </div>
+          <div id="tab3" class="info-items">
+            <p>
+              모든 학생들은 Track Assignment를 받게 되는데 모든 외국인 학생들은 첫 두학기를 Track Assignment로 받게 됩니다. 예를 들어, 본인이 가을학기에 I-20를 받고
+              BYU-Idaho에 첫 학기를 시작한다면 가을 겨울학기를 Track Assignment로 받습니다. (겨울에 시작하면, 겨울 봄; 봄에 시작하면, 봄 가을)<br><br>
+              외국인 학생들에게 Track Assignment가 중요한 이유는 F-1 학생 비자를 받고 오는 모든 외국인 학생들은 첫 두학기를 의무적으로 ‘fully enrolled’, 즉 12학점 이상
+              들어야 합니다.<br><br>
+              Full Enrollment: 렉스버그 혹은 그 근처에 거주하면서 하나의 온라인 수업과 캠퍼스 수업으로 12학점 이상 또는 3 학점 이하의 온라인 수업들과 캠퍼스 수업으로 12학점 이상 채울
+              시 full enrollment의 자격이 채워집니다. 그 외는 없음. <br><br>
+
+              예시) <br>
+              </p>
+              <ol>
+                <li>캠퍼스 수업 총 8 학점 + 온라인 수업 하나 4 학점</li>
+                <li>캠퍼스 수업 총 9학점 + 온라인 수업 두개 이상 총 3 학점</li>
+              </ol>
+              <p>
+              온라인 수업을 두개 이상 듣고 싶다면 캠퍼스 수업을 꼭 9 학점 이상 들어야 가능 합니다.<br><br>
+              예시를 이어가서 가을 겨울을 12학점 이상 수업을 들었다면 봄 학기는 off-track인데 쉽게 말해 optional semester로 사용 가능합니다.<br><br>
+
+              봄학기 Off-track때 쉬고 싶다 또는 다른 계획이 있다, 그렇다면 수업을 하나도 안 듣고 할 일 하시면 됩니다. 따로 추가적으로 하셔야 할 일은 없지만 가을 겨울 Track
+              Assignment를 12학점 이상 채우시면 됩니다.<br><br>
+
+              Off-track때 수업을 듣고 싶다, 들으시면 됩니다.<br>
+            </p>
+              <ul>
+                <li>온라인 수업을 아무런 제한 없이 들으실 수 있고 만약 캠퍼스 수업을 수강신청하고 싶다면 Admissions Office에서 <a
+                    href="https://td.byui.edu/TDClient/75/Portal/Requests/ServiceDet?ID=640" target='_blank'>Override</a>를 신청하셔야 합니다.
+                  (Override)
+                  Off-track 학기에 partially enrolled로 수업을 들으시면 수업을 아예 안 들었을때와 같이 다음 두학기는 fully enrolled되셔야 합니다.</li>
+                <li>
+                  Full enrollment 처럼 자격요건을 충족하게 된다면 그 바로 다음학기를 off-track처럼 쉬실 수 있으십니다. 이때 International Services에서
+                  Annual Break Request 온라인 폼을 제출하셔야 합니다. (<a
+                    href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormAnnualBreakRequest0ServiceProvider" target='_blank'>Annual
+                    Break Request</a>) 안 쉬고 계속 수업을 듣고 싶으신 학생분들은 계속 수업을 들으셔도
+                  무방합니다.
+                </li>
+              </ul>
+              <p>
+              Off-Track을 포함해 학기를 쉬거나 수업을 조금 들을 수 있는 조건은 본인이 쉬어갈려고 하는 학기 전 두학기를 Fully Enrolled 하셔야 하고 그 다음 두 학기 또한 Fully
+              Enrolled 되셔야 합니다. (편입 및 졸업 제외) <br><br>
+              (<a href="https://www.byui.edu/registration/dates-and-deadlines" target='_blank'>Registration Dates & Deadlines</a>)에서
+              수강신청 날짜를 확인 하실 수 있고, 본인 개인의 수강신청 날짜를 확인하고 싶으시면 BYU-Idaho 홈페이지 로그인 후 ‘Registration’ 클릭 후 해당 페이지를 잘 관찰
+              하시면 찾으실 수 있으십니다. <br><br><br>
+              All BYU-Idaho students receive Track Assignments, and for international students, their track assignments
+              will always be their first two semesters. For an example, if your first semester is Fall, your Track
+              Assignment will be Fall/Winter; if your first semester is Spring, your Track Assignment will be
+              Spring/Fall.<br><br>
+              It is quite important to understand what Track Assignment and Full Enrollment are because these may give
+              you either great stress or great advantage during your academic years.<br><br>
+              Full Enrollment(Fully Enrolled): Regardless of your track assignment and while you are resigning in
+              Rexburg or near Rexburg, if you are registered at least 12 credits with one online class and on-campus
+              classes or if you are registered with at least 9 credits of on-campus classes and online classes to have
+              at least 12 credits, you are considered to be fully enrolled. You may fill 12 credits with all on-campus
+              classes to have a full enrollment.<br><br>
+              Full Enrollment Examples)
+            </p>
+              <ul>
+                <li>At least 12 credits of on-campus classes</li>
+                <li>8 credits of on-campus classes + 4 credits of one online class</li>
+                <li>9 credits of on-campus classes + 3 credits of at least one online class</li>
+              </ul>
+              <p>
+              If you wish to be fully enrolled and take multiple online classes, you must be registered with at least 9
+              credits of on-campus classes.<br><br>
+              After your second semester, your third semester is considered as an off-track, meaning an optional
+              semester. (If your first two semesters were Spring/Fall, your off-track semester is Winter.) During your
+              first off-track, you may have three different options to choose.<br>
+            </p>
+              <ol>
+                <li>
+                  Take a full break.
+                  <ol type="a">
+                    <li>Since you were fully enrolled for the past two consecutive semesters (first two semesters), you
+                      are not required to take classes. However, you are required to be fully enrolled for the next two
+                      consecutive semesters after you take an off-track.</li>
+                    <li>You do not need to stay in Rexburg during this semester.</li>
+                  </ol>
+                </li>
+                <li>
+                  Take classes but not fully enrolled.
+                  <ol>
+                    <li>You may take as many online classes as you want.</li>
+                    <li>You may also take some on-campus classes, but you must apply for an override at Admissions. (<a
+                        href="https://td.byui.edu/TDClient/75/Portal/Requests/ServiceDet?ID=640" target='_blank'>Override</a>)</li>
+                    <li>Although you are taking classes, if you do not meet with the Full Enrollment requirements, you
+                      are not considered as fully enrolled.</li>
+                    <li>You are required to be fully enrolled for the next two consecutive semesters.</li>
+                  </ol>
+                </li>
+                <li>Be fully enrolled.
+                  <ol>
+                    <li>You may first need to apply for an override at Admissions and register classes to meet the Full
+                      Enrollment requirements.</li>
+                    <li>You may use next semester as an off-track if you like to. If you want to take a full break or
+                      partial break during your on-track semester, you need to request an Annual Break at International
+                      Services. (<a
+                        href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormAnnualBreakRequest0ServiceProvider" target='_blank'>Annual
+                        Break Request</a>)
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+              <p>
+              You might catch while reading the option, yes, the qualification for an off-track is you must be fully
+              enrolled for two consecutive semesters prior and after a semester you wish to take off. With using this
+              logic, you are not technically changing your track assignment, but you can adjust which semester to take
+              off.<br><br>
+              You can check your registration date at <a
+                href="https://www.byui.edu/registration/dates-and-deadlines" target='_blank'>Registration Dates & Deadlines</a>, or you
+              can log in to your BYU-Idaho account and check under ‘Registration' page.
+            </p>
+          </div>
+          <div id="tab4" class="info-items">
+            <p>
+              학교에 오시고 International Services에 체크인을 하게 되면 학교에서 일을 하실 수 있게 됩니다. 처음으로 미국에서 일을 하게 되면 Social Security Number
+              SSN을 발급 받으셔야 하는데 이에 필요한 서류 및 정보는 Human Resources Office 그리고 International Services에서 받으실 수 있습니다.<br><br>
+              한국은 Tax Treaty라는 세금 혜택을 받는 국가 중 하나이므로 일을 처음 시작할 때 꼭 신청하시길 바랍니다. Tax Treaty는 첫 $2,000 수익에 대한 세금 면제 혜택임으로
+              받으시는 것이 좋습니다. 그리고 매년마나 갱신하셔야 하니 Accounting Services를 찾아 갱신을 해주시면 됩니다.<br><br>
+              학기마다 일을 할 수 있는 시간이 정해지는 이를 지키는 것은 중요하므로 꼭 지키길 바랍니다. 이를 어길 시 I-20유지에 불이익이 갈 수 있습니다. 본인이 수업을 Fully Enrolled로
+              듣고 있다면 일주일에 20시간 까지 일을 하실 수 있고 그 외 Full Enrollment가 아닌 학기, 방학, 그리고 여름 세션엔 20시간보다 더 많이 일을 하실 수 있습니다. 학기내
+              공휴일은 방학이 아니므로 주의하시길 바랍니다.<br><br>
+              학교밖에서 일을 하는 것은 International Services에서 CPT I-20를 받고 일을 하는것 외엔 없으니 해당 절차를 밟고 일을 하시길 바랍니다.<br><br><br>
+              Once you are checked in with International Services, you can start working for on campus jobs. If it is
+              your first job on the campus, you are required to get a Social Security Number at SSN office in Idaho
+              Falls. All required information what to bring for the SSN application will be given by Human Resources
+              office and International Services.<br><br>
+              It is important for you to check if your nation fits under Tax Treaty from the U.S. Government because if
+              it is, your income will be tax free up to $2,000 of your income. You may need to apply for the tax treaty
+              beginning of each year at Accounting Services.<br><br>
+              Keeping working hours is important because it can affect your I-20 status. If you are fully enrolled, you
+              can work up to 20 hours (part time), and if you are not fully enrolled (off-track, breaks between
+              semesters, and Summer session), you can work more than 20 hours per week. Holidays within semesters do not
+              count as breaks, such as Thanksgiving week.<br><br>
+              You are not allowed work off-campus unless you have CPT I-20 during your school years.
+            </p>
+          </div>
+          <div id="tab5" class="info-items">
+            <p>
+              몇몇 전공들을 제외하고 대부분의 전공들은 졸업 조건으로 인턴십을 해야합니다. 그리고 외국인 학생들이 하는 인턴십을 Curricular Practical Training (CPT)라고
+              부릅니다.<br><br>
+              CPT를 하기 위해선 우선 본인이 인턴십 수업을 수강신청 하기위해 들어야 하는 수업들을 이수해야 합니다. (전공마다 다르기 때문에 과 교수님이나 전공 커리큘럼에서 확인 가능합니다.) CPT
+              수강신청 자격이 생긴다면 전공과 관련된 인턴십을 찾아오신 후 <a href="http://iplan.byui.edu" target='_blank'>I-Plan</a> 에서 인턴십을 신청 하시면 됩니다. 이때 제출해야
+              하는 필요서류로는 Job (Employment) Offer
+              Letter가 필요한데 해당 서류에
+              <ul>
+                <li>Company Letterhead</li>
+                <li>Job Title</li>
+                <li>Job Description</li>
+                <li>Start and End Date</li>
+                <li>Working Hours per Week</li>
+                <li>Employer Signature</li>
+              </ul>
+              이 여섯가지가 필요하고 인턴십이 전공과 관련이 없거나 위에 정보가 없을 경우 CPT 허가를 받을 수 없습니다.<br><br>
+              iPlan에서 인턴십을 신청하게 되면 Faculty internship coordinator, internship office, 그리고 international services에서 리뷰를
+              하게 되는데 모든 오피스에서 승인이 나면 International Services에서 CPT I-20를 발급 받게 됩니다. 그럼 그거 가지고 인턴십 화이팅 하시면 됩니다.<br><br>
+              대부분 전공들은 Required Internship이 하나만 있는데 본인이 첫 인턴십을 Full-time position (일주일에 20시간 이상 일을 할 경우)로 한다면 인턴십을 하는
+              학기는 수업을 듣지 않아도 Full enrollment로 쳐줍니다. 그리고 교회에서 하는 인턴십을 제외하고는 인턴십을 Full-time으로 하게 되더라도 학교에서 part-time으로 하실
+              수 있습니다.<br><br>
+              Required Internship을 끝내고 또 CPT를 할 수 있나요?
+              <ul>
+                <li>네, 할 수 있습니다. 다만 Full-time으로 하실려면 본인이 Fully enrolled 안 할 수 있는 학기에만 할 수 있습니다.</li>
+                <li>학교 생활 중 CPT Full-time은 최대 3번만 가능하니 참고 바랍니다.</li>
+              </ul>
+              인턴십 두 학기 연속으로 할 수 있나요?
+              <ul>
+                <li>Required Internship이 두개이고 인턴십을 해본적이 없다, 그렇다면 가능합니다.</li>
+                <li>Required Internship이 하나일 경우 두학기 연속으로 인턴십을 하실 수 없습니다. 하지만 여름 (Summer Session)은 학기가 아닌 세션이기 때문에 여름세션은
+                  포함 시킬 수 있습니다. 그래서 봄학기 + 여름 또는 여름 + 가을학기 이런식으로 인턴십을 하실 수 있습니다.</li>
+              </ul>
+              Except for several majors, most majors require students to have at least one internship before their
+              graduation. As international students, we often call internship as Curricular Practical Training
+              (CPT).<br><br>
+              To take an internship class, you must complete pre-requisite classes for the internship class, and you
+              would want to check with your academic advisor or your academic curriculum to check the pre-requisites
+              since each major has different pre-requisites.<br><br>
+              When you meet the requirement for your internship class, you can request an internship through <a
+                href="http://iplan.byui.edu" target='_blank'>I-Plan</a> if
+              you have an internship offer from a company. At this process, you are required to submit an Employment
+              (Job Offer) Letter, and it needs to include following:
+              <ul>
+                <li>Company letterhead</li>
+                <li>Job title</li>
+                <li>Job description</li>
+                <li>Internship start and end date</li>
+                <li>Working hours per week</li>
+                <li>Employer signature</li>
+              </ul>
+              If you do not have all six information from the above or if your job is not related to your major, your
+              request will not be approved.<br><br>
+              After you submit your internship request through iPlan, your Faculty Internship Coordinator, Internship
+              Office, and International Services will give you updates on your request. If your internship request gets
+              approved, you will be able to register your internship class, and then you will receive your CPT I-20 for
+              your internship.<br><br>
+              Most majors have one required internship, but some majors have two. If you are doing your required
+              internship, you may do any semester that you want to if you are working more than 20 hours per week for
+              the internship (full-time internship) because it will be considered as a full enrollment. It will not be
+              counted as full enrollment even you work more than 20 hours per week if the internship is not required. If
+              it is a part-time internship (working less than 20 hours per week), you may need to do it on your
+              off-track semester or stay in Rexburg and take classes to be fully enrolled.<br><br>
+              You are not allowed to do two consecutive internships unless you have two required internships. If you
+              have one required internship and did it on Spring, you are not allowed to do another internship on Fall.
+              However, since summer session is not a semester, you can either start your internship in Summer session as
+              part of Fall semester internship class, or you can finish your internship in Summer session as part of
+              Spring semester internship class.<br><br>
+              FYI, you can do up to 3 full-time internship during your whole academic years.
+            </p>
+          </div>
+          <div id="tab6" class="info-items">
+            <p>선교사업을 떠나기 마지막 학기 중에 Sunapsis (International Services Page)에서 Departure Request Form을 작성해주시면 됩니다.
+              (<a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormStudentExitForm0ServiceProvider" target='_blank'>Departure
+                Request Form</a>)</p><br>
+                
+                <p>
+            그리고 한국으로 돌아가시면 됩니다.<br><br>
+            선교사업 끝나고 돌아오는 방법 적기
+          </p>
+          </div>
+          <div id="tab7" class="info-items">
+            <p>
+              미국내에 있는 다른 학교로부터 입학 허가서를 받게 된다면 Sunapsis에서 <a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormTransferOutRequest0ServiceProvider" target='_blank'>Transfer
+                Out Request Form</a>을 제출 하셔야 합니다.<br><br>
+              미국이 아닌 다른 나라일 경우 <a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormStudentExitForm0ServiceProvider" target='_blank'>Departure
+                Request Form</a>을 제출 하시면 됩니다.<br><br>
+              If you have an acceptance letter from a different college/university within the U.S., you must submit <a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormTransferOutRequest0ServiceProvider" target='_blank'>Transfer
+                Out Request Form</a> Form.<br><br>
+              If you are transferring to a different school outside of the U.S., you may submit <a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormStudentExitForm0ServiceProvider" target='_blank'>Departure
+                Request Form</a>
+            </p>
+
+          </div>
+          <div id="tab8" class="info-items">
+            <p>
+              결혼을 하게 된다면 <a href="https://www.byui.edu/student-records/demographic-change" target='_blank'>Student Record and
+                Registration</a> 에서 개인정보를 업데이트 하시면 됩니다.<br><br>
+              미국인과 결혼 할 경우 개인정보 업데이트 말고 따로 학교에서 해야할 건 없습니다. 영주권 신청 관련된 것은 Immigration Attorney에게 직접 물어보는것이 보다 정확하고 안전하기
+              때문에 해당 정보는 기입하지 않겠습니다.<br><br>
+              같은 외국인 학생끼리 결혼을 하게 된다면 추가로 하실 일이 없습니다.<br><br>
+              배우자가 한국에 있어서 결혼 후 미국에 같이 데리고 올 경우 International Services에서 <a
+                href="https://international.byui.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormGroupProvider&eformGroup=56" target='_blank'>Dependent
+                Request</a>를 작성해주셔야 합니다 (자녀도 포함). 작성을 하실때
+              은행잔고, bank statements, 를 제출하셔야 하는데 dependent 한 명당 $4,500를 추가적으로 보여주셔야 합니다.
+              <ol>
+                <li>본인이 교회 회원이실 경우 본인 1년 학교 생활비 $17,000에 $4,500 더해서 $21,500 을 보여주시면 됩니다.</li>
+              </ol>
+              작성 후 허가가 나온다면 F-2 I-20 (Dependent I-20)가 나오게 되는데 그 서류를 가지고 미국 비자를 발급 받으시고 미국에 오시면 됩니다.
+
+            </p>
+          </div>
+          <div id="tab9" class="info-items">
+            <p></p>
+          </div>
+          <div id="tab10" class="info-items">
+            <p>
+              Internal Revenue Service (미국 국세청)에 의한 정보를 간략하게 요약을 한다면 미국에서 수익을 만들지 않는다면 세금 신청서를 내실필요 없습니다. 하지만 그 외 어떤
+              경우에서의 수익을 발생하게 된다면 (은행 이자율은 제외) 세금 신청서를 국세청에 제출 하셔야 합니다. 수익이라 함은 아르바이트, taxable scholarship, 주식 및 코인 (미국
+              계정), 인턴십, 정규직, 등 있습니다.<br><br>
+              또한 Select Health 즉 미국 정부지원 보험을 사용하실 경우 세금 신청을 하셔야 합니다.<br><br>
+              자세한 정보: <a
+                href="https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors" target='_blank'>https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors</a>
+              <br><br>
+              세금에 관한것은 전문 회계인에게 물어보시는것이 가장 안전합니다. <br><br>
+              According to Internal Revenue Service (IRS), international students are not required to file their taxes
+              if they did not make any income. In otherwise, you must file your tax. Income can be but not limited to
+              taxable scholarship, on and off campus job, stocks, coins, etc. <br><br>
+              If you are using SelectHealth (U.S. Government support insurance), you are required to file your tax.
+              <br><br>
+              You can use the following link to for additional information: <a
+                href="https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors" target='_blank'>https://www.irs.gov/individuals/international-taxpayers/foreign-students-scholars-teachers-researchers-and-exchange-visitors</a>
+              <br><br>
+              It is recommended to ask tax professionals if you have any questions regarding filing your tax.
+            </p>
+          </div>
+          <div id="tab11" class="info-items">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae iusto id in molestiae laboriosam beatae et
+              qui tempora. Similique sunt, qui nobis porro libero alias! Culpa nostrum maxime perferendis facilis!
+              Voluptatibus tempora non pariatur similique quibusdam eos atque nisi iusto hic, assumenda, nobis soluta?
+              Perspiciatis recusandae at voluptate repellendus incidunt quaerat iusto sunt maxime maiores. Expedita vel
+              repellendus nam voluptatem.
+              Ullam qui ipsa iure blanditiis amet laboriosam expedita autem eveniet aperiam! Numquam quisquam at eum
+              incidunt mollitia inventore id, sapiente ut facere iste quam eius maxime quas accusantium adipisci
+              deleniti.
+              Adipisci error magni enim assumenda voluptas nobis, qui esse id omnis ipsam quos distinctio dolores?
+              Recusandae doloremque cupiditate asperiores nemo odit quasi nisi suscipit amet quidem repellat, aliquid,
+              modi doloribus!
+              Enim commodi cupiditate quae laborum assumenda. Repellendus deleniti, odit doloribus culpa repellat dolore
+              quam, consectetur voluptatibus recusandae facilis nulla doloremque obcaecati officiis quisquam eveniet
+              modi velit eaque ab magnam earum?
+            </p>
+          </div>
+          <div id="tab12" class="info-items">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae iusto id in molestiae laboriosam beatae et
+              qui tempora. Similique sunt, qui nobis porro libero alias! Culpa nostrum maxime perferendis facilis!
+              Voluptatibus tempora non pariatur similique quibusdam eos atque nisi iusto hic, assumenda, nobis soluta?
+              Perspiciatis recusandae at voluptate repellendus incidunt quaerat iusto sunt maxime maiores. Expedita vel
+              repellendus nam voluptatem.
+              Ullam qui ipsa iure blanditiis amet laboriosam expedita autem eveniet aperiam! Numquam quisquam at eum
+              incidunt mollitia inventore id, sapiente ut facere iste quam eius maxime quas accusantium adipisci
+              deleniti.
+              Adipisci error magni enim assumenda voluptas nobis, qui esse id omnis ipsam quos distinctio dolores?
+              Recusandae doloremque cupiditate asperiores nemo odit quasi nisi suscipit amet quidem repellat, aliquid,
+              modi doloribus!
+              Enim commodi cupiditate quae laborum assumenda. Repellendus deleniti, odit doloribus culpa repellat dolore
+              quam, consectetur voluptatibus recusandae facilis nulla doloremque obcaecati officiis quisquam eveniet
+              modi velit eaque ab magnam earum?
+            </p>
+          </div>
+          <div id="tab13" class="info-items">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae iusto id in molestiae laboriosam beatae et
+              qui tempora. Similique sunt, qui nobis porro libero alias! Culpa nostrum maxime perferendis facilis!
+              Voluptatibus tempora non pariatur similique quibusdam eos atque nisi iusto hic, assumenda, nobis soluta?
+              Perspiciatis recusandae at voluptate repellendus incidunt quaerat iusto sunt maxime maiores. Expedita vel
+              repellendus nam voluptatem.
+              Ullam qui ipsa iure blanditiis amet laboriosam expedita autem eveniet aperiam! Numquam quisquam at eum
+              incidunt mollitia inventore id, sapiente ut facere iste quam eius maxime quas accusantium adipisci
+              deleniti.
+              Adipisci error magni enim assumenda voluptas nobis, qui esse id omnis ipsam quos distinctio dolores?
+              Recusandae doloremque cupiditate asperiores nemo odit quasi nisi suscipit amet quidem repellat, aliquid,
+              modi doloribus!
+              Enim commodi cupiditate quae laborum assumenda. Repellendus deleniti, odit doloribus culpa repellat dolore
+              quam, consectetur voluptatibus recusandae facilis nulla doloremque obcaecati officiis quisquam eveniet
+              modi velit eaque ab magnam earum?
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
