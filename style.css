@@ -549,6 +549,15 @@ header.active {
 }
 
 @media(max-width: 768px){
+  .logo img{
+    height : 50px;
+  }
+  .login a{
+    width: 80px;
+    padding: 4px;
+    font-size: 13px;
+    border-radius: 20px;
+  }
   .info__container{
     width: 100%;
   }
