@@ -7,6 +7,10 @@ const uiItems = document. querySelectorAll('.info-items');
 const ui = document.querySelector('.info__container');
 console.log(uiItems);
 
+if(ui.offsetWidth < 770){
+  document.querySelector('.info-contents').style.height = "3300px";
+}
+
 // console.log(uiItems);
 document.addEventListener('click', (e)=>{
   if(e.target.parentNode.className=='info-menu'){
@@ -29,6 +33,9 @@ document.addEventListener('click', (e)=>{
       // console.log("desktop");
     // document.querySelector('.info-contents').style.height = "1100px";
     // }
+    if(ui.offsetWidth < 770){
+      document.querySelector('.info-contents').style.height = "3300px";
+    }
   }
 })
 
