@@ -42,7 +42,7 @@ document.querySelector(".login-btn").addEventListener('click', async (e) => {
 async function init(){
   if (token) {
     console.log('init')
-    const res = await externalServices.me(token);
+    const res = await services.me(token);
     console.log(res);
     if(res.code==200){
       document.querySelector('.signoutBtn').classList.add('display');
