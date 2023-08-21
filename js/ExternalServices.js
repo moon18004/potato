@@ -190,8 +190,13 @@ export default class ExternalServices {
   }
 
   async updateCourseRequest(json, token) {
-    const id = getParam("id");
-    console.log(`id` + id);
+    var id;
+    if (getParam("id")!==null){
+      id = getParam("id");
+    } else {
+      id = json.id;
+    }
+    
     const options = {
       method: "PUT",
       headers: {

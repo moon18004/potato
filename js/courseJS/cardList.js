@@ -39,11 +39,15 @@ export default class CardList {
   }
 
   prepareTemplate(template, card) {
+    
+    const comment = template.querySelector(".comment");
+    
     template.querySelector(".subject").innerHTML = card.subject;
     template.querySelector(".classcode").innerHTML = card.code;
     template.querySelector(".date").innerHTML = card.createdAt;
     template.querySelector(".author").innerHTML = card.author;
     template.querySelector(".textBox").innerHTML = card.text;
+    
     template.querySelector(
       ".updateCourse"
     ).href = `../posting/updateCourse.html?id=${card._id}`;
@@ -53,32 +57,29 @@ export default class CardList {
         e.preventDefault();
         await services.deleteCourseRequest(card._id, "course/", token);
       });
-    const comment = template.querySelector(".comment");
+    
     
     // heart
-    let isLiked = false;
     const heartButton = template.querySelector(".clickHeart");
-    template.querySelector(".heartCount").innerHTML = card.like;
-    var currentHeart = card.like;
-    var heartCount = template.querySelector(".heartCount").innerHTML;
-    console.log(heartCount);
+    template.querySelector(".heartCount").innerHTML = card.like.length;
     
-    heartButton.addEventListener("click", ()=>{
-      if(!isLiked){
-        isLiked = true;
-        card.like++;
-        currentHeart;
-        console.log(card)
+    heartButton.addEventListener("click", async ()=>{
+      
+      const userInformation = await userInfo();
+      const filtered = card.like.filter((element) => {
+        return userInformation["userId"] === element;
+      });
+      if (!filtered.length){
+        card.like.push(userInformation["userId"]); 
+        console.log(card.like);
         heartButton.classList.add("clicked");
       } else {
-        isLiked = false;
-        card.like--;
-    
+        card.like.pop(userInformation["userId"]); 
         heartButton.classList.remove("clicked");
       }
-      
-      heartCount = card.like;
-      services.updateCourseRequest(card, token);
+      console.log(filtered);
+    
+      await services.updateCourseRequest(card, token);
     });
 
     // 카테고리
@@ -119,14 +120,20 @@ export default class CardList {
       console.log(card._id);
     });
 
-    // template.querySelector(".comment").innerHTML = card.comment;
+    // comment count
+    const commentfiltered = this.list2.filter((element) => {
+      return card._id === element.source_id;
+    });
+    template.querySelector(".commentCount").innerHTML = commentfiltered.length;
+
+    // comment button event
     template.querySelector(".fa-comment").addEventListener("click", (e) => {
-      console.log(comment);
       comment.classList.toggle("active");
       console.log(this.list2);
       const filtered = this.list2.filter((element) => {
         return card._id === element.source_id;
       });
+      
       console.log(filtered);
       renderList(
         comment,
@@ -140,6 +147,7 @@ export default class CardList {
     return template;
   }
   prepareComment(template, comment) {
+
     template.querySelector(".author").innerHTML = comment.author;
     template.querySelector(".content").innerHTML = comment.text;
     template.querySelector(".date").innerHTML = comment.createdAt;
