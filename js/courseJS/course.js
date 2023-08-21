@@ -16,6 +16,7 @@ cardList.init();
 const tab = document.querySelectorAll('.text p');
 console.log(tab);
 
+
 // document.addEventListener('click', (e)=>{
 //   if(e.target.parentNode.className=='categories'){
 //     tab.forEach(element=> element.classList.remove('active'));

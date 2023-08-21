@@ -6,6 +6,7 @@ import { formDataToJSON } from "../utils.js";
 const tokenStorage = new TokenStorage();
 let token = tokenStorage.getToken();
 const services = new ExternalServices();
+const categorySelect = document.getElementById("selectSubject");
 
 export default class CardList {
   constructor(source, commentSource, element) {
@@ -50,9 +51,22 @@ export default class CardList {
       .querySelector(".deleteCourse")
       .addEventListener("click", async (e) => {
         e.preventDefault();
-        await services.deleteCourseRequest(card._id, 'course/', token);
+        await services.deleteCourseRequest(card._id, "course/", token);
       });
     const comment = template.querySelector(".comment");
+
+    // 카테고리
+    const eachCard = template.querySelector(".twoRow");
+    categorySelect.addEventListener("change", function () {
+      const selectedCategory = categorySelect.value;
+      const cardSubject = card.subject;
+
+      if (selectedCategory === "all" || cardSubject === selectedCategory) {
+        eachCard.style.display = "flex";
+      } else {
+        eachCard.style.display = "none";
+      }
+    });
 
     // comment reply button
     template
@@ -65,8 +79,13 @@ export default class CardList {
         console.log(token);
         const body = { text, cardId };
         const userInformation = await userInfo();
-        
-        await services.commentPostRequest(body, 'comment/', userInformation, token);
+
+        await services.commentPostRequest(
+          body,
+          "comment/",
+          userInformation,
+          token
+        );
       });
 
     //update
@@ -111,25 +130,25 @@ export default class CardList {
         // await services.deleteCourseRequest(comment.id,token)
       });
     template
-    .querySelector(".commentDeleteBtn")
-    .addEventListener("click", async (e) => {
-      e.preventDefault();
-      token = tokenStorage.getToken();
-      console.log("comment : " +comment);
-      await services.deleteCourseRequest(comment._id, 'comment/', token)
-    });  
+      .querySelector(".commentDeleteBtn")
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        token = tokenStorage.getToken();
+        console.log("comment : " + comment);
+        await services.deleteCourseRequest(comment._id, "comment/", token);
+      });
 
     return template;
   }
 }
 
-async function userInfo(){
+async function userInfo() {
   console.log(token);
-    if (token) {
-      console.log('init')
-      const res = await services.me(token);
-      console.log(res.userId);
+  if (token) {
+    console.log("init");
+    const res = await services.me(token);
+    console.log(res.userId);
 
-      return { userId : res.userId, username: res.username };
-    }
+    return { userId: res.userId, username: res.username };
+  }
 }
