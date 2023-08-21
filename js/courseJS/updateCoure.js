@@ -17,7 +17,10 @@ document
     const formElement = document.forms["updating-courseForm"];
     let json = formDataToJSON(formElement);
 
-    json.mainText = lineChange(json.mainText);
+    json.text = lineChange(json.mainText);
+    json.subject = json.category;
+    
+    console.log(json);
     //   console.log(json);
     await services.updateCourseRequest(json, token);
   });

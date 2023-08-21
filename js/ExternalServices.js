@@ -180,6 +180,7 @@ export default class ExternalServices {
         subject: json.category,
         code: json.code,
         text: json.mainText,
+        like: 0
       }),
     })
       .then(convertToJson)
@@ -198,9 +199,10 @@ export default class ExternalServices {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        subject: json.category,
+        subject: json.subject,
         code: json.code,
-        text: json.mainText,
+        text: json.text,
+        like: json.like
       }),
     };
     try {

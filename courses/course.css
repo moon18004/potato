@@ -179,6 +179,22 @@ input {
 
 /* Heart button and Comment button in Course page */
 .heartCommentBtn {
-  margin-top: 5px;
+  
   margin-left: 90px;
+  display: flex;
 }
+.clickHeart, .clickComment{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+.clickHeart.clicked {
+  color: red;
+  fill: red;
+}
+

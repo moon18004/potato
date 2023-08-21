@@ -54,6 +54,32 @@ export default class CardList {
         await services.deleteCourseRequest(card._id, "course/", token);
       });
     const comment = template.querySelector(".comment");
+    
+    // heart
+    let isLiked = false;
+    const heartButton = template.querySelector(".clickHeart");
+    template.querySelector(".heartCount").innerHTML = card.like;
+    var currentHeart = card.like;
+    var heartCount = template.querySelector(".heartCount").innerHTML;
+    console.log(heartCount);
+    
+    heartButton.addEventListener("click", ()=>{
+      if(!isLiked){
+        isLiked = true;
+        card.like++;
+        currentHeart;
+        console.log(card)
+        heartButton.classList.add("clicked");
+      } else {
+        isLiked = false;
+        card.like--;
+    
+        heartButton.classList.remove("clicked");
+      }
+      
+      heartCount = card.like;
+      services.updateCourseRequest(card, token);
+    });
 
     // 카테고리
     const eachCard = template.querySelector(".twoRow");
