@@ -18,7 +18,7 @@ document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
 })
 
 document.querySelector(".login-btn").addEventListener('click', async (e) => {
-  console.log('login-page');
+  
   e.preventDefault();
   const formElement = document.forms["login-form"];
   const checkForm = formElement.checkValidity();
