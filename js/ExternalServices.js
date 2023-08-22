@@ -300,9 +300,17 @@ export default class ExternalServices {
       },
       body: JSON.stringify(post),
     };
-    const response = await fetch(baseURL + url, options).then(convertToJson);
-    console.log(response);
-    return response;
+
+    try {
+      const response = await fetch(baseURL + url, options).then(convertToJson);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+    // const response = await fetch(baseURL + url, options).then(convertToJson);
+    // console.log(response);
+    // return response;
   }
   async me(token) {
     const options = {

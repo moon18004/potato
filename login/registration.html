@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potato</title>
+  <link rel="icon" type= "imge/png" href="../images/potatos.png">
   <link rel="stylesheet" href="../style.css">
   <script src="//code.jquery.com/jquery-latest.js"></script>
   <script src="../js/registration.js" type="module"></script>
-  <title>Document</title>
+  
 </head>
 <body>
   <div class="container">
     <header>
       <div class="header-inner">
         <div class="logo">
-          <a href="../index.html"><img src="">Potato</a>
+          <a href="../index.html"><img src="../images/temp_logo.png"></a>
         </div>
         <div class="gnb">
           <a href="../index.html">Home</a>
@@ -23,21 +26,31 @@
           <a href="../community/index.html">Community</a>
         </div>
         <div class="login">
-          <a href="../login/login.html">Sign in</a>
+          <a href="../login/login.html" class="loginBtn">Sign in</a>
+          <a href="../login/registration.html" class="signupBtn">Sign Up</a>
+          <a href="" class="profileBtn">Profile</a>
+          <a href="" class="signoutBtn">Sign Out</a>
         </div>
       </div>
       <div class="trigger"></div>
     </header>
+    
     <section class="registration">
+      
+      <div class="regi-header">
+        <h2>Welcome to Potato</h2>
+        <p>It's a platform designed for sharing information and experiences about studying at BYU-I.</p>
+        <div>
+      </div>
       <form name="reg-form" class="reg-form" action="">
         <div class="email">
           <label for="email">Email</label>
           <input type="email" name="email" class="input-email" placeholder="potato@potato.com">
-          <button class="get-opt">Get OPT</button>
+          <button class="get-opt">Send Code</button>
           <span class="email-msg"></span>
         </div>
         <div class="opt">
-          <label for="opt">OPT Code</label>
+          <label for="opt">Verification Code</label>
           <input class = "code" type="text" name="opt" placeholder="6 digits">
           <button class="check-opt">Check</button>
           <span class="opt-msg"></span>
@@ -59,7 +72,8 @@
             <label for="country">Country</label>
             <input type="text" name="country" placeholder="South Korea">
           </div>
-          <span class="err-msg"></span>
+          <p class="err-msg"></p >
+          
           <button class="sign-up">Sign Up</button>
         </section>
         

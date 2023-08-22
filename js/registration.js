@@ -19,7 +19,15 @@ document.querySelector(".get-opt").addEventListener("click", async (e) => {
   document.querySelector(".email-msg").innerHTML = res.message;
 
   if (res.code === 200){
+    document.querySelector(".input-email").readOnly = true;
     document.querySelector('.opt').classList.add('display');
+    document.querySelector(".email-msg").classList.remove('fail');
+    document.querySelector(".email-msg").classList.add('success');
+  }
+
+  else if(res.code ===409){
+    document.querySelector(".email-msg").classList.remove('success');
+    document.querySelector(".email-msg").classList.add('fail');
   }
 });
 
@@ -36,7 +44,14 @@ document.querySelector(".check-opt").addEventListener("click", async (e) => {
 
   if (res.code === 200){
     document.querySelector('.user-info').classList.add('display');
+    document.querySelector(".opt-msg").classList.remove('fail');
+    document.querySelector(".opt-msg").classList.add('success');
   }
+  else if(res.code == 401){
+    document.querySelector(".opt-msg").classList.remove('success');
+    document.querySelector(".opt-msg").classList.add('fail');
+  }
+  
 });
 
 document.querySelector(".sign-up").addEventListener('click', async (e) =>{
