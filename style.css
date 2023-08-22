@@ -504,6 +504,16 @@ header.active {
 .editBtns button{
   display:block;
 }
+.views::before{
+  /* display:inline-block; */
+  font-family: xeicon;
+  content: '\e950';
+  /* width: 20px; */
+}
+.comments::before{
+  font-family: xeicon;
+  content: '\e9d8';
+}
 
 
 /* registration */
@@ -649,13 +659,16 @@ header.active {
     text-align: center;
   }
   .infoTrigger:before {
+    color: crimson;
     content: '\eb45';
     font-family: xeicon;
   }
   .infoTrigger.active:before {
-    content: '\e9af';
+    font-weight:500;
+    content: '\eb46';
   }
   .info-items{
     padding-left: 50px;
   }
 }
+
