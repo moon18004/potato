@@ -1,4 +1,5 @@
 import { getLocalStorage, loadTemplate, renderList, setLocalStorage } from './utils.js';
+// import { format, render, cancel, register } from 'timeago.js';
 import TokenStorage from './token.js';
 
 const tokenStorage = new TokenStorage();
@@ -26,7 +27,7 @@ export default class CommunityComment{
 
   }
   prepareTemplate(template, comment) {
-    const date = dateCaculator(comment.createdAt);
+    const date = timeAgo(comment.createdAt);
     template.querySelector('.author').innerHTML = comment.author;
     template.querySelector('.date').innerHTML = date;
     template.querySelector('.content').innerHTML = comment.text;
@@ -93,12 +94,36 @@ export default class CommunityComment{
   }
 }
 
-function dateCaculator(date){
-  const formatter = new Intl.RelativeTimeFormat('en');
-  const today = new Date();
-  const started = new Date(date);
-  console.log(started);
-  const daysPassed = Math.ceil((started-today)/ (1000*60*60*24));
-  console.log(`day ${formatter.format(daysPassed,'day')}`);
-  return formatter.format(daysPassed,'day')
-}
+const timeAgo = (data) => {
+  const date = new Date(data);
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + ' years ago';
+  }
+
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + ' months ago';
+  }
+
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + ' days ago';
+  }
+
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + ' hours ago';
+  }
+
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + ' minutes ago';
+  }
+
+  if(seconds < 10) return 'just now';
+
+  return Math.floor(seconds) + ' seconds ago';
+};

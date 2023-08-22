@@ -1,5 +1,6 @@
 import { getLocalStorage, loadTemplate, renderList, setLocalStorage } from './utils.js';
 
+
 export default class PostList{
   constructor(source, element){
     this.source = source;
@@ -86,7 +87,7 @@ export default class PostList{
       // console.log(this.source);
       const res = await this.source.increaseView(post.id, post.view + 1);
     })
-    const date = dateCaculator(post.createdAt);
+    const date = timeAgo(post.createdAt);
     template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
     template.querySelector(".date").innerHTML = date;
@@ -109,3 +110,37 @@ function dateCaculator(date){
   console.log(`day ${formatter.format(daysPassed,'day')}`);
   return formatter.format(daysPassed,'day')
 }
+
+const timeAgo = (data) => {
+  const date = new Date(data);
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + ' years ago';
+  }
+
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + ' months ago';
+  }
+
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + ' days ago';
+  }
+
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + ' hours ago';
+  }
+
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + ' minutes ago';
+  }
+
+  if(seconds < 10) return 'just now';
+
+  return Math.floor(seconds) + ' seconds ago';
+};

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/moon18004/potato/issues"
   },
-  "homepage": "https://github.com/moon18004/potato#readme"
+  "homepage": "https://github.com/moon18004/potato#readme",
+  "dependencies": {
+    "timeago.js": "^4.0.2"
+  }
 }

@@ -45,12 +45,49 @@ export default class Post{
     const view = document.querySelector('.view');
     const title = document.querySelector('.title');
     const text = document.querySelector('.mainText');
+    const days = timeAgo(data.createdAt);
+
     category.innerText = data.category;
     author.innerHTML = data.author;
-    date.innerHTML = data.createdAt;
+    date.innerHTML = days;
     view.innerHTML = data.view;
     title.innerHTML = data.title;
     text.innerHTML = data.mainText;
   }
 
 }
+
+
+const timeAgo = (data) => {
+  const date = new Date(data);
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + ' years ago';
+  }
+
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + ' months ago';
+  }
+
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + ' days ago';
+  }
+
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + ' hours ago';
+  }
+
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + ' minutes ago';
+  }
+
+  if(seconds < 10) return 'just now';
+
+  return Math.floor(seconds) + ' seconds ago';
+};
