@@ -7,6 +7,7 @@ const tokenStorage = new TokenStorage();
 let token = tokenStorage.getToken();
 const services = new ExternalServices();
 const categorySelect = document.getElementById("selectSubject");
+const userInformation = await userInfo();
 
 export default class CardList {
   constructor(source, commentSource, element) {
@@ -20,7 +21,7 @@ export default class CardList {
   async init() {
     const list = await this.source.getData();
     this.list2 = await this.commentSource.getData();
-
+    
     const template = await loadTemplate("../templates/courseCard.html");
     this.commentTemplate = await loadTemplate("../templates/comment.html");
     renderList(
@@ -30,6 +31,7 @@ export default class CardList {
       this.prepareTemplate.bind(this),
       true
     );
+    
     // commentList(this.element, template, list2, this.prepareTemplate, true);
 
     // document.querySelector('.fa-comment').addEventListener('click', (e) => {
@@ -102,8 +104,7 @@ export default class CardList {
         e.preventDefault();
         const text = document.querySelector(".reply").value;
         const cardId = card.id;
-        console.log(cardId);
-        console.log(token);
+        
         const body = { text, cardId };
         const userInformation = await userInfo();
 
@@ -129,12 +130,10 @@ export default class CardList {
     // comment button event
     template.querySelector(".fa-comment").addEventListener("click", (e) => {
       comment.classList.toggle("active");
-      console.log(this.list2);
       const filtered = this.list2.filter((element) => {
         return card._id === element.source_id;
       });
       
-      console.log(filtered);
       renderList(
         comment,
         this.commentTemplate,
@@ -149,20 +148,55 @@ export default class CardList {
   prepareComment(template, comment) {
 
     template.querySelector(".author").innerHTML = comment.author;
-    template.querySelector(".content").innerHTML = comment.text;
+    template.querySelector(".courseCommentContent").innerHTML = comment.text;
     template.querySelector(".date").innerHTML = comment.createdAt;
+    template.querySelector(".comment")
+
+    // comment edit and delete display
+    if(comment.userId === userInformation['userId']){
+      template.querySelector('.displayCommentBtn').classList.add('display');  
+    }
+    
+    
+    //edit button
+    const editArea = template.querySelector('.editArea');
+    const content = template.querySelector('.courseCommentContent');
+    editArea.querySelector('.courseCommentEditBox').value = comment.text;
+    var on = false;
     template
       .querySelector(".commentEditBtn")
       .addEventListener("click", async (e) => {
         e.preventDefault();
-        console.log(comment);
-        // token = tokenStorage.getToken();
-        // const text = document.querySelector(".reply").value;
-        // const cardId = card.id;
-        // const body = { text, cardId };
-        // await services.commentPostRequest(body, token);
-        // await services.deleteCourseRequest(comment.id,token)
+        if (!on){
+          on = true;
+          editArea.classList.add('display');
+          content.classList.add('none');
+        } else {
+          on = false;
+          editArea.classList.remove('display');
+          content.classList.remove('none');
+        }
       });
+
+    template.querySelector('.commentEdit').addEventListener('click', async (e) =>{
+      e.preventDefault();
+      token = tokenStorage.getToken();
+      var editArea = e.target.parentNode.parentElement.parentElement.querySelector('.editArea');
+      
+      const body = {
+        text: editArea.querySelector('.courseCommentEditBox').value,
+        source_id: comment.source_id,      
+      };
+      
+      const res = await services.putComment('comment', body, comment._id, token);
+      if (res.code == 200){
+        alert("comment is changed successfully");
+        window.location.href = "../courses/index.html";
+      }
+    })
+      
+
+
     template
       .querySelector(".commentDeleteBtn")
       .addEventListener("click", async (e) => {
@@ -177,12 +211,10 @@ export default class CardList {
 }
 
 async function userInfo() {
-  console.log(token);
   if (token) {
     console.log("init");
     const res = await services.me(token);
-    console.log(res.userId);
-
     return { userId: res.userId, username: res.username };
   }
 }
+

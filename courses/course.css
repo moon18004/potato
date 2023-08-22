@@ -1,8 +1,8 @@
 .coursePost {
   padding-right: 25px;
-  max-width: 200px;
+  max-width: 100px;
   min-height: 50px;
-  margin: auto;
+  margin: auto; 
   font-size: x-large;
 }
 #selectSubject{
@@ -36,6 +36,11 @@
     box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.3);
   }
   
+.courseTop {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+}
   /* Add some padding inside the card container */
 .top {
     padding: 5px 16px;
@@ -175,6 +180,20 @@ input {
 }
 .commentDeleteBtn:hover .icon-text{
   opacity: 1;
+}
+.displayCommentBtn{
+  display: none;
+}
+.displayCommentBtn.display{
+  display:block;
+}
+
+/* content -> input when click comment edit */
+.courseCommentContent.none{
+  display:none;
+}
+.courseCommentEditBox{
+  width: 400px;
 }
 
 /* Heart button and Comment button in Course page */
