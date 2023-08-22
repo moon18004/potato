@@ -6,7 +6,7 @@ import TokenStorage from './token.js';
 
 const postID = getParam('id');
 console.log(postID);
-const url = `https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app//community/${postID}`;
+const url = `https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community/${postID}`;
 const source = new ExternalServices(url);
 
 // const post = new Post(source);

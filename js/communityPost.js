@@ -6,7 +6,7 @@ import CommunityComment from './communityComment.js';
 
 
 const postID = getParam('id');
-const url = `https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app//community/${postID}`;
+const url = `https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community/${postID}`;
 const source = new ExternalServices(url);
 const comments = document.querySelector('.com-cmts');
 console.log(comments);

@@ -26,9 +26,9 @@ export default class CommunityComment{
 
   }
   prepareTemplate(template, comment) {
-    
+    const date = dateCaculator(comment.createdAt);
     template.querySelector('.author').innerHTML = comment.author;
-    template.querySelector('.date').innerHTML = comment.createdAt;
+    template.querySelector('.date').innerHTML = date;
     template.querySelector('.content').innerHTML = comment.text;
     // console.log(comment);
     // console.log(this.userId);
@@ -91,4 +91,14 @@ export default class CommunityComment{
     // console.log(template);
     renderList(this.element, template, this.data, this.prepareTemplate.bind(this), true)
   }
+}
+
+function dateCaculator(date){
+  const formatter = new Intl.RelativeTimeFormat('en');
+  const today = new Date();
+  const started = new Date(date);
+  console.log(started);
+  const daysPassed = Math.ceil((started-today)/ (1000*60*60*24));
+  console.log(`day ${formatter.format(daysPassed,'day')}`);
+  return formatter.format(daysPassed,'day')
 }

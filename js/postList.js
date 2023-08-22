@@ -86,9 +86,10 @@ export default class PostList{
       // console.log(this.source);
       const res = await this.source.increaseView(post.id, post.view + 1);
     })
+    const date = dateCaculator(post.createdAt);
     template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
-    template.querySelector(".date").innerHTML = post.createdAt;
+    template.querySelector(".date").innerHTML = date;
     template.querySelector(".title").innerHTML += post.title;
     template.querySelector(".category").innerHTML = post.category;
     template.querySelector(".views").innerHTML = post.view;
@@ -98,3 +99,13 @@ export default class PostList{
     return template;
   }
 } 
+
+function dateCaculator(date){
+  const formatter = new Intl.RelativeTimeFormat('en');
+  const today = new Date();
+  const started = new Date(date);
+  console.log(started);
+  const daysPassed = Math.ceil((started-today)/ (1000*60*60*24));
+  console.log(`day ${formatter.format(daysPassed,'day')}`);
+  return formatter.format(daysPassed,'day')
+}
