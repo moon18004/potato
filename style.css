@@ -34,6 +34,8 @@ font-family: 'Trispace', sans-serif; */
   --color-line: #dcdce3;
   --color-navy: #194569;
   --color-pink: #AC8181;
+  --color-font2: #374151;
+  --color-selected : rgb(239, 243, 248);
   --font-main: 'Trispace', sans-serif;
   --font-sub: 'Fira Code', monospace;
 }
@@ -162,6 +164,10 @@ header.active {
 .profileBtn.display{
   display:inline-block;
 }
+.signoutBtn{
+  background-color: rgb(207, 63, 91);
+  color: var(--color-white);
+}
 
 /* **********************  Information ************************************ */
 #info{
@@ -283,6 +289,7 @@ header.active {
   padding-bottom: 20px;
   margin: auto;
   display: flex;
+  align-items: center;
 }
 .write{
   margin-left: 10px;
@@ -295,13 +302,17 @@ header.active {
   text-align:center;
   justify-content: center;
   align-items:center;
+  
 }
+
 .categories p{
-  margin: 0 20px;
+  padding: 10px 14px;
+  margin: 0 6px;
   cursor: pointer;
+  border-radius: 10px;
 }
 .categories .active{
-  background-color: gray; 
+  background-color: var(--color-selected);
 }
 
 .search{
@@ -329,6 +340,7 @@ header.active {
 .post-bottom{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .post-bottom p{
   margin-top: 0;
@@ -336,6 +348,48 @@ header.active {
 .amount span{
   margin: 0 4px 0 4px;
 }
+.write-btn{
+  background-color: royalblue;
+  padding: 10px;
+  color:var(--color-white);
+  border-radius: 10px;
+}
+/* .write-btn::before{
+  font-family: xeicon;
+  content: '\e9c4';
+
+} */
+
+.title{
+  font-weight: 600;
+  font-size: 16px;
+}
+.post >a > p{
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+.post .name { 
+  color : var(--color-font2);
+}
+.post-bottom{
+
+}
+.post-bottom .category, .post-bottom .amount{
+  font-weight: 500;
+  font-size: 14px;
+}
+.post-bottom .category{
+  color: royalblue;
+  line-height: 10px;
+  border: 1px solid var(--color-line);
+  padding: 6px 8px;
+  border-radius: 5px;
+  align-items: center;
+}
+
 
 /************************* posting page *****************************/
 .posting-body{

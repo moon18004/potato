@@ -40,16 +40,16 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   // console.log(data);
   // data = [json, ...data];
   
-  // const res = await services.postRequest(json, 'community', token);
+  const res = await services.postRequest(json, 'community', token);
   // console.log(res);
   
   // setLocalStorage('posts', data);
   // console.log(getLocalStorage('posts'));
   
   
-  // if(json.mainText !== "" && json.title !== ""){
-  //   location.assign("../community/index.html");
-  // }
+  if(json.mainText !== "" && json.title !== ""){
+    location.assign("../community/index.html");
+  }
   
 });
 

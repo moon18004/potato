@@ -82,7 +82,7 @@ export default class ExternalServices {
       return err;
     }
   }
-  async increaseView(id, num) {
+  async increaseView( id, num) {
     const view = { num };
     const options = {
       method: "PUT",
@@ -92,7 +92,7 @@ export default class ExternalServices {
       body: JSON.stringify(view),
     };
     try {
-      const response = await fetch(this.url + "/view/" + id, options).then(
+      const response = await fetch(baseURL + "community/view/" + id, options).then(
         convertToJson
       );
       console.log(response);

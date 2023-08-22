@@ -9,6 +9,9 @@ export default class Post{
     this.data = await this.source.getData();
     console.log(this.data);
     console.log(userId);
+
+    const res = await this.source.increaseView(this.data.id, this.data.view+1);
+    console.log(res);
     
     this.renderPost(this.data);
     if (this.data.userId === userId){
