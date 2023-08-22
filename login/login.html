@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
-  <script src="//code.jquery.com/jquery-latest.js"></script>
-  <script src="../js/login.js" type="module"></script>
-  <title>Document</title>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="header-inner">
-        <div class="logo">
-          <a href="../index.html"><img src="">Potato</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="../js/login.js" type="module"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-inner">
+          <div class="logo">
+            <a href="../index.html"><img src="" />Potato</a>
+          </div>
+          <div class="gnb">
+            <a href="../index.html">Home</a>
+            <a href="../info/index.html">Information</a>
+            <a href="../courses/index.html">Course</a>
+            <a href="../community/index.html">Community</a>
+          </div>
+          <div class="login">
+            <a href="./login/login.html" class="loginBtn">Sign in</a>
+            <a href="" class="signoutBtn">Sign Out</a>
+            <a href="../login/registration.html" class="signupBtn">Sign Up</a>
+          </div>
         </div>
-        <div class="gnb">
-          <a href="../index.html">Home</a>
-          <a href="../info/index.html">Information</a>
-          <a href="../courses/index.html">Courses</a>
-          <a href="../community/index.html">Community</a>
-        </div>
-        <div class="login">
-          <a href="./login/login.html" class="loginBtn">Sign in</a>
-          <a href="" class="signoutBtn">Sign Out</a>
-          <a href="../login/registration.html" class="signupBtn">Sign Up</a>
-          
-        </div>
-      </div>
-      <div class="trigger"></div>
-    </header>
-    <section class="section-login">
-      <form name = "login-form" class="login-form">
-        <div class="login-email">
-          <label for="email">Email</label>
-          <input type="email" name='email' class="loginEmail" placeholder="potato@potato.com">
-        </div>
-        <div class="login-pwd">
-          <label for="password" >Password</label>
-          <input type="password" name="password" class="loginPwd" >
-        </div>
-        <span class="err-msg"></span>
-        <div class="login-btns">
-          <button class="login-btn">Login</button>
-          <button class="reg"><a href="../login/registration.html">Sign up</a></button>
-        </div>
-      </form>
-      
-    </section>
-  </div>
-</body>
+        <div class="trigger"></div>
+      </header>
+      <section class="section-login">
+        <form name="login-form" class="login-form">
+          <div class="login-email">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="loginEmail"
+              placeholder="potato@potato.com"
+            />
+          </div>
+          <div class="login-pwd">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="loginPwd" />
+          </div>
+          <span class="err-msg"></span>
+          <div class="login-btns">
+            <button class="login-btn">Login</button>
+            <button class="reg">
+              <a href="../login/registration.html">Sign up</a>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
 </html>

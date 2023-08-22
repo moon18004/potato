@@ -171,25 +171,41 @@ export default class ExternalServices {
   }
 
   async postCourseRequest(json, page, userInfo, token) {
-    const a = await fetch(baseURL + page, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        author: userInfo['username'],
-        subject: json.category,
-        code: json.code,
-        text: json.mainText,
-        like: 0
-      }),
-    })
-      .then(convertToJson)
-      .then(alert("정상적으로 포스트 되었습니다."))
-      .then((window.location.href = "../courses/index.html"));
-    console.log(a);
+    const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+            author: userInfo['username'],
+            subject: json.category,
+            code: json.code,
+            text: json.text,
+            like: [],
+            // userId: userInfo['userId']
+        }),
+    };
+    console.log(baseURL);
+    console.log(json);
+    console.log(page);
+    console.log(userInfo);
+    console.log(token);
+    try {
+      const response = await fetch(baseURL + page,options).then(
+        convertToJson
+      )
+      console.log(response);
+      alert("정상적으로 작성 되었습니다.");
+      window.location.href = "../courses/index.html";
+      return response;
+    } catch (err) {
+      alert(err.message);
+      console.log(err);
+      return err;
+    }
   }
+
 
   async updateCourseRequest(json, token) {
     var id;

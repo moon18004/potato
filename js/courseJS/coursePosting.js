@@ -6,20 +6,26 @@ const tokenStorage = new TokenStorage();
 let token = tokenStorage.getToken();
 const services = new ExternalServices();
 
+init();
+
 // course post
 document
   .querySelector(".submit-coursePost")
   .addEventListener("click", async (e) => {
     e.preventDefault();
 
-    token = tokenStorage.getToken();
     const formElement = document.forms["posting-courseForm"];
     let json = formDataToJSON(formElement);
     console.log(json);
-    json.mainText = lineChange(json.mainText);
+    json.text = lineChange(json.mainText);
     const userInformation = await userInfo();
+    console.log(userInformation);
+    console.log(json);
     await services.postCourseRequest(json, "course/", userInformation, token);
   });
+document.querySelector(".coursePostCancel").addEventListener("click", (e) => {
+  window.location.href = "../courses/index.html";
+});
 
 function lineChange(text) {
   var formattedText = text.replace(/\n/g, "<br>");
@@ -28,13 +34,40 @@ function lineChange(text) {
   return formattedText;
 }
 
-async function userInfo(){
+async function userInfo() {
   console.log(token);
-    if (token) {
-      console.log('init')
-      const res = await services.me(token);
-      console.log(res.userId);
-
-      return { userId : res.userId, username: res.username };
-    }
+  if (token) {
+    console.log("init");
+    const res = await services.me(token);
+    return { userId: res.userId, username: res.username };
+  }
 }
+
+document.querySelector(".signoutBtn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  if (confirm("Do you want to sign out?")) {
+    tokenStorage.clearToken();
+    document.querySelector(".signoutBtn").classList.remove("display");
+    document.querySelector(".loginBtn").classList.remove("none");
+    document.querySelector(".profileBtn").classList.remove("display");
+    document.querySelector(".signupBtn").classList.remove("none");
+    window.location.href = "../courses/index.html";
+  }
+});
+
+async function init() {
+  console.log(token);
+  if (token) {
+    console.log("init");
+    const res = await source.me(token);
+    console.log(res);
+    if (res.code == 200) {
+      document.querySelector(".signoutBtn").classList.add("display");
+      document.querySelector(".profileBtn").classList.add("display");
+      document.querySelector(".loginBtn").classList.add("none");
+      document.querySelector(".signupBtn").classList.add("none");
+      return { userId: res.userId, username: res.username };
+    }
+  }
+}
+

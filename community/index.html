@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../js/community.js" type="module"></script>
-  <script src="//code.jquery.com/jquery-latest.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="header-inner">
-        <div class="logo">
-          <a href="../index.html"><img src="../images/temp_logo.png"></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../js/community.js" type="module"></script>
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-inner">
+          <div class="logo">
+            <a href="../index.html"><img src="../images/temp_logo.png" /></a>
+          </div>
+          <div class="gnb">
+            <a href="../index.html">Home</a>
+            <a href="../info/index.html">Information</a>
+            <a href="../courses/index.html">Course</a>
+            <a href="./index.html">Community</a>
+          </div>
+          <div class="login">
+            <a href="../login/login.html" class="loginBtn">Sign in</a>
+            <a href="../login/registration.html" class="signupBtn">Sign Up</a>
+            <a href="" class="profileBtn">Profile</a>
+            <a href="" class="signoutBtn">Sign Out</a>
+          </div>
         </div>
-        <div class="gnb">
-          <a href="../index.html">Home</a>
-          <a href="../info/index.html">Information</a>
-          <a href="../courses/index.html">Courses</a>
-          <a href="./index.html">Community</a>
-        </div>
-        <div class="login">
-          <a href="../login/login.html" class="loginBtn">Sign in</a>
-          <a href="../login/registration.html" class="signupBtn">Sign Up</a>
-          <a href="" class="profileBtn">Profile</a>
-          <a href="" class="signoutBtn">Sign Out</a>
-        </div>
-      </div>
-      
-      <div class="trigger"></div>
-    </header>
-    
-    
-    <section class="posts_body">
-      <section class="posts_bar">
-        <div class="write">
-          <a href="" class="write-btn"><i class="xi-pen-o"></i> Write</a>
-        </div>
-        <div class="categories">
-          <p data-cat = "all">All</p>
-          <p data-cat = "question">Question</p>
-          <p data-cat = "free">Dog Sound</p>
-          <p data-cat = "social">Social</p>
-          <p data-cat = "tip">Tip</p>
-          <p data-cat = "etc">Etc</p>
-        </div>
-      </section>
-      <section class="search">
-        <div class="search_form">
-          <form action="">
-            <select class ="searchOption" name="option" id="">
-              <option value="username">Author</option>
-              <option value="title">Title</option>
-              <option value="text">Content</option>
-            </select>
-            <input type="text" class ="searchText">
-            <button class="searchBtn">Search</button>
-          </form>
-        </div>
-      </section>
-      <section class="posts">
-        <!-- <div class="post">
+
+        <div class="trigger"></div>
+      </header>
+
+      <section class="posts_body">
+        <section class="posts_bar">
+          <div class="write">
+            <a href="" class="write-btn"><i class="xi-pen-o"></i> Write</a>
+          </div>
+          <div class="categories">
+            <p data-cat="all">All</p>
+            <p data-cat="question">Question</p>
+            <p data-cat="free">Dog Sound</p>
+            <p data-cat="social">Social</p>
+            <p data-cat="tip">Tip</p>
+            <p data-cat="etc">Etc</p>
+          </div>
+        </section>
+        <section class="search">
+          <div class="search_form">
+            <form action="">
+              <select class="searchOption" name="option" id="">
+                <option value="username">Author</option>
+                <option value="title">Title</option>
+                <option value="text">Content</option>
+              </select>
+              <input type="text" class="searchText" />
+              <button class="searchBtn">Search</button>
+            </form>
+          </div>
+        </section>
+        <section class="posts">
+          <!-- <div class="post">
           <a href="">
             <p class="name">Moon - <span class="date">2022.03.12</span></p>
             <h3 class="title">질문있습니다.</h3>
@@ -73,13 +75,11 @@
             </div>
           </a>
         </div> -->
+        </section>
+        <div class="pagination-wrapper clearfix">
+          <ul class="pagination float--right" id="pages"></ul>
+        </div>
       </section>
-      <div class="pagination-wrapper clearfix">
-        <ul class="pagination float--right" id="pages">
-          
-        </ul> 
-      </div>
-    </section>
-  </div>
-</body>
+    </div>
+  </body>
 </html>
