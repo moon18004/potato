@@ -2,7 +2,7 @@ import ExternalServices from "./ExternalServices.js";
 import PostList from './postList.js';
 import TokenStorage from './token.js';
 
-const url = 'http://localhost:8080/community';
+const url = 'https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community';
 const source = new ExternalServices(url);
 const element = document.querySelector(".posts");
 const postList = new PostList(source, element);

@@ -1,5 +1,6 @@
-const baseURL = "https://byuifriendserver.onrender.com/";
-const localURL = "http://localhost:8080/";
+// const baseURL = "https://byuifriendserver.onrender.com/";
+const baseURL = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/";
+// const baseURL = "http://localhost:8080/";
 import { getParam } from "./utils.js";
 
 async function convertToJson(res) {
@@ -73,7 +74,7 @@ export default class ExternalServices {
       body: JSON.stringify(post),
     };
     try {
-      const response = await fetch(localURL + url, options).then(convertToJson);
+      const response = await fetch(baseURL + url, options).then(convertToJson);
       console.log(response);
       return response;
     } catch (err) {
@@ -116,7 +117,7 @@ export default class ExternalServices {
     };
     try {
       const response = await fetch(
-        localURL + "community/num/" + id,
+        baseURL + "community/num/" + id,
         options
       ).then(convertToJson);
       console.log(response);
@@ -129,7 +130,7 @@ export default class ExternalServices {
 
   async getComments(url, post_id) {
     // console.log(post_id);
-    return fetch(localURL + url + "/" + post_id)
+    return fetch(baseURL + url + "/" + post_id)
       .then(convert)
       .then((data) => data);
   }
@@ -139,7 +140,7 @@ export default class ExternalServices {
       headers: { Authorization: `Bearer ${token}` },
     };
     try {
-      const response = await fetch(localURL + url + "/" + comment_id, options);
+      const response = await fetch(baseURL + url + "/" + comment_id, options);
       return response.status;
     } catch (err) {
       return err;
@@ -157,7 +158,7 @@ export default class ExternalServices {
     };
     try {
       const response = await fetch(
-        localURL + url + "/" + comment_id,
+        baseURL + url + "/" + comment_id,
         options
       ).then(convertToJson);
       console.log(response);
@@ -232,10 +233,10 @@ export default class ExternalServices {
       },
       body: JSON.stringify(email),
     };
-    console.log(`${localURL}auth/email`);
+    console.log(`${baseURL}auth/email`);
     // let response;
     try {
-      const response = await fetch(localURL + "auth/email", options).then(
+      const response = await fetch(baseURL + "auth/email", options).then(
         convertToJson
       );
       return response;
@@ -255,7 +256,7 @@ export default class ExternalServices {
     };
     try {
       const response = await fetch(
-        localURL + "auth/check/" + code,
+        baseURL + "auth/check/" + code,
         options
       ).then(convertToJson);
       return response;
@@ -298,7 +299,7 @@ export default class ExternalServices {
       },
       body: JSON.stringify(post),
     };
-    const response = await fetch(localURL + url, options).then(convertToJson);
+    const response = await fetch(baseURL + url, options).then(convertToJson);
     console.log(response);
     return response;
   }
@@ -308,7 +309,7 @@ export default class ExternalServices {
       headers: { Authorization: `Bearer ${token}` },
     };
     try {
-      const response = await fetch(localURL + "auth/me", options).then(
+      const response = await fetch(baseURL + "auth/me", options).then(
         convertToJson
       );
       return response;

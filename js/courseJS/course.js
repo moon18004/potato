@@ -3,10 +3,10 @@ import ExternalServices from "../ExternalServices.js";
 import CardList from './cardList.js';
 
 // const url = '../courses/cards.json';
-const url = 'https://byuifriendserver.onrender.com/course';
+const url = 'https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/course';
 const source = new ExternalServices(url);
 
-const commentUrl = 'https://byuifriendserver.onrender.com/comment';
+const commentUrl = 'https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/comment';
 const commentSource = new ExternalServices(commentUrl);
 
 const element = document.querySelector(".cards");
