@@ -54,6 +54,9 @@ document.querySelector(".edit-btn").addEventListener('click', async (e) =>{
   formElement.reportValidity();
   let json = formDataToJSON(formElement);
   token = tokenStorage.getToken();
+  let text = json.mainText;
+  text = text.replaceAll(/(\n|\r\n)/g, "<br>");
+  json.mainText = text;
   console.log(token);
   const res = await source.putData(json, token);
   if(res.code ==200){

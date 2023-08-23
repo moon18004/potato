@@ -35,6 +35,8 @@ font-family: 'Trispace', sans-serif; */
   --color-navy: #194569;
   --color-pink: #AC8181;
   --color-font2: #374151;
+  --color-red: rgb(207, 63, 91);
+  --color-bgc: rgb(240, 245, 251);
   --color-selected : rgb(239, 243, 248);
   --font-main: 'Trispace', sans-serif;
   --font-sub: 'Fira Code', monospace;
@@ -271,7 +273,17 @@ header.active {
   opacity: 1;
   visibility: visible;
 }
+/* *************  community edit page*****************c */
 
+.btn .edit-btn{
+  width: 80px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-blue);
+  color:var(--color-white);
+
+}
 
 /**************************** community ***********************************/
 .posts_body{
@@ -390,8 +402,23 @@ header.active {
   align-items: center;
 }
 
+.mainText .section1{
+  color: royalblue;
+  display: flex;
+  font-weight: 600;
+  font-size: 16px;
+}
+.mainText .section2{
+  margin-bottom: 20px
+}
+
 
 /************************* posting page *****************************/
+.post.announcement{
+  background-color: var(--color-bgc);
+
+}
+
 .posting-body{
   width: 1300px;
   margin: auto;
@@ -401,6 +428,60 @@ header.active {
   margin:auto;
   text-align:center;
 }
+.posting-form select{
+  width: 800px;
+  display: block;
+  margin:auto;
+  border: 1px solid var(--color-line);
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.posting-form > div{
+  margin-bottom: 10px;
+}
+.posting-form label, .posting-form input{
+  display: block;
+}
+.posting-form label{
+  text-align:left;
+  margin-left: 20px
+}
+.posting-form input{
+  margin:auto;
+  width: 800px;
+  border: 1px solid var(--color-line);
+  border-radius: 5px;
+  padding: 8px;
+}
+.posting-form textArea{
+  border-radius: 5px;
+  width: 800px;
+  resize: none;
+  border: 1px solid var(--color-line);
+  padding: 8px;
+}
+.posting-form textArea:focus{
+  outline: 0;
+}
+.submit-post, .cancel-btn{
+  padding: 8px;
+  width: 80px;
+  border:none;
+  border-radius: 5px;
+  color:var(--color-white);
+}
+.submit-post{
+  background-color: var(--color-blue2);
+}
+.cancel-btn{
+  background-color: rgb(207, 63, 91);
+  
+}
+.cancel-btn a {
+  color:var(--color-white);
+}
+
 
 .postBox, .commentsBox{
   width: 840px;
@@ -477,6 +558,7 @@ header.active {
 }
 
 
+
 .comments{
   padding: 10px;
 }
@@ -516,6 +598,38 @@ header.active {
 }
 .postBtns.display{
   display:block;
+}
+.post-info{
+  display: flex;
+  align-items: center;
+}
+.postInfo .author{
+  margin-bottom : 0px;
+}
+.postInfo .dateP{
+  margin-top: 0;
+}
+.postInfo .view::before{
+  color: var(--color-blue);
+  font-family: xeicon;
+  content: '\e950';
+}
+.postBox .title{
+  font-size: 24px;
+
+}
+.postBox .editBtn, .postBox .postDelete{
+  width: 60px;
+  padding: 8px;
+  border: none;
+  color:white;
+  border-radius: 10px;
+}
+.postBox .editBtn{
+  background-color: var(--color-navy);
+}
+.postBox .postDelete{
+  background-color: var(--color-pink);
 }
 
 /*************** Community comment************************ */
@@ -571,13 +685,22 @@ header.active {
 
 
 /* registration */
-
+.regi-header h2{
+  font-family: var(--font-sub);
+  font-weight: 700;
+}
+.regi-header h2, .regi-header p{
+  text-align:center;
+}
+.regi-header p{
+  font-size: 16px;
+}
 .registration{
   width: 1300px;
   margin: auto;
 }
 .registration form{
-  width: 800px;
+  width: 600px;
   margin: auto;
 }
 .registration form div{
@@ -597,6 +720,59 @@ header.active {
 .user-info.display{
   display:block;
 }
+/* .reg-form{
+  width: 600px;
+  margin: auto;
+} */
+.reg-form label{
+  font-weight:500;
+  font-size: 16px;
+  /* left:0; */
+  text-align:left;
+  margin-left: 100px;
+  display: block;
+}
+.reg-form input{
+  border: 1px solid var(--color-line);
+  padding: 8px;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+  display: block;
+}
+.reg-form button{
+  background-color: var(--color-navy);
+  color:var(--color-white);
+  padding: 4px;
+  border:none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left:100px;
+}
+.email-msg.success, .opt-msg.success{
+  color: royalblue;
+}
+.email-msg.fail, opt-msg.fail{
+  color: crimson;
+}
+.user-info div{
+  margin-bottom: 10px;
+}
+.reg-form .sign-up{
+  width: 400px;
+  padding: 8px 10px;
+  /* font-size: 1; */
+  background-color: var(--color-blue);
+  font-size: 18px;
+}
+.user-info .err-msg{
+  color:crimson;
+  text-align:center;
+  
+}
+
+
 
 /* login */
 .section-login{
@@ -604,12 +780,52 @@ header.active {
   margin: auto;
 }
 .login-form{
-  width: 800px;
+  width: 600px;
   margin: auto;
+}
+.forgotPwd{
+  margin-left: 100px;
+
+}
+.forgotPwd a{
+  font-size: 14px;
 }
 .section-login form div{
   width: 600px;
   text-align:cneter;
+  margin-bottom: 10px;
+}
+.login-form label{
+  margin-left: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+}
+.login-form input{
+  border: 1px solid var(--color-line);
+  padding: 8px;
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+  width: 400px;
+}
+.login-form .login-btn{
+  /* display: flex; */
+  display: block;
+  margin: auto;
+  border: 1px solid var(--color-line);
+  color:var(--color-white);
+  text-align:center;
+  width: 400px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  /* font-size: 1; */
+  background-color: var(--color-blue);
+  font-size: 18px;
+}
+.login-form .reg{
+  color: royalblue;
+  text-decoration: underline;
 }
 
 @media(max-width: 768px){

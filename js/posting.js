@@ -29,6 +29,10 @@ document.querySelector(".submit-post").addEventListener("click", async (e) => {
   let json = formDataToJSON(formElement);
   console.log("hihihihi");
   console.log(json);
+
+  let text = json.mainText;
+  text = text.replaceAll(/(\n|\r\n)/g, "<br>");
+  json.mainText = text;
   
   // console.log(json.mainText);
   
