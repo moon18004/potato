@@ -656,22 +656,7 @@ header.active {
   display: inline-block;
 }
 
-.editArea{
-  display:none;
-}
 
-.editArea.display{
-  display: flex;
-  justify-content: center;
-}
-.editArea .editBox{
-  width: 80%;
-  resize:none;
-  height: 100px;
-}
-.editBtns button{
-  display:block;
-}
 .views::before{
   /* display:inline-block; */
   font-family: xeicon;

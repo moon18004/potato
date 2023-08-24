@@ -88,11 +88,12 @@ h4.author{
 }
 p.author{
   font-weight: 400;
-  font-size: 22px;
+  font-size: 18px;
   width: 150px;
   max-width: 180px;
   padding-left: 40px;
   padding-right: 20px;
+  margin: 0px;
 }
 .content{
   width: 400px;
@@ -168,6 +169,7 @@ input {
 }
 .commentDetail{
   width: 892px;
+  min-height: 30px;
 }
 .commentReplyBtn,
 .commentDeleteBtn,
@@ -221,8 +223,11 @@ input {
 }
 
 .courseCommentContent{
+  font-size: small;
   width: 530px;
   word-wrap: break-word;
+  margin: 5px 0px 5px 0px;
+  max-height: 300px;
 }
 
 /* content -> input when click comment edit */
@@ -255,3 +260,30 @@ input {
   fill: red;
 }
 
+/* comment edit input area*/
+.editArea{
+  width:530px;
+  display:none;
+  align-items: center;
+}
+
+.editArea.display{
+  display: flex;
+  justify-content: center;
+}
+.editArea .editBox{
+  width: 80%;
+  resize:none;
+  height: 100px;
+}
+.editBtns button{
+  display:block;
+}
+
+.courseCommentEditBox{
+  width: 480px;
+}
+.commentEdit{
+  cursor: pointer;
+  font-size: medium;
+}
