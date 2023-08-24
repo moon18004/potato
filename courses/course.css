@@ -1,9 +1,15 @@
-.coursePost {
-  padding-right: 25px;
-  max-width: 100px;
-  min-height: 50px;
+#courseWriteURL{
+  color: white;
+  width: 110px;
+}
+.courseWrite {
   margin: auto; 
-  font-size: x-large;
+  background-color: royalblue;
+  padding: 10px;
+  width: 110px;
+  align-items: center;
+  
+  border-radius: 10px;
 }
 #selectSubject{
   margin-right: 25px;
@@ -19,7 +25,7 @@
   font-size: larger;
 }
 .card {
-  border: 2px solid gray;
+  border: 4px solid gray;
   border-radius: 20px 20px 20px 20px;
   min-height: 300px;
   width: 900px;
@@ -44,7 +50,7 @@
   /* Add some padding inside the card container */
 .top {
     padding: 5px 16px;
-    padding: 40px 40px 0px 40px;
+    padding: 40px 30px 0px 40px;
     display: flex;
   }
 
@@ -59,19 +65,33 @@
 }
 
 .subject{
-  padding-right: 30px;
+  font-weight: 550;
+  font-size: 22px;
+  width: 100px;
+  margin-right: 50px;
 }
 
 .classcode{
-  padding-right: 400px;
+  font-weight: 550;
+  font-size: 22px;
+  width: 550px;
 }
 
-.date{
-  padding-left: 10px;
+p.date{
+  width: 100px;
 }
-
-.author{
-  padding-left: 50px;
+h4.author{
+  padding-left: 40px;
+  width: 400px;
+  font-weight: 400;
+  font-size: 22px;
+}
+p.author{
+  font-weight: 400;
+  font-size: 22px;
+  width: 150px;
+  max-width: 180px;
+  padding-left: 40px;
   padding-right: 20px;
 }
 .content{
@@ -80,7 +100,8 @@
 
 .authors{
   display: flex;
-  max-height: 30px;
+  padding-left: 50px;
+  max-height: 40px;
 }
 
 .textBox{
@@ -104,21 +125,24 @@ button {
 
 .circleBorder {
   display: inline-block;
-  padding: 10px;
+  padding: 12px;
   font-size: 24px;
   text-align: center;
   border: 2px solid #333;
   border-radius: 50%; /* 테두리를 원 형태로 만듦 */
 }
 input {
+  margin-left:10px;
   width: 80%;
   height: 40px;
 }
 
 .writeComment {
+  width: 892px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 /* flex for update and delete buttons */
@@ -133,6 +157,7 @@ input {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
+  display: none;
 }
 
 .updateCourse, .deleteCourse {
@@ -141,7 +166,9 @@ input {
   display: inline-block;
   cursor: pointer;
 }
-
+.commentDetail{
+  width: 892px;
+}
 .commentReplyBtn,
 .commentDeleteBtn,
 .commentEditBtn{
@@ -184,14 +211,25 @@ input {
 .displayCommentBtn{
   display: none;
 }
+.updateAndDelete.display{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
 .displayCommentBtn.display{
   display:block;
+}
+
+.courseCommentContent{
+  width: 530px;
+  word-wrap: break-word;
 }
 
 /* content -> input when click comment edit */
 .courseCommentContent.none{
   display:none;
 }
+
 .courseCommentEditBox{
   width: 400px;
 }

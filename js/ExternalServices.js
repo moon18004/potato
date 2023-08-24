@@ -214,7 +214,6 @@ export default class ExternalServices {
     } else {
       id = json.id;
     }
-    
     const options = {
       method: "PUT",
       headers: {
@@ -224,8 +223,7 @@ export default class ExternalServices {
       body: JSON.stringify({
         subject: json.subject,
         code: json.code,
-        text: json.text,
-        like: json.like
+        text: json.text
       }),
     };
     try {

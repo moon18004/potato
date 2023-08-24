@@ -23,9 +23,7 @@ document
     console.log(json);
     await services.postCourseRequest(json, "course/", userInformation, token);
   });
-document.querySelector(".coursePostCancel").addEventListener("click", (e) => {
-  window.location.href = "../courses/index.html";
-});
+
 
 function lineChange(text) {
   var formattedText = text.replace(/\n/g, "<br>");
@@ -59,7 +57,7 @@ async function init() {
   console.log(token);
   if (token) {
     console.log("init");
-    const res = await source.me(token);
+    const res = await services.me(token);
     console.log(res);
     if (res.code == 200) {
       document.querySelector(".signoutBtn").classList.add("display");

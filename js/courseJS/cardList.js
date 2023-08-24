@@ -8,6 +8,8 @@ let token = tokenStorage.getToken();
 const services = new ExternalServices();
 const categorySelect = document.getElementById("selectSubject");
 const userInformation = await userInfo();
+// display course's edit and delete
+let cardArray = [];
 
 export default class CardList {
   constructor(source, commentSource, element) {
@@ -31,24 +33,24 @@ export default class CardList {
       this.prepareTemplate.bind(this),
       true
     );
-    
-    // commentList(this.element, template, list2, this.prepareTemplate, true);
-
-    // document.querySelector('.fa-comment').addEventListener('click', (e) => {
-    //   document.querySelector('.comment').classList.toggle('active');
-
-    // })
+    console.log(list);
   }
-
+  
   prepareTemplate(template, card) {
-    
     const comment = template.querySelector(".comment");
     
     template.querySelector(".subject").innerHTML = card.subject;
     template.querySelector(".classcode").innerHTML = card.code;
     template.querySelector(".date").innerHTML = card.createdAt;
+    const date = timeAgo(card.createdAt);
+    template.querySelector(".date").innerHTML = date;
     template.querySelector(".author").innerHTML = card.author;
     template.querySelector(".textBox").innerHTML = card.text;
+    
+    // comment edit and delete display
+    if(card.userId === userInformation['userId']){
+      template.querySelector('.updateAndDelete').classList.add('display');  
+    } 
     
     template.querySelector(
       ".updateCourse"
@@ -141,7 +143,6 @@ export default class CardList {
         this.prepareComment,
         true
       );
-      console.log(`comment` + comment);
     });
     return template;
   }
@@ -149,10 +150,12 @@ export default class CardList {
 
     template.querySelector(".author").innerHTML = comment.author;
     template.querySelector(".courseCommentContent").innerHTML = comment.text;
-    template.querySelector(".date").innerHTML = comment.createdAt;
+    const date = timeAgo(comment.createdAt);
+    template.querySelector(".date").innerHTML = date;
     template.querySelector(".comment")
 
     // comment edit and delete display
+    console.log(comment)
     if(comment.userId === userInformation['userId']){
       template.querySelector('.displayCommentBtn').classList.add('display');  
     }
@@ -218,3 +221,36 @@ async function userInfo() {
   }
 }
 
+const timeAgo = (data) => {
+  const date = new Date(data);
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + ' years ago';
+  }
+
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + ' months ago';
+  }
+
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + ' days ago';
+  }
+
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + ' hours ago';
+  }
+
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + ' minutes ago';
+  }
+
+  if(seconds < 10) return 'just now';
+
+  return Math.floor(seconds) + ' seconds ago';
+};
