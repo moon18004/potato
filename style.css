@@ -659,6 +659,22 @@ header.active {
 .info .data p {
   display: inline-block;
 }
+.editArea{
+  display:none;
+}
+
+.editArea.display{
+  display: flex;
+  justify-content: center;
+}
+.editArea .editBox{
+  width: 80%;
+  resize:none;
+  height: 100px;
+}
+.editBtns button{
+  display:block;
+}
 
 
 .views::before{
