@@ -1,0 +1,60 @@
+
+.displayCommentBtn{
+  display: none;
+}  
+.displayCommentBtn.display{
+  display:block;
+  justify-content: right;
+}
+
+button {
+  border: none;
+  background-color:transparent;
+}
+
+.updateCourse:hover .icon-text {
+  opacity: 1; /* 아이콘에 마우스를 올렸을 때 텍스트를 나타나게 함 */
+}
+.deleteCourse:hover .icon-text {
+  opacity: 1; /* 아이콘에 마우스를 올렸을 때 텍스트를 나타나게 함 */
+}
+.commentReplyBtn:hover .icon-text{
+  opacity: 1;
+}
+.commentEditBtn:hover .icon-text{
+  opacity: 1;
+}
+.commentDeleteBtn:hover .icon-text{
+  opacity: 1;
+}
+
+.updateAndDelete.display{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+hr{
+  margin: 0px;
+}
+/* content -> input when click comment edit */
+.courseCommentContent.none{
+  display:none;
+}
+
+.clickHeart.clicked {
+  color: red;
+  fill: red;
+}
+
+.commentTop{
+  display: flex;
+}
+
+.commentEdit{
+  cursor: pointer;
+  font-size: medium;
+}
+
+.reply{
+  width: 85%;
+}

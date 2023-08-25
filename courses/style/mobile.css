@@ -1,0 +1,200 @@
+/* mobile view */
+@media (max-width: 600px) {
+    div.header-inner{
+        width: 100%;
+    }
+    .twoRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+    }
+    .bodyBar{
+        padding: 100px 0px 20px 0px;
+    }
+    .courseTop {
+        margin: auto;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    #courseWriteURL{
+        color: white;
+        font-size:small;
+    }
+    .courseWrite {
+        margin: 0px; 
+        background-color: royalblue;
+        padding: 10px;
+        width: 25%;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px 0px 10px;
+        border-radius: 10px;
+    }
+    #selectSubject{
+        margin-right: 25px;
+        border-radius: 20px 20px 20px 20px;
+        width:30%; 
+        height: 50px; 
+        font-size: small;
+    }
+    
+    .cards{
+        padding: 0px;
+    }
+    .card {
+        border: 4px solid gray;
+        border-radius: 20px 20px 20px 20px;
+        min-height: 300px;
+        width: 98%;
+        margin: 5px;
+        /* position: relative; */
+        text-align: left;
+        font-family: arial;
+    }
+    
+    /* Add some padding inside the card container */
+    .top {
+        padding: 20px 5px 0px 5px;
+        display: flex;
+        width: 98%;
+        height: 50px;
+    }
+    .subject{
+        font-weight: 550;
+        font-size: 22px;
+        margin: 0px;
+        width: 80px;
+    }
+    .classcode{
+        font-weight: 550;
+        font-size: 22px;
+        width: 120px;
+        margin: 0px;
+    }
+    h4.date{
+        margin:0px;
+    }
+    p.date{
+        font-size: 5px;
+        width: 30%;
+        margin: 0px;
+    }
+    .textBox{
+        border: 2px solid gray;
+        border-radius: 20px 20px 20px 20px;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 98%;
+        min-height: 100px;
+      }
+    .authors{
+        padding-left: 10px;
+    }
+    h4.author{
+        width: 200px;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    /* course comment */
+    p.author{
+        font-weight: 400;
+        font-size: 16px;
+        width: 40%;
+        padding-left: 10px;
+        padding-right: 20px;
+        margin: 0px;
+    }
+    .comments{
+        padding: 0px;
+    }
+    input {
+        margin-left:10px;
+        width: 70%;
+        height: 30px;
+    }
+    .writeComment {
+        width: 98%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+        margin: auto;
+    }
+    .updateAndDelete {
+        padding: 0px 30px 0px 30px;
+        width: 100%;
+        flex-direction: row;
+        display: none;
+    }
+    .commentDetail{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 30px;
+    }
+    .commentReplyBtn,
+    .commentDeleteBtn,
+    .commentEditBtn{
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .icon-text {
+        padding-top: 20px;
+        position: absolute;
+          /* 텍스트를 아이콘 위에 표시하도록 조정 */
+        left: 50%;
+        
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+        opacity: 0; /* 처음에는 텍스트 숨김 */
+        transition: opacity 0.3s ease-in-out;
+        font-size: small;
+    }
+      
+    .courseCommentContent{
+        font-size: small;
+        padding: 0px 10px 0px 10px;
+        width: 100%;
+        word-wrap: break-word;
+        margin: 10px 0px 10px 0px;
+    }
+    .courseCommentEditBox{
+        width: 80%;
+    }
+    /* Heart button and Comment button in Course page */
+  .heartCommentBtn {
+    margin-left: 20px;
+    display: flex;
+  }
+  .clickHeart, .clickComment{
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  /* comment edit input area*/
+  .editArea{
+    display:none;
+    align-items: center;
+  }
+  .editArea.display{
+    display: flex;
+    justify-content: center;
+  }
+}
