@@ -422,6 +422,7 @@ header.active {
 .posting-body{
   width: 1300px;
   margin: auto;
+  display: flex;
 }
 .posting-form{
   width: 840px;
@@ -584,12 +585,7 @@ header.active {
 
 .main-text textarea {
   white-space: pre-wrap;
-}
-
-/* comment  */
-.commentDetail {
-  display: flex;
-  align-items: center;
+  width: 750px;
 }
 
 /* **************  community post ******************* */
@@ -926,4 +922,38 @@ header.active {
     padding-left: 50px;
   }
 }
+
+
+/* full pc view: (course) write and update page*/
+@media(min-width: 1200px){
+  .courseAnnouncement{
+    min-width: 550px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color-line);
+    border-color: black;
+    padding: 10px;
+  }
+  .firstSentence{
+    display: flex;
+  }
+  .firstSentence p{
+    margin: 0px;
+  }
+  .firstParagraph{
+    font-size: small;
+  }
+  textarea{
+    padding: 20px;
+  }
+}
+
+.bad{
+  color: red;
+}
+.good{
+  color: blue;
+}
+
+
 

@@ -6,8 +6,9 @@ const tokenStorage = new TokenStorage();
 let token = tokenStorage.getToken();
 const services = new ExternalServices();
 
-await getCourse();
 init();
+await getCourse();
+
 
 // course update
 document
@@ -41,7 +42,6 @@ async function getCourse() {
   document.querySelector(".code").value = course.code;
   document.querySelector(".textArea").value = course.text;
 }
-
 
 document.querySelector(".signoutBtn").addEventListener("click", async (e) => {
   e.preventDefault();

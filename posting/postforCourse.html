@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Potato</title>
+    <title>Potato</title>
+    <link rel="icon" type= "imge/png" href="../images/potatos.png">
     <link rel="stylesheet" href="../style.css" />
     <script src="//code.jquery.com/jquery-latest.js"></script>
     <script src="../js/courseJS/coursePosting.js" type="module"></script>
@@ -34,10 +35,35 @@
         <div class="trigger"></div>
       </header>
       <section class="posting-body">
+        <div class="courseAnnouncement">
+          <div class="firstParagraph">
+            <div class="firstSentence">
+              <p>Hi! This is Speaking Potato.</p>
+            <img src="../images/potatos.png" alt="speakingPotato" style="width: 40px; height: 40px;">
+            </div>
+            <p>We aim to share insightful and valuable information with everyone.</p>
+            <p>Below, you'll find guidance on good examples and content to avoid:</p>  
+            <ul>
+              <p class="good">Good Examples</p>
+              <li>Emphasize positive aspects of the professor's teaching.</li>
+              <li>Summarize the key points covered in the lecture.</li>
+              <li>Provide solutions for challenging parts and how to overcome them.</li>
+              <li>Highlight memorable moments from the lecture.</li>
+              <li>Recommend preparatory materials for better understanding of the lecture.</li>
+              <li>Suggest additional topics that could be covered to enhance learning.</li>
+            </ul>
+            <ul>
+              <p class="bad">Poor Examples</p>
+              <li>Negative criticism of professors or lectures.</li>
+              <li>Mention of inappropriate methods to improve grades.</li>
+            </ul>
+          </div>
+        </div>
         <form name="posting-courseForm" class="posting-courseForm" action="">
           <div class="select-category">
             <label for="category">Subject</label>
             <select type="radio" name="category">
+              <option selected="selected" value="">select subject</option>
               <option value="ACTV">Activities</option>
               <option value="AGBS">Agribusiness</option>
               <option value="AGED">Agriculture Education</option>
@@ -54,7 +80,6 @@
               <option value="ACCT">Accounting</option>
               <option value="BUS">Business</option>
               <option value="BA">Business Analytics</option>
-              <option selected="selected" value="">All</option>
               <option value="CHEM">Chemistry</option>
               <option value="CHLD">Child Studies</option>
               <option value="CHIN">Chinese</option>
@@ -141,12 +166,11 @@
               <option value="WDD">Web Design Development</option>
               <option value="WELD">Welding</option>
             </select>
+            <label for="code" >Class Code</label>
+            <input type="text" placeholder="ex) cse110" name="code" required />
 
-            <label for="code">Class Code</label>
-            <input type="text" name="code" required />
-
-            <label for="satisfy">Satisfaction</label>
-            <input
+            <!-- <label for="satisfy">Satisfaction</label> -->
+            <!-- <input
               type="range"
               min="1"
               max="100"
@@ -154,31 +178,33 @@
               class="slider"
               id="myRange"
             />
-          </div>
+          </div> -->
 
           <div class="main-text">
             <label for="mainText"></label>
             <textarea
               name="mainText"
               id="textArea"
-              cols="90"
-              rows="16"
+              cols="70"
+              rows="32"
               required
             >
-- 교수:
-- 수업에 대한 간단 요약:
-- 수업에서 가장 어렵거나 기억에 남는 것: 
-- 학기 시작 전 혹은 학기 동안 공부하면 좋은 것들: 
-- 이 수업의 아쉬웠던 부분: 
-- 점수 잘 받기위한? 이 수업에서 제대로 배우기 위해서 어떤 식으로 하면 좋을지 피드백? 
-          </textarea
-            >
+>> Professor:
+
+>> Briefly explain the class:
+            
+>> Memorable moments from the lecture:
+            
+>> Preparatory materials for understanding of the lecture:
+            
+>> ETC:
+            </textarea>
           </div>
           <div class="btn">
+            <button class="submit-coursePost">post</button>
             <button class="coursePostCancel">
               <a href="../courses/index.html">cancel</a>
             </button>
-            <button class="submit-coursePost">post</button>
           </div>
         </form>
       </section>

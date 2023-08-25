@@ -1,26 +1,29 @@
 <hr>
 <form class="commentDetail">
-  <p class="author"></p>
-  <p class="courseCommentContent"></p>
-  <div class="editArea">
-    <input class="courseCommentEditBox" name="" id="" cols="50" rows="10"></textarea>
-    <div class="editBtns">
-      <button class="commentEdit">edit</button>
+  <div class="commentTop">
+    <p class="author"></p>
+    <p class="date"></p>
+    <div class="displayCommentBtn">
+      <button class="commentEditBtn">
+        <i class="fa-solid fa-rotate fa-2x"></i>
+        <span class="icon-text">edit</span>
+      </button>
+      <button class="commentDeleteBtn">
+        <i class="fa-solid fa-trash-can fa-2x"></i>
+        <span class="icon-text">delete</span>
+      </button>
     </div>
   </div>
-
-  <div class="info">
-    <p class="date"></p>
+  <div class="commentBottom">
+    <p class="courseCommentContent"></p>
+    <div class="editArea">
+      <input class="courseCommentEditBox" name="" id="" cols="50" rows="10"></textarea>
+      <div class="editBtns">
+        <button class="commentEdit">edit</button>
+      </div>
+    </div>
   </div>
+  
 
-  <div class="displayCommentBtn">
-    <button class="commentEditBtn">
-      <i class="fa-solid fa-rotate fa-2x"></i>
-      <span class="icon-text">edit</span>
-    </button>
-    <button class="commentDeleteBtn">
-      <i class="fa-solid fa-trash-can fa-2x"></i>
-      <span class="icon-text">delete</span>
-    </button>
-  </div>
+  
 </form>
