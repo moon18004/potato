@@ -1,5 +1,11 @@
 
+import TokenStorage from './token.js';
+import ExternalServices from "./ExternalServices.js";
+const tokenStorage = new TokenStorage();
+const source = new ExternalServices();
+let token = tokenStorage.getToken();
 
+init();
 
 const tab = document.querySelectorAll('.info-menu p');
 // console.log(tab);
@@ -36,6 +42,32 @@ document.addEventListener('click', (e)=>{
     if(ui.offsetWidth < 770){
       document.querySelector('.info-contents').style.height = "3300px";
     }
+  }
+})
+
+async function init(){
+  if (token) {
+    console.log('init')
+    token = tokenStorage.getToken();
+    const res = await source.me(token);
+    console.log(res);
+    if(res.code==200){
+      document.querySelector('.signoutBtn').classList.add('display');
+      document.querySelector('.profileBtn').classList.add('display');
+      document.querySelector('.loginBtn').classList.add('none');
+      document.querySelector('.signupBtn').classList.add('none');
+      
+    }
+  }
+}
+document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
+  e.preventDefault();
+  if (confirm("Do you want to sign out?")){
+  tokenStorage.clearToken();
+  document.querySelector('.signoutBtn').classList.remove('display');
+  document.querySelector('.loginBtn').classList.remove('none');
+  document.querySelector('.profileBtn').classList.remove('display');
+  document.querySelector('.signupBtn').classList.remove('none');
   }
 })
 
