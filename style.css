@@ -971,8 +971,56 @@ header.active {
     /* margin: 10px; */
 
   }
+  /* ****************** sign In ********************* */
+  .section-login, .login-form, .section-login form div, .regi-header{
+    width: 100%;
+  }
+  .section-login h2{    
+    text-align:center;
+  }
+  .login-form label{
+    text-align:center;
+    margin: 0;
+  }
+  .forgotPwd{
+    display:block;
+    margin: auto;
+  }
+  .forgotPwd a{
+    text-align:center;
+    display: block;
+    margin:auto;
+  }
 
+  /* ************ Registration *************************** */
+  .registration{
+    width: 100%;
+  }
+  .registration form, .registration form div {
+    width: 100%;
+  }
+  .reg-form label{
+    text-align:center;
+    margin:0;
+
+  }
+  .reg-form button {
+    display: block;
+    margin: 10px auto;
+    /* text-align:center; */
+    /* margin:0; */
+  }
+  .email-msg.success, .opt-msg.success{
+    display: block;
+    text-align:center;
+  }
 }
+@media (max-width: 400px){
+  .reg-form input, .login-form input, .login-form .login-btn, .reg-form .sign-up{
+    width: 100%;
+  }
+}
+  
 
 
 /* full pc view: (course) write and update page*/
