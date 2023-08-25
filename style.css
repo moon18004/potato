@@ -939,7 +939,8 @@ header.active {
   }
   .categories{
     margin-top: 20px;
-
+    display: flex;
+    flex-wrap: wrap;
   }
   .categories p{
     font-size: 14px;
