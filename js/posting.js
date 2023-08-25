@@ -114,7 +114,29 @@ function getJson(json){
   return { ...json, id, views, likes, date, comments, author };
 }
 
+/* Header Trigger */
+$('.trigger').click(function(){
+  console.log("clicked");
+  $(this).toggleClass('active')
+  $('.gnb').toggleClass('active')
+})
+$('.gnb a, section').click(function(){
+  $('.gnb, .trigger').removeClass('active')
+})
 
+$('.infoTrigger').click(function(){
+  console.log("clicked");
+  $(this).toggleClass('active');
+  $('.info-menu').toggleClass('active');
+})
+$('.info-menu p').click(function(){
+  $('.info-menu, .infoTrigger').removeClass('active')
+  $('html').animate({scrollTop: 0}, 300)
+})
+
+$('.info-items').click(function(){
+  $('.info-menu, .infoTrigger').removeClass('active')
+})
 // async checkout() {
 //   const formElement = document.forms["checkout"];
 

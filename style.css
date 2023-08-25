@@ -383,7 +383,15 @@ header.active {
   font-size: 14px;
   font-weight: 500;
 }
+.post .date{
+  font-size: 12px;
+  margin-right: 20px;
+  font-weight: 700;
+
+  color: var(--color-grey)
+}
 .post .name { 
+  font-weight: 700;
   color : var(--color-font2);
 }
 .post-bottom{
@@ -455,14 +463,14 @@ header.active {
   border-radius: 5px;
   padding: 8px;
 }
-.posting-form textArea{
+.posting-form .comm-text textArea{
   border-radius: 5px;
   width: 800px;
   resize: none;
   border: 1px solid var(--color-line);
   padding: 8px;
 }
-.posting-form textArea:focus{
+.posting-form .comm-text textArea:focus{
   outline: 0;
 }
 .submit-post, .cancel-btn{
@@ -489,11 +497,11 @@ header.active {
   margin:auto;
   /* text-align:center; */
   overflow:hidden;
-  
 }
 .postBox p{
   font-size: 14px;
 }
+
 .post-head{
   position:relative;
   padding-left: 40px;
@@ -651,15 +659,35 @@ header.active {
 .info .data p {
   display: inline-block;
 }
+.editArea{
+  display:none;
+}
+
+.editArea.display{
+  display: flex;
+  justify-content: center;
+}
+.editArea .editBox{
+  width: 80%;
+  resize:none;
+  height: 100px;
+}
+.editBtns button{
+  display:block;
+}
 
 
 .views::before{
   /* display:inline-block; */
+  font-weight: 600;
   font-family: xeicon;
   content: '\e950';
+  color: var(--color-blue);
   /* width: 20px; */
 }
 .comments::before{
+  font-weight: 600;
+  color: var(--color-blue);
   font-family: xeicon;
   content: '\e9d8';
 }
@@ -921,7 +949,94 @@ header.active {
   .info-items{
     padding-left: 50px;
   }
+  /* **************    community   ********************** */
+  .posts_body{
+    width: 100%;
+  }
+  .categories{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .categories p{
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .posts_bar{
+    width: 100%;
+    flex-direction: column;
+  }
+  .posts{
+    width: 100%;
+  }
+  .post{
+    width: 100%;
+  }
+  .search{
+    width: 100%;
+
+  }
+  /* ******************** community posting **************************** */
+  .posting-body, .posting-form, .posting-form select, .posting-form input, .posting-form .comm-text textArea, .postBox, .commentsBox {
+    width: 100%;
+  }
+  .posting-body{
+    /* margin : 10px; */
+  }
+  .posting-form input{
+    /* margin: 10px; */
+
+  }
+  /* ****************** sign In ********************* */
+  .section-login, .login-form, .section-login form div, .regi-header{
+    width: 100%;
+  }
+  .section-login h2{    
+    text-align:center;
+  }
+  .login-form label{
+    text-align:center;
+    margin: 0;
+  }
+  .forgotPwd{
+    display:block;
+    margin: auto;
+  }
+  .forgotPwd a{
+    text-align:center;
+    display: block;
+    margin:auto;
+  }
+
+  /* ************ Registration *************************** */
+  .registration{
+    width: 100%;
+  }
+  .registration form, .registration form div {
+    width: 100%;
+  }
+  .reg-form label{
+    text-align:center;
+    margin:0;
+
+  }
+  .reg-form button {
+    display: block;
+    margin: 10px auto;
+    /* text-align:center; */
+    /* margin:0; */
+  }
+  .email-msg.success, .opt-msg.success{
+    display: block;
+    text-align:center;
+  }
 }
+@media (max-width: 400px){
+  .reg-form input, .login-form input, .login-form .login-btn, .reg-form .sign-up{
+    width: 100%;
+  }
+}
+  
 
 
 

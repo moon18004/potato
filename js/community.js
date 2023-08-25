@@ -8,7 +8,7 @@ const element = document.querySelector(".posts");
 const postList = new PostList(source, element);
 const tokenStorage = new TokenStorage();
 
-const token = tokenStorage.getToken();
+let token = tokenStorage.getToken();
 
 
 init();
