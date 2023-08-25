@@ -924,36 +924,5 @@ header.active {
 }
 
 
-/* full pc view: (course) write and update page*/
-@media(min-width: 1200px){
-  .courseAnnouncement{
-    min-width: 550px;
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px solid var(--color-line);
-    border-color: black;
-    padding: 10px;
-  }
-  .firstSentence{
-    display: flex;
-  }
-  .firstSentence p{
-    margin: 0px;
-  }
-  .firstParagraph{
-    font-size: small;
-  }
-  textarea{
-    padding: 20px;
-  }
-}
-
-.bad{
-  color: red;
-}
-.good{
-  color: blue;
-}
-
 
 
