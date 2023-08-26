@@ -8,6 +8,7 @@
     <title>Potato</title>
     <link rel="icon" type= "imge/png" href="../images/potatos.png">
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../courses/style/writePage/index.css">
     <link rel="stylesheet" href="../courses/style/writePage/mobile.css">
     <link rel="stylesheet" href="../courses/style/writePage/tablet.css">
     <link rel="stylesheet" href="../courses/style/writePage/pc.css">
@@ -65,7 +66,7 @@
         <form name="posting-courseForm" class="posting-courseForm" action="">
           <div class="select-category">
             <label for="category">Subject</label>
-            <select type="radio" name="category">
+            <select type="radio" name="category" style="border-radius: 10px;">
               <option selected="selected" value="">select subject</option>
               <option value="ACTV">Activities</option>
               <option value="AGBS">Agribusiness</option>
@@ -170,7 +171,7 @@
               <option value="WELD">Welding</option>
             </select>
             <label for="code" >Class Code</label>
-            <input type="text" placeholder="ex) cse110" name="code" required />
+            <input type="text" placeholder="ex) cse110" name="code" style="border-radius: 10px;" />
 
             <!-- <label for="satisfy">Satisfaction</label> -->
             <!-- <input
@@ -188,11 +189,11 @@
             <textarea
               name="mainText"
               id="textArea"
-              cols="70"
-              rows="32"
               required
             >
 >> Professor:
+
+>> Year/Semester:
 
 >> Briefly explain the class:
             

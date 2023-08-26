@@ -394,9 +394,7 @@ header.active {
   font-weight: 700;
   color : var(--color-font2);
 }
-.post-bottom{
 
-}
 .post-bottom .category, .post-bottom .amount{
   font-weight: 500;
   font-size: 14px;
@@ -427,11 +425,7 @@ header.active {
 
 }
 
-.posting-body{
-  width: 1300px;
-  margin: auto;
-  display: flex;
-}
+
 .posting-form{
   width: 840px;
   margin:auto;
@@ -591,10 +585,7 @@ header.active {
   margin-bottom: 12px;
 }
 
-.main-text textarea {
-  white-space: pre-wrap;
-  width: 750px;
-}
+
 
 /* **************  community post ******************* */
 .postBtns{
@@ -980,12 +971,9 @@ header.active {
   .posting-body, .posting-form, .posting-form select, .posting-form input, .posting-form .comm-text textArea, .postBox, .commentsBox {
     width: 100%;
   }
-  .posting-body{
-    /* margin : 10px; */
-  }
+
   .posting-form input{
     /* margin: 10px; */
-
   }
   /* ****************** sign In ********************* */
   .section-login, .login-form, .section-login form div, .regi-header{

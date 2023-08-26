@@ -1,5 +1,5 @@
 /* mobile view */
-@media (max-width: 600px) {
+@media (max-width: 425px) {
     div.header-inner{
         width: 100%;
     }

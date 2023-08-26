@@ -1,5 +1,5 @@
 /* 중간 크기 */
-@media (min-width: 601px) and (max-width: 900px)  {
+@media (min-width: 425px) and (max-width: 912px)  {
   .bodyBar{
     padding: 120px 0px 20px 0px;
   }

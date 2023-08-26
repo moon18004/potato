@@ -1,0 +1,32 @@
+@media (max-width: 912px) and (min-width: 426px){
+    .courseAnnouncement{
+        width: 90%;
+        border-radius: 10px;
+        border: 1px solid var(--color-line);
+        border-color: black;
+        padding: 10px;
+    }
+    .posting-body{
+        flex-direction: column;
+        align-items: center;
+    }
+    .firstParagraph{
+        font-size: medium;
+    }
+    textarea{
+        padding: 20px;
+    }
+    .select-category{
+        width: 90%;
+    }
+    .posting-courseForm{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #textArea{
+        width: 100%;
+        height: 300px;
+    }
+}

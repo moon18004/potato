@@ -1,0 +1,37 @@
+
+.posting-body{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* .posting-course */
+.select-category{
+    height:100%;
+    margin: 10px;
+}
+
+#textArea{
+    border-radius: 10px;
+    height: 90%;
+}
+.main-text{
+    height: 80%;
+    margin: 0px;
+}
+
+.firstSentence{
+  display: flex;
+}
+.firstSentence p{
+  margin: 0px;
+}
+.bad{
+  color: red;
+  }
+.good{
+  color: blue;
+}
