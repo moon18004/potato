@@ -63,10 +63,10 @@
             </ul>
           </div>
         </div>
-        <form name="posting-courseForm" class="posting-courseForm" action="">
+        <form name="updating-courseForm" class="updating-courseForm" action="">
           <div class="select-category">
             <label for="category">Subject</label>
-            <select type="radio" name="category">
+            <select type="radio" name="category" class="category">
               <option selected="selected" value="">select subject</option>
               <option value="ACTV">Activities</option>
               <option value="AGBS">Agribusiness</option>
@@ -171,7 +171,7 @@
               <option value="WELD">Welding</option>
             </select>
             <label for="code" >Class Code</label>
-            <input type="text" placeholder="ex) cse110" name="code" required />
+            <input type="text" placeholder="ex) cse110" name="code" class="code" required />
 
             <!-- <label for="satisfy">Satisfaction</label> -->
             <!-- <input
@@ -189,6 +189,7 @@
             <textarea
               name="mainText"
               id="textArea"
+              class="textArea"
               cols="70"
               rows="32"
               required

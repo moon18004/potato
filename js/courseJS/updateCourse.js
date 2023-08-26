@@ -17,7 +17,7 @@ document
     token = tokenStorage.getToken();
     const formElement = document.forms["updating-courseForm"];
     let json = formDataToJSON(formElement);
-
+    console.log(json);
     json.text = lineChange(json.mainText);
     json.subject = json.category;
     
@@ -26,7 +26,13 @@ document
     await services.updateCourseRequest(json, token);
   });
 
-
+function convertDataToPage(text){
+  console.log(text);
+  var formattedText = text.replace(/<br>/g, "\n");
+  // 서버로 formattedText를 보내거나 원하는 방식으로 처리합니다.
+  console.log(formattedText);
+  return formattedText;
+}
 function lineChange(text) {
   var formattedText = text.replace(/\n/g, "<br>");
   // 서버로 formattedText를 보내거나 원하는 방식으로 처리합니다.
@@ -36,10 +42,11 @@ function lineChange(text) {
 
 async function getCourse() {
   const course = await services.getCourseData();
-  console.log(course);
+  console.log(course.subject);
+  var text = convertDataToPage(course.text)
   document.querySelector(".category").value = course.subject;
   document.querySelector(".code").value = course.code;
-  document.querySelector(".textArea").value = course.text;
+  document.querySelector(".textArea").value = text;
 }
 
 document.querySelector(".signoutBtn").addEventListener("click", async (e) => {
