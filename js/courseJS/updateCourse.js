@@ -20,13 +20,13 @@ document
     console.log(json);
     json.text = lineChange(json.mainText);
     json.subject = json.category;
-    
+
     console.log(json);
     //   console.log(json);
     await services.updateCourseRequest(json, token);
   });
 
-function convertDataToPage(text){
+function convertDataToPage(text) {
   console.log(text);
   var formattedText = text.replace(/<br>/g, "\n");
   // 서버로 formattedText를 보내거나 원하는 방식으로 처리합니다.
@@ -43,7 +43,7 @@ function lineChange(text) {
 async function getCourse() {
   const course = await services.getCourseData();
   console.log(course.subject);
-  var text = convertDataToPage(course.text)
+  var text = convertDataToPage(course.text);
   document.querySelector(".category").value = course.subject;
   document.querySelector(".code").value = course.code;
   document.querySelector(".textArea").value = text;
@@ -60,7 +60,6 @@ document.querySelector(".signoutBtn").addEventListener("click", async (e) => {
     window.location.href = "../courses/index.html";
   }
 });
-
 
 async function init() {
   console.log(token);
@@ -79,25 +78,25 @@ async function init() {
 }
 
 /* Header Trigger */
-$('.trigger').click(function(){
+$(".trigger").click(function () {
   console.log("clicked");
-  $(this).toggleClass('active')
-  $('.gnb').toggleClass('active')
-})
-$('.gnb a, section').click(function(){
-  $('.gnb, .trigger').removeClass('active')
-})
+  $(this).toggleClass("active");
+  $(".gnb").toggleClass("active");
+});
+$(".gnb a, section").click(function () {
+  $(".gnb, .trigger").removeClass("active");
+});
 
-$('.infoTrigger').click(function(){
+$(".infoTrigger").click(function () {
   console.log("clicked");
-  $(this).toggleClass('active');
-  $('.info-menu').toggleClass('active');
-})
-$('.info-menu p').click(function(){
-  $('.info-menu, .infoTrigger').removeClass('active')
-  $('html').animate({scrollTop: 0}, 300)
-})
+  $(this).toggleClass("active");
+  $(".info-menu").toggleClass("active");
+});
+$(".info-menu p").click(function () {
+  $(".info-menu, .infoTrigger").removeClass("active");
+  $("html").animate({ scrollTop: 0 }, 300);
+});
 
-$('.info-items').click(function(){
-  $('.info-menu, .infoTrigger').removeClass('active')
-})
+$(".info-items").click(function () {
+  $(".info-menu, .infoTrigger").removeClass("active");
+});
