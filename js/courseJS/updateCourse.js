@@ -9,7 +9,6 @@ const services = new ExternalServices();
 init();
 await getCourse();
 
-
 // course update
 document
   .querySelector(".submit-updateCourse")
