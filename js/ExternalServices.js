@@ -214,6 +214,7 @@ export default class ExternalServices {
     } else {
       id = json.id;
     }
+    console.log(json);
     const options = {
       method: "PUT",
       headers: {
@@ -223,7 +224,8 @@ export default class ExternalServices {
       body: JSON.stringify({
         subject: json.subject,
         code: json.code,
-        text: json.text
+        text: json.text,
+        like: json.like
       }),
     };
     try {
@@ -374,5 +376,33 @@ export default class ExternalServices {
       .then((window.location.href = "../courses/index.html"));
     console.log(response);
     return response;
+  }
+
+  async heartUpdate(json, page, token) {
+    console.log(token)
+    const options = {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        subject: json.subject,
+        code: json.code,
+        text: json.text,
+        like: json.like
+      }),
+    };
+    try {
+      const response = await fetch(baseURL + page + json.id, options).then(
+        convertToJson
+      );
+      console.log(response);
+      console.log(json.like);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 }

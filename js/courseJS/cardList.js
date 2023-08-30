@@ -8,8 +8,7 @@ let token = tokenStorage.getToken();
 const services = new ExternalServices();
 const categorySelect = document.getElementById("selectSubject");
 const userInformation = await userInfo();
-// display course's edit and delete
-let cardArray = [];
+
 
 export default class CardList {
   constructor(source, commentSource, element) {
@@ -65,9 +64,11 @@ export default class CardList {
     
     // heart
     const heartButton = template.querySelector(".clickHeart");
-    template.querySelector(".heartCount").innerHTML = card.like.length;
+    var heartCount = card.like.length;
+    var heart = template.querySelector(".heartCount");
+    heart.innerHTML = heartCount;
     
-    heartButton.addEventListener("click", async ()=>{
+    heartButton.addEventListener("click", async (e)=>{
       
       const userInformation = await userInfo();
       const filtered = card.like.filter((element) => {
@@ -76,14 +77,21 @@ export default class CardList {
       if (!filtered.length){
         card.like.push(userInformation["userId"]); 
         console.log(card.like);
+        heartCount++;
         heartButton.classList.add("clicked");
+        console.log(heartCount)
       } else {
         card.like.pop(userInformation["userId"]); 
+        heartCount--;
         heartButton.classList.remove("clicked");
+        console.log(heartCount)
       }
+      
+      heart.innerHTML = heartCount;
+      console.log(e.target.parentNode.parentElement.parentElement.querySelector('.heartCount').value);
       console.log(filtered);
-    
-      await services.updateCourseRequest(card, token);
+      
+      await services.heartUpdate(card, "course/", token);
     });
 
     // 카테고리
@@ -98,7 +106,6 @@ export default class CardList {
         eachCard.style.display = "none";
       }
     });
-
     // comment reply button
     template
       .querySelector(".commentReplyBtn")

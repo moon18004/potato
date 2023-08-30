@@ -1,14 +1,20 @@
 import ExternalServices from './ExternalServices.js';
 import TokenStorage from './token.js';
-
-
-const externalServices = new ExternalServices();
+import CourseCard from "./homeCourse.js";
 const tokenStorage = new TokenStorage();
-
 const token = tokenStorage.getToken();
 
-// console.log(token);
+const courseUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/course";
+const communityUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community"
 
+const externalServices = new ExternalServices();
+const courseSource = new ExternalServices(courseUrl);
+const communitySource = new ExternalServices(communityUrl);
+
+const element = document.querySelector(".homeCourse");
+const courseCard = new CourseCard(courseSource, element);
+
+courseCard.init();
 init();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {

@@ -7,6 +7,7 @@ export function setLocalStorage(key, data) {
 }
 
 export async function loadTemplate(path) {
+  console.log(path);
   const data = await fetch(path);
   const template = await data.text();
 
@@ -20,7 +21,9 @@ export async function loadTemplate(path) {
 export function renderList(ul, template, list, hydrateFunction, clear) {
   // Empty the list if the list should be emptied
   if (clear) ul.innerHTML = "";
+  console.log(template);
   list.forEach((item) => {
+    console.log(item);
     renderwithTemplate(ul, template, item, hydrateFunction);
   });
 }
