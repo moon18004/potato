@@ -1,30 +1,60 @@
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-#courseMove, #communityMove, #infoMove {
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-#courseMove{
-    margin-top: 10%;
-}
-#courseImg{
-    width:50%;
-    height: 40%;
+@media (min-width: 768px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+    #courseMove, #communityMove, #infoMove {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: 2px solid;
+        border-radius: 3%;
+    }
+    #courseMove{
+        margin-top: 15%;
+    }
+    #courseImg{
+        width:50%;
+        height: 40%;
+    }
+    
+    #communityImg{
+        width: 50%;
+        height: 40%;
+    }
+    #infoImg{
+        width: 50%;
+        height: 40%;
+    }
+    .homeCourse{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .homeCourseCard{
+        display: flex;
+    }
+    ul{
+        margin: 0;
+        font-size: 70%;
+        padding: 0;
+    }    
+    p{
+        margin:0;
+    }
+    .subject, .classcode{
+        padding-right: 3%;
+    }
+    .subject, .classcode, .date{
+        width: 30%;
+    }
 }
 
-#communityImg{
-    width: 50%;
-    height: 40%;
-}
-#infoImg{
-    width: 50%;
-    height: 40%;
+.subject, .classcode, .date{
+    margin: 0;
 }

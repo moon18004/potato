@@ -28,11 +28,13 @@ export function renderList(ul, template, list, hydrateFunction, clear) {
   });
 }
 export function renderwithTemplate(parent_node, template, data, callback) {
+  console.log(parent_node);
   let copy = template.content.cloneNode(true);
 
   if (callback) {
     copy = callback(copy, data);
   }
+  console.log(copy);
   parent_node.appendChild(copy);
 }
 
