@@ -175,7 +175,7 @@ header.active {
 main .home-info{
   /* margin-top: 150px; */
   /* margin-top: 100px; */
-  width: 1300px;
+  width:1100px;
   margin:auto;
   padding-top: 150px;
   display: flex;
@@ -184,12 +184,17 @@ main .home-info{
   justify-content: center;
 }
 .home-info a{
-  margin: 12px;
+  margin: 16px;
+  /* transition: 0.3s; */
+}
+.home-info a:hover{
+  color: var(--color-blue);
 }
 .home-content{
   margin: auto;
   display: flex;
   width: 1000px;
+  margin-top: 80px;
   justify-content: space-around;
 }
 .home-course, .home-comm{
@@ -204,7 +209,7 @@ main .home-info{
 }
 .course-banner, .home-comm{
   position: relative;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .course-img, .course-header, .comm-img, .comm-header{
   position: absolute;

@@ -127,15 +127,12 @@ export default class HomeCourse{
 
   prepareTemplate(template, post) {
     console.log(template.querySelector(".date"));
-    template.querySelector('a').href = `../community/post.html?id=${post._id}`;
-    template.querySelector('a').addEventListener('click', async (e) => {
-      // e.preventDefault();
-      // console.log(this.source);
-      // e.preventDefault();
-      // console.log(post.view+1)
-      const res = await this.source.increaseView(post.id, post.view + 1);
-      console.log(res);
-    })
+    // template.querySelector('a').href = `../community/post.html?id=${post._id}`;
+    // template.querySelector('a').addEventListener('click', async (e) => {
+      
+    //   const res = await this.source.increaseView(post.id, post.view + 1);
+    //   console.log(res);
+    // })
     const date = timeAgo(post.createdAt);
     // template.querySelector('.post').dataset.category = post.category;
     template.querySelector(".name").innerHTML = post.author;
