@@ -60,7 +60,7 @@ export default class HomeCommunity{
 
   prepareTemplate(template, post) {
     
-    template.querySelector('a').href = `../community/post.html?id=${post._id}`;
+    template.querySelector('a').href = `./community/post.html?id=${post._id}`;
     template.querySelector('a').addEventListener('click', async (e) => {
       // e.preventDefault();
       // console.log(this.source);
