@@ -96,7 +96,7 @@ export default class HomeCourse{
     // const list = await this.source.getDate();
     // setLocalStorage('posts', list);
     
-    const template = await loadTemplate("../templates/home/course.html");
+    const template = await loadTemplate("../templates/homeCourse.html");
     // console.log(list);
     
     renderList(this.element, template, this.data, this.prepareTemplate.bind(this), true);
