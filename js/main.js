@@ -20,8 +20,8 @@ const element = document.querySelector(".home-course-items");
 const courseCard = new HomeCourse(courseSource, element);
 
 
-postList.init();
-courseCard.init();
+await postList.init();
+// await courseCard.init();
 init();
 
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
