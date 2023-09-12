@@ -11,13 +11,12 @@ export default class HomeCommunity{
   async init(query=null){
     // this.data = getLocalStorage('posts');
     // if(!this.data){
-    if(query == null){
-      this.data = await this.source.getData();
-    }
-    else{
-      console.log("query");
-      this.data = await this.source.getData(query);
-    }
+    
+    this.data = await this.source.getData();
+    
+    
+      
+    
     
       // setLocalStorage('posts', this.data);
     //   console.log(this.data);
