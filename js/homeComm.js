@@ -29,7 +29,7 @@ export default class HomeCommunity{
     // const list = await this.source.getDate();
     // setLocalStorage('posts', list);
     
-    const template = await loadTemplate("../templates/homeComm.html");
+    const template = await loadTemplate("./templates/homeComm.html");
     // console.log(list);
     
     renderList(this.element, template, this.data, this.prepareTemplate.bind(this), true);
