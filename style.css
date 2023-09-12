@@ -1031,6 +1031,24 @@ main .home-info{
   .info-items{
     padding-left: 50px;
   }
+  
+
+  /* ****************** Home *********************************** */
+
+  main .home-info{
+    width: 100%;
+  }
+  .home-content{
+    display: block;
+    width: 100%;
+  }
+ 
+  .home-course, .home-comm{
+    width: 400px;
+    margin: auto;
+    padding-bottom: 40px;
+  }
+
   /* **************    community   ********************** */
   .posts_body{
     width: 100%;
@@ -1113,5 +1131,9 @@ main .home-info{
 @media (max-width: 400px){
   .reg-form input, .login-form input, .login-form .login-btn, .reg-form .sign-up{
     width: 100%;
+  }
+  .home-course, .home-comm{
+    width: 100%;
+    
   }
 }
