@@ -171,6 +171,90 @@ header.active {
   color: var(--color-white);
 }
 
+/* *********************** Main ********************************** */
+main .home-info{
+  /* margin-top: 150px; */
+  /* margin-top: 100px; */
+  width: 1300px;
+  margin:auto;
+  padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  position:relative;
+  justify-content: center;
+}
+.home-info a{
+  margin: 12px;
+}
+.home-content{
+  margin: auto;
+  display: flex;
+  width: 1000px;
+  justify-content: space-around;
+}
+.home-course, .home-comm{
+  width: 40%;
+
+}
+.course-bg, .comm-bg{
+  width: 100%;
+  height: 76px;
+  filter:opacity(60%);
+  border-radius: 10px;
+}
+.course-banner, .home-comm{
+  position: relative;
+  margin-top: 40px;
+}
+.course-img, .course-header, .comm-img, .comm-header{
+  position: absolute;
+
+}
+.course-img, .comm-img{
+  right: 10px;
+  width: 150px;
+  top: -20px;
+}
+.comm-header, .course-header{
+  left: 40px;
+  top: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+.home-comm-item, .home-course-item{
+  padding-left: 14px;
+  border-bottom: 1px solid var(--color-line);
+
+}
+.home-comm-item p , .home-course-item p{
+  /* display: inline-block; */
+  font-size: 14px;
+  
+}
+.home-course-item h3{
+  font-size: 16px;
+  font-weight:500;
+  margin-bottom: 10px;
+}
+.home-comm-top, .home-course-top{
+  display: flex;
+  justify-content: space-between;
+}
+.home-comm-top .name{
+  font-weight:500;
+}
+
+.likes::before{
+  /* \ea11 */
+  font-weight: 600;
+  color: var(--color-blue);
+  font-family: xeicon;
+  content: '\ea11';
+}
+
+
+
 /* **********************  Information ************************************ */
 #info{
   width: 100%;
@@ -677,6 +761,7 @@ header.active {
   /* width: 20px; */
 }
 .comments::before{
+  /* \ea11 */
   font-weight: 600;
   color: var(--color-blue);
   font-family: xeicon;

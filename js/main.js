@@ -1,6 +1,9 @@
 import ExternalServices from './ExternalServices.js';
 import TokenStorage from './token.js';
 import CourseCard from "./homeCourse.js";
+
+import HomeCommunity from './homeComm.js';
+import HomeCourse from './homeCourse.js';
 const tokenStorage = new TokenStorage();
 const token = tokenStorage.getToken();
 
@@ -10,10 +13,14 @@ const communityUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/co
 const externalServices = new ExternalServices();
 const courseSource = new ExternalServices(courseUrl);
 const communitySource = new ExternalServices(communityUrl);
+const commElement = document.querySelector(".home-comm-items");
+const postList = new HomeCommunity(communitySource, commElement);
 
-const element = document.querySelector(".homeCourse");
-const courseCard = new CourseCard(courseSource, element);
+const element = document.querySelector(".home-course-items");
+const courseCard = new HomeCourse(courseSource, element);
 
+
+postList.init();
 courseCard.init();
 init();
 
