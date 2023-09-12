@@ -9,6 +9,7 @@ export function setLocalStorage(key, data) {
 export async function loadTemplate(path) {
   console.log(path);
   const data = await fetch(path);
+  console.log(data);
   const template = await data.text();
 
   const newTemplate = document.createElement("template");
