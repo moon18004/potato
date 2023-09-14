@@ -187,10 +187,6 @@ export default class ExternalServices {
             // userId: userInfo['userId']
         }),
     };
-    console.log(baseURL);
-    console.log(json);
-    console.log(page);
-    console.log(userInfo);
     console.log(json.className);
     try {
       const response = await fetch(baseURL + page,options).then(
