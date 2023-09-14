@@ -7,8 +7,8 @@ import HomeCourse from './homeCourse.js';
 const tokenStorage = new TokenStorage();
 const token = tokenStorage.getToken();
 
-const courseUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/course";
-const communityUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community"
+const courseUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/course/limit";
+const communityUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/community/limit"
 
 const externalServices = new ExternalServices();
 const courseSource = new ExternalServices(courseUrl);
