@@ -24,6 +24,18 @@ await postList.init();
 await courseCard.init();
 init();
 
+// const infoMenu = document.querySelectorAll('.home-info a');
+// console.log(infoMenu);
+// infoMenu.forEach(e => {
+//   document.getElementById(e).classList.remove('active');
+//   e.addEventListener('click', e=>{
+//     console.log(e.target.id);
+//   })
+// })
+// infoMenu.addEventListener('click', async (e)=> {
+//   console.log(e);
+// })
+
 document.querySelector('.signoutBtn').addEventListener('click', async (e) => {
   e.preventDefault();
   if (confirm("Do you want to sign out?")){

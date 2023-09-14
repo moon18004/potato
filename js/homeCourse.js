@@ -139,6 +139,7 @@ export default class HomeCourse{
     template.querySelector(".date").innerHTML = date;
     template.querySelector(".subject").innerHTML += post.subject;
     template.querySelector(".code").innerHTML += post.code;
+    template.querySelector('.courseName').innerHTML = post.courseName;
     // template.querySelector(".category").innerHTML = post.category;
     // template.querySelector(".views").innerHTML = post.view;
     // template.querySelector(".comments").innerHTML = post.comments;
