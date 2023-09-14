@@ -65,115 +65,122 @@
         </div>
         <form name="updating-courseForm" class="updating-courseForm" action="">
           <div class="select-category">
-            <label for="category">Subject</label>
-            <select type="radio" name="category" class="category">
-              <option selected="selected" value="">select subject</option>
-              <option value="ACTV">Activities</option>
-              <option value="AGBS">Agribusiness</option>
-              <option value="AGED">Agriculture Education</option>
-              <option value="AGTC">Agriculture Technology</option>
-              <option value="AGRO">Agronomy</option>
-              <option value="AS">Animal Science</option>
-              <option value="ANTH">Anthropology</option>
-              <option value="APS">Applied Plant Science</option>
-              <option value="ARAB">Arabic</option>
-              <option value="ARCH">Architecture</option>
-              <option value="ART">Art</option>
-              <option value="AUTO">Automotive</option>
-              <option value="BIO">Biology</option>
-              <option value="ACCT">Accounting</option>
-              <option value="BUS">Business</option>
-              <option value="BA">Business Analytics</option>
-              <option value="CHEM">Chemistry</option>
-              <option value="CHLD">Child Studies</option>
-              <option value="CHIN">Chinese</option>
-              <option value="CE">Civil Engineering</option>
-              <option value="COMM">Communication</option>
-              <option value="CIT">Computer Info Technology</option>
-              <option value="CS">Computer Science</option>
-              <option value="CM">Construction Management</option>
-              <option value="CYBR">Cybersecurity</option>
-              <option value="DANC">Dance</option>
-              <option value="DS">Data Science</option>
-              <option value="ECD">Early Child Development</option>
-              <option value="ECSE">Early Child Special Ed</option>
-              <option value="ECON">Economics</option>
-              <option value="ED">Education</option>
-              <option value="ECEN">Electrical/Computer Eng</option>
-              <option value="ENGT">Engineering Technology</option>
-              <option value="ENG">English</option>
-              <option value="ESL">English Second Language</option>
-              <option value="EIL">English as an Int'l Lang</option>
-              <option value="ESS">Exercise/Sports Science</option>
-              <option value="FCS">Family &amp; Consumer Sci</option>
-              <option value="FHGE">Family History Research</option>
-              <option value="FAML">Family Studies</option>
-              <option value="FIN">Finance</option>
-              <option value="FS">Food Science</option>
-              <option value="FAMF">Foundations: American</option>
-              <option value="FR">French</option>
-              <option value="GESC">General Educ: Science</option>
-              <option value="GE">General Education</option>
-              <option value="GS">General Studies</option>
-              <option value="GIS">Geographic Info Systems</option>
-              <option value="GEOG">Geography</option>
-              <option value="GEOL">Geology</option>
-              <option value="GER">German</option>
-              <option value="GRK">Greek</option>
-              <option value="HS">Health Science</option>
-              <option value="HRHP">Health, Rec, Human Pfrm</option>
-              <option value="HCA">Healthcare</option>
-              <option value="HEB">Hebrew</option>
-              <option value="HIST">History</option>
-              <option value="HFED">Home/Family Education</option>
-              <option value="HORT">Horticulture</option>
-              <option value="HTM">Hospitality/Tourism Mgmt</option>
-              <option value="HUM">Humanities</option>
-              <option value="ITM">Information Tech. Mgmt.</option>
-              <option value="IDS">Interdisciplinary Study</option>
-              <option value="ID">Interior Design</option>
-              <option value="INTL">International Studies</option>
-              <option value="LANG">Language</option>
-              <option value="LATN">Latin</option>
-              <option value="LR">Library Research</option>
-              <option value="MGMT">Management</option>
-              <option value="MET">Manufacturing Eng Tech</option>
-              <option value="MKTG">Marketing</option>
-              <option value="MATH">Mathematics</option>
-              <option value="ME">Mechanical Engineering</option>
-              <option value="MA">Medical Assisting</option>
-              <option value="MS">Military Science</option>
-              <option value="MUS">Music</option>
-              <option value="NURS">Nursing</option>
-              <option value="NRSF">Nursing Family Skills</option>
-              <option value="NUTR">Nutrition</option>
-              <option value="OSH">Occ Safety and Health</option>
-              <option value="PARA">Paramedicine</option>
-              <option value="PEAC">Peace</option>
-              <option value="PHIL">Philosophy</option>
-              <option value="PTA">Physical Therapy Asst</option>
-              <option value="PH">Physics</option>
-              <option value="PLSC">Political Science</option>
-              <option value="PSYC">Psychology</option>
-              <option value="PUBH">Public Health</option>
-              <option value="RM">Recreation Management</option>
-              <option value="REL">Religion</option>
-              <option value="RUSS">Russian</option>
-              <option value="SCED">Science Education</option>
-              <option value="SMM">Social Media Marketing</option>
-              <option value="SW">Social Work</option>
-              <option value="SOC">Sociology</option>
-              <option value="SPAN">Spanish</option>
-              <option value="SPED">Special Education</option>
-              <option value="TSOL">Teach Eng Second Lang</option>
-              <option value="TA">Theatre Arts</option>
-              <option value="WDD">Web Design Development</option>
-              <option value="WELD">Welding</option>
-            </select>
-            <label for="code" >Class Code</label>
-            <input type="text" placeholder="ex) cse110" name="code" class="code" required />
-            <label for="className" >Class Name</label>
-            <input type="text" placeholder="ex) Class Name" name="className" style="border-radius: 10px;" />            
+            <div>
+              <label for="category">Subject</label>
+              <select type="radio" name="category" class="category" style="border-radius: 10px; width: 80%" required>
+                <option selected="selected" value="">select subject</option>
+                <option value="ACTV">Activities</option>
+                <option value="AGBS">Agribusiness</option>
+                <option value="AGED">Agriculture Education</option>
+                <option value="AGTC">Agriculture Technology</option>
+                <option value="AGRO">Agronomy</option>
+                <option value="AS">Animal Science</option>
+                <option value="ANTH">Anthropology</option>
+                <option value="APS">Applied Plant Science</option>
+                <option value="ARAB">Arabic</option>
+                <option value="ARCH">Architecture</option>
+                <option value="ART">Art</option>
+                <option value="AUTO">Automotive</option>
+                <option value="BIO">Biology</option>
+                <option value="ACCT">Accounting</option>
+                <option value="BUS">Business</option>
+                <option value="BA">Business Analytics</option>
+                <option value="CHEM">Chemistry</option>
+                <option value="CHLD">Child Studies</option>
+                <option value="CHIN">Chinese</option>
+                <option value="CE">Civil Engineering</option>
+                <option value="COMM">Communication</option>
+                <option value="CIT">Computer Info Technology</option>
+                <option value="CSE">Computer Science</option>
+                <option value="CM">Construction Management</option>
+                <option value="CYBR">Cybersecurity</option>
+                <option value="DANC">Dance</option>
+                <option value="DS">Data Science</option>
+                <option value="ECD">Early Child Development</option>
+                <option value="ECSE">Early Child Special Ed</option>
+                <option value="ECON">Economics</option>
+                <option value="ED">Education</option>
+                <option value="ECEN">Electrical/Computer Eng</option>
+                <option value="ENGT">Engineering Technology</option>
+                <option value="ENG">English</option>
+                <option value="ESL">English Second Language</option>
+                <option value="EIL">English as an Int'l Lang</option>
+                <option value="ESS">Exercise/Sports Science</option>
+                <option value="FCS">Family &amp; Consumer Sci</option>
+                <option value="FHGE">Family History Research</option>
+                <option value="FAML">Family Studies</option>
+                <option value="FIN">Finance</option>
+                <option value="FS">Food Science</option>
+                <option value="FAMF">Foundations: American</option>
+                <option value="FR">French</option>
+                <option value="GESC">General Educ: Science</option>
+                <option value="GE">General Education</option>
+                <option value="GS">General Studies</option>
+                <option value="GIS">Geographic Info Systems</option>
+                <option value="GEOG">Geography</option>
+                <option value="GEOL">Geology</option>
+                <option value="GER">German</option>
+                <option value="GRK">Greek</option>
+                <option value="HS">Health Science</option>
+                <option value="HRHP">Health, Rec, Human Pfrm</option>
+                <option value="HCA">Healthcare</option>
+                <option value="HEB">Hebrew</option>
+                <option value="HIST">History</option>
+                <option value="HFED">Home/Family Education</option>
+                <option value="HORT">Horticulture</option>
+                <option value="HTM">Hospitality/Tourism Mgmt</option>
+                <option value="HUM">Humanities</option>
+                <option value="ITM">Information Tech. Mgmt.</option>
+                <option value="IDS">Interdisciplinary Study</option>
+                <option value="ID">Interior Design</option>
+                <option value="INTL">International Studies</option>
+                <option value="LANG">Language</option>
+                <option value="LATN">Latin</option>
+                <option value="LR">Library Research</option>
+                <option value="MGMT">Management</option>
+                <option value="MET">Manufacturing Eng Tech</option>
+                <option value="MKTG">Marketing</option>
+                <option value="MATH">Mathematics</option>
+                <option value="ME">Mechanical Engineering</option>
+                <option value="MA">Medical Assisting</option>
+                <option value="MS">Military Science</option>
+                <option value="MUS">Music</option>
+                <option value="NURS">Nursing</option>
+                <option value="NRSF">Nursing Family Skills</option>
+                <option value="NUTR">Nutrition</option>
+                <option value="OSH">Occ Safety and Health</option>
+                <option value="PARA">Paramedicine</option>
+                <option value="PEAC">Peace</option>
+                <option value="PHIL">Philosophy</option>
+                <option value="PTA">Physical Therapy Asst</option>
+                <option value="PH">Physics</option>
+                <option value="PLSC">Political Science</option>
+                <option value="PSYC">Psychology</option>
+                <option value="PUBH">Public Health</option>
+                <option value="RM">Recreation Management</option>
+                <option value="REL">Religion</option>
+                <option value="RUSS">Russian</option>
+                <option value="SCED">Science Education</option>
+                <option value="SMM">Social Media Marketing</option>
+                <option value="SW">Social Work</option>
+                <option value="SOC">Sociology</option>
+                <option value="SPAN">Spanish</option>
+                <option value="SPED">Special Education</option>
+                <option value="TSOL">Teach Eng Second Lang</option>
+                <option value="TA">Theatre Arts</option>
+                <option value="WDD">Web Design Development</option>
+                <option value="WELD">Welding</option>
+              </select>
+            </div>
+            <div>
+              <label for="code" >Class Code</label>
+              <input type="text" placeholder="ex) cse110" name="code" class="code" style="border-radius: 10px; width: 70%" required />
+            </div>
+            <div>
+              <label for="className" >Class Name</label>
+            <input type="text" placeholder="ex) Discrete Mathematics" name="className" style="border-radius: 10px" required />            
+            </div>
+            
             <!-- <label for="satisfy">Satisfaction</label> -->
             <!-- <input
               type="range"
@@ -182,11 +189,10 @@
               value="50"
               class="slider"
               id="myRange"
-            />
-          </div> -->
+            /> -->
+          </div> 
 
           <div class="main-text">
-            <label for="mainText"></label>
             <textarea
               name="mainText"
               id="textArea"
@@ -195,8 +201,6 @@
               rows="32"
               required
             >
->> Professor:
-
 >> Briefly explain the class:
             
 >> Memorable moments from the lecture:
@@ -204,7 +208,7 @@
 >> Preparatory materials for understanding of the lecture:
             
 >> ETC:
-          </textarea>
+            </textarea>
           </div>
           <div class="btn">
             <button class="submit-updateCourse">edit</button>

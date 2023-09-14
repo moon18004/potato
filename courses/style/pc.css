@@ -69,20 +69,24 @@
     .subject{
       font-weight: 550;
       font-size: 22px;
-      width: 100px;
-      margin-right: 50px;
+      width: 10%;
     }
     
     .classcode{
       font-weight: 550;
       font-size: 22px;
-      width: 530px;
+      width: 10%;
     }
-    
+    .courseName{
+      width: 55%;
+    }
+    h4.date{
+      width: 25%;
+    }
     p.date{
       font-size: 15px;
       margin: 0px;
-      width: 200px;
+      width: 20%;
     }
     h4.author{
       padding-left: 40px;

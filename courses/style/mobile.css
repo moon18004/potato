@@ -60,23 +60,27 @@
     .top {
         padding: 20px 5px 0px 5px;
         display: flex;
+        flex-direction: column;
         width: 98%;
-        height: 50px;
+        height: 100%;
     }
     .subject{
         font-weight: 550;
         font-size: 22px;
         margin: 0px;
-        width: 80px;
+        width: 20%;
     }
     .classcode{
         font-weight: 550;
         font-size: 22px;
-        width: 120px;
+        width: 20%;
         margin: 0px;
     }
+    .courseName{
+        margin-bottom: 0px;
+    }
     h4.date{
-        margin:0px;
+        margin-bottom:15px;
     }
     p.date{
         font-size: 5px;
@@ -121,7 +125,7 @@
     }
     .writeComment {
         width: 98%;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         padding-bottom: 10px;
