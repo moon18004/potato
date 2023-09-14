@@ -145,7 +145,7 @@
     
     .updateAndDelete {
       padding-top: 30px;
-      display: flex;
+      display: none;
       flex-direction: column;
     }
     

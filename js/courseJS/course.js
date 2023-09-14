@@ -9,8 +9,8 @@ let token = tokenStorage.getToken();
 const url = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/course";
 const source = new ExternalServices(url);
 
-const commentUrl =
-  "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/comment";
+console.log(source);
+const commentUrl = "https://port-0-server-eu1k2llllu5ilt.sel3.cloudtype.app/comment";
 const commentSource = new ExternalServices(commentUrl);
 
 const element = document.querySelector(".cards");
@@ -19,13 +19,6 @@ cardList.init();
 init();
 const tab = document.querySelectorAll(".text p");
 console.log(tab);
-
-// document.addEventListener('click', (e)=>{
-//   if(e.target.parentNode.className=='categories'){
-//     tab.forEach(element=> element.classList.remove('active'));
-//     e.target.classList.add('active');
-//   }
-// })
 
 async function init() {
   console.log(token);
@@ -42,6 +35,17 @@ async function init() {
     }
   }
 }
+
+document.querySelector(".courseWrite").addEventListener("click", async ()=>{
+  const res = await source.me(token);
+  console.log(res);
+  if(res.code ===200){
+    window.location.href = '../posting/postforCourse.html';
+  } else{
+    alert("Login Please");
+  }
+
+})
 
 document.querySelector(".signoutBtn").addEventListener("click", async (e) => {
   e.preventDefault();

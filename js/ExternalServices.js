@@ -181,6 +181,7 @@ export default class ExternalServices {
             author: userInfo['username'],
             subject: json.category,
             code: json.code,
+            courseName: json.className,
             text: json.text,
             like: [],
             // userId: userInfo['userId']
@@ -190,7 +191,7 @@ export default class ExternalServices {
     console.log(json);
     console.log(page);
     console.log(userInfo);
-    console.log(token);
+    console.log(json.className);
     try {
       const response = await fetch(baseURL + page,options).then(
         convertToJson
