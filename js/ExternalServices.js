@@ -171,6 +171,8 @@ export default class ExternalServices {
   }
 
   async postCourseRequest(json, page, userInfo, token) {
+    // console.log(userInfo);
+    // console.log(json.className);
     const options = {
         method: "POST",
         headers: {
@@ -189,9 +191,12 @@ export default class ExternalServices {
     };
     console.log(json.className);
     try {
-      const response = await fetch(baseURL + page,options).then(
+      const response = await fetch(baseURL + page, options).then(
         convertToJson
       )
+      // const response = await fetch("http://localhost:8080/course", options).then(
+      //   convertToJson
+      // )
       console.log(response);
       alert("정상적으로 작성 되었습니다.");
       window.location.href = "../courses/index.html";
